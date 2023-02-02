@@ -1,70 +1,44 @@
-const http = require('http');
-const url = require('url');
-const qs = require('querystring');
+const express = require('express');
 
-const {createApp} = require('./js/load-data.js');
-const userFile = require('./js/user-file.js');
+const userfile = require('./js/user-file');
 
-const hostname = "127.0.0.1";
 const port = 3000;
+const app = express();
+const router = express.Router();
 
-const app = createApp();
+const {createApp} = require("./js/load-data");
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
+const appLogic = createApp();
 
-    let valid = true;
-    let errormsg = "";
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-    if (req.method === "GET") {
-        const name = req.url.substring(1);
-        const isUser = (name.length > 0 && app.users.hasOwnProperty(name));
-
-        if (isUser) {
-            res.end(JSON.stringify(app.getUserPlants(name)));
-        } else if (req.url.startsWith("/user")) {
-            const qPos = req.url.indexOf("?");
-            if (qPos < 0) {
-                valid = false;
-                errormsg = "id utente non specificato";
-            } else {
-                const u = url.parse(req.url);
-                const query = qs.parse(u.query);
-                if (query["num"] === undefined ||
-                    isNaN(query["num"])) {
-                    valid = false;
-                    errormsg = "id utente non correttamente specificato";
-                } else {
-                    const ucode = parseInt(query["num"]);
-                    if (!userFile.userExists(ucode)) {
-                        valid = false;
-                        errormsg = "id utente inesistente";
-                    } else {
-                        userFile.sendFile(ucode, res);
-                    }
-                }
-            }
+router.route("/user")
+    .get((req, res) => {
+        if (req.query.id !== undefined && userfile.userExists(req.query.id)) {
+            userfile.sendFile(req.query.id, res);
         } else {
-            valid = false;
-            errormsg = "nome utente inesistente";
+            res.sendStatus(404);
         }
-    } else if (req.method === "POST") {
-        if (req.url === "/user" && req.headers['content-type'] === "application/json") {
-            userFile.createFile(req);
-            res.end();
-        } else {
-            valid = false;
-            errormsg = "richiesta non valida";
-        }
-    }
-    if (!valid) {
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/html');
-        res.end(`<h1>${errormsg}</h1>`);
-    }
-});
+    })
+    .post((req, res) => {
+        userfile.writeUserData(req.body);
+        res.sendStatus(200);
+    });
 
-server.listen(port, hostname, () => {
-    console.log("Server running at http://" + hostname + ":" + port);
+router.route("/:username")
+    .get((req, res) => {
+        const name = req.params.username;
+        const isuser = (name.length > 0 && appLogic.users.hasOwnProperty(name));
+        if (isuser) {
+            res.send(appLogic.getUserPlants(name));
+        } else {
+            res.sendStatus(404);
+        }
+    });
+
+app.use("/", router);
+
+app.listen(port, () => {
+    console.log("Server running at http://localhost:" + port);
 });
