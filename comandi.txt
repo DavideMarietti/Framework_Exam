@@ -1,0 +1,12 @@
+node --version
+npm --version
+sudo npm install -g npm@9.6.0
+sudo npm install -g @angular/cli
+ng version
+ng help 
+ng new --help 
+
+npm config set legacy-peer-deps true
+cfr. https://stackoverflow.com/questions/66989383/could-not-resolve-dependency-npm-err-peer-angular-compiler11-2-8
+
+ng serve
