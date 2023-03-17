@@ -16,6 +16,7 @@ export class AppComponent {
 
   receiveAuth(value: boolean) {
       this.autenticato = value;
+      this.setTitles();
   }
 
   receiveAuth_(value: boolean) {
@@ -24,6 +25,10 @@ export class AppComponent {
 
   receiveUser(value: string) {
     this.username = value;
+    this.setTitles()
+  }
+
+  setTitles(){
     if(!this.autenticato){
       this.sottotitolo = "--Log in for full access--";
       this.titolo = "Welcome user!";
