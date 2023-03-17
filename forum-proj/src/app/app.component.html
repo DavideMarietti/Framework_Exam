@@ -1,2 +1,11 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header [Autenticato]="autenticato"
+            (auth)='receiveAuth($event)'
+            (auth_)='receiveAuth_($event)'
+></app-header>
+<app-jumbotron [Titolo]="titolo" [SottoTitolo]="sottotitolo"></app-jumbotron>
+<app-login (auth)='receiveAuth($event)'
+           (auth_)='receiveAuth_($event)'
+           (userN)='receiveUser($event)'
+           *ngIf="autenticazione"
+></app-login>
+<!--router-outlet></--router-outlet-->

@@ -19,7 +19,7 @@
           <a class="nav-link" title="Graphs" href="#">Grapsh</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" title="Profile" href="#">Profile</a>
+          <a class="nav-link" title="Profile" href="#" *ngIf="Autenticato">Profile</a>
         </li>
       </ul>
 
@@ -35,10 +35,21 @@
           <img class="img-circle" src="/assets/images/user.png" width="38" height="38">
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Accedi</a></li>
-          <li><a class="dropdown-item" href="#">Registrati</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+          <li><a class="dropdown-item"
+                 href="#"
+                 *ngIf="!Autenticato"
+                 (click) = login()
+          >Accedi</a></li>
+          <li><a class="dropdown-item"
+                 href="#"
+                 *ngIf="!Autenticato"
+          >Registrati</a></li>
+          <!--li><hr class="dropdown-divider"></li-->
+          <li><a class="dropdown-item"
+                 href="#"
+                 *ngIf="Autenticato"
+                 (click) = logout()
+          >Logout</a></li>
         </ul>
       </div>
 

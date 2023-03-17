@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +6,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  userId: string = "Andrea";
+  username: string = "";
   password: string = "";
-  autenticato: boolean = true;
-  consentito: boolean = true;
+  autenticato: boolean = false;
+  autenticazione: boolean = false;
+  consentito: boolean = false;
+  @Output() auth = new EventEmitter<boolean>();
+  @Output() auth_ = new EventEmitter<boolean>();
+  @Output() userN = new EventEmitter<string>();
   errMsg: string = "Spiacente, userID o psw errati!!!";
   okMsg: string = "Accesso effettuato con successo!!";
-
-  titolo: string = "Welcome " + this.userId + "!";
-  /*sottotitolo: string = this.userId + "!";*/
 
   constructor() {
   }
@@ -23,14 +24,19 @@ export class LoginComponent implements OnInit{
   }
 
   gestAuth = () : void => {
-    console.log(this.userId);
-    if (this.userId === "Andrea" && this.password === "pupopeligroso95") {
+    console.log(this.username);
+    if (this.username === "Andrea" && this.password === "pupopeligroso95") {
       this.autenticato = true;
       this.consentito = true;
+      this.autenticazione = false;
     }
     else {
       this.autenticato = false;
       this.consentito = false;
+      this.autenticazione = true;
     }
+    this.auth.emit(this.autenticato);
+    this.auth_.emit(this.autenticazione);
+    this.userN.emit(this.username);
   }
 }
