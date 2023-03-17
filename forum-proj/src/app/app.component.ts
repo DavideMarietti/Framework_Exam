@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'forum-proj';
   titolo: string = "Welcome user!";
   sottotitolo: string = "--Log in for full access--";
+  img: string = "/assets/images/default-user-icon.png"
   username: string | null = "";
   autenticato: boolean | null = false;
   autenticazione: boolean | null = false;
@@ -17,6 +18,11 @@ export class AppComponent {
   receiveAuth(value: boolean) {
       this.autenticato = value;
       this.setTitles();
+      if(!this.autenticato){
+        this.autenticazione = false;
+        this.username = "";
+        this.img = "/assets/images/default-user-icon.png"
+      }
   }
 
   receiveAuth_(value: boolean) {
@@ -25,7 +31,11 @@ export class AppComponent {
 
   receiveUser(value: string) {
     this.username = value;
-    this.setTitles()
+    this.setTitles();
+  }
+
+  receiveImg(value: string) {
+    this.img = value;
   }
 
   setTitles(){

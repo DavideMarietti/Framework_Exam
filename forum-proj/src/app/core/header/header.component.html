@@ -19,7 +19,7 @@
           <a class="nav-link" title="Graphs" href="#">Grapsh</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" title="Profile" href="#" *ngIf="Autenticato">Profile</a>
+          <a class="nav-link" title="Profile" href="#" *ngIf="autenticato">Profile</a>
         </li>
       </ul>
 
@@ -32,22 +32,22 @@
 
       <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle thumbnail dduser" data-bs-toggle="dropdown" aria-expanded="false">
-          <img class="img-circle" src="/assets/images/user.png" width="38" height="38">
+          <img class="img-circle" src="{{image}}" width="38" height="38">
         </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item"
                  href="#"
-                 *ngIf="!Autenticato"
+                 *ngIf="!autenticato"
                  (click) = login()
           >Accedi</a></li>
           <li><a class="dropdown-item"
                  href="#"
-                 *ngIf="!Autenticato"
+                 *ngIf="!autenticato"
           >Registrati</a></li>
           <!--li><hr class="dropdown-divider"></li-->
           <li><a class="dropdown-item"
                  href="#"
-                 *ngIf="Autenticato"
+                 *ngIf="autenticato"
                  (click) = logout()
           >Logout</a></li>
         </ul>

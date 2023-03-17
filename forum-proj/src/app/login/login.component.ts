@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +8,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class LoginComponent implements OnInit{
   username: string = "";
   password: string = "";
-  autenticato: boolean = false;
-  autenticazione: boolean = false;
-  consentito: boolean = false;
-  @Output() auth = new EventEmitter<boolean>();
-  @Output() auth_ = new EventEmitter<boolean>();
-  @Output() userN = new EventEmitter<string>();
-  errMsg: string = "Spiacente, userID o psw errati!!!";
+  errore: boolean = false;
+  @Output() auth_out = new EventEmitter<boolean>();
+  @Output() auth_in = new EventEmitter<boolean>();
+  @Output() user_data = new EventEmitter<string>();
+  @Output() user_img = new EventEmitter<string>();
+  errMsg: string = "Attenzione! Username o password errati.";
   okMsg: string = "Accesso effettuato con successo!!";
+
+  img: string = "/assets/images/default-user-icon.png";
 
   constructor() {
   }
@@ -23,20 +24,20 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  gestAuth = () : void => {
-    console.log(this.username);
+  login = () : void => {
     if (this.username === "Andrea" && this.password === "pupopeligroso95") {
-      this.autenticato = true;
-      this.consentito = true;
-      this.autenticazione = false;
+      this.auth_out.emit(true);
+      this.auth_in.emit(false);
+      this.errore = false;
+      this.user_data.emit(this.username);
+      this.user_img.emit("/assets/images/user.png");
     }
     else {
-      this.autenticato = false;
-      this.consentito = false;
-      this.autenticazione = true;
+      this.errore = true;
     }
-    this.auth.emit(this.autenticato);
-    this.auth_.emit(this.autenticazione);
-    this.userN.emit(this.username);
+  }
+
+  close_login_form() {
+    this.auth_in.emit(false);
   }
 }

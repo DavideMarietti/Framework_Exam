@@ -6,9 +6,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() Autenticato: boolean | null = false;
-  @Output() auth = new EventEmitter<boolean>();
-  @Output() auth_ = new EventEmitter<boolean>();
+  @Input() autenticato: boolean | null = false;
+  @Input() image: string | null = "";
+  @Output() auth_out = new EventEmitter<boolean>();
+  @Output() auth_in = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -16,12 +17,11 @@ export class HeaderComponent implements OnInit {
   }
 
   logout = () : void => {
-    this.Autenticato = false;
-    this.auth.emit(this.Autenticato);
+    this.auth_out.emit(false);
   }
 
   login = () : void => {
-    this.auth_.emit(true);
+    this.auth_in.emit(true);
   }
 }
 

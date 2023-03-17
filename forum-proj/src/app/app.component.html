@@ -1,11 +1,13 @@
-<app-header [Autenticato]="autenticato"
-            (auth)='receiveAuth($event)'
-            (auth_)='receiveAuth_($event)'
+<app-header [autenticato]="autenticato"
+            [image]="img"
+            (auth_out)='receiveAuth($event)'
+            (auth_in)='receiveAuth_($event)'
 ></app-header>
-<app-jumbotron [Titolo]="titolo" [SottoTitolo]="sottotitolo"></app-jumbotron>
-<app-login (auth)='receiveAuth($event)'
-           (auth_)='receiveAuth_($event)'
-           (userN)='receiveUser($event)'
+<app-jumbotron [titolo]="titolo" [sottotitolo]="sottotitolo"></app-jumbotron>
+<app-login (auth_out)='receiveAuth($event)'
+           (auth_in)='receiveAuth_($event)'
+           (user_data)='receiveUser($event)'
+           (user_img)='receiveImg($event)'
            *ngIf="autenticazione"
 ></app-login>
 <!--router-outlet></--router-outlet-->
