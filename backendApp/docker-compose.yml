@@ -9,7 +9,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
-      - backendnet
+      - appbootrestnet
     environment:
       POSTGRES_DB: testdb
       POSTGRES_USER: admin
@@ -30,17 +30,17 @@ services:
         depends_on:
           - dbpostgresql
         networks:
-          - backendnet
+          - appbootrestnet
   app:
-    build: ./user-service
-    image: user-service
-    container_name: user-service
+    build: user-service
+    image: appbootrest
+    container_name: appbootrest
     ports:
       - "8080:8080"
     depends_on:
       - dbpostgresql
     networks:
-      - backendnet
+      - appbootrestnet
     environment:
      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql:5432/testdb
      - SPRING_DATASOURCE_USERNAME=admin
@@ -50,7 +50,7 @@ volumes:
   db-data:
   pgadmin-data:
 networks:
-  backendnet:
+  appbootrestnet:
     driver: bridge
 # docker-compose build && docker-compose up
 
