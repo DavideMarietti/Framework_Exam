@@ -5,9 +5,9 @@ services:
     image: "postgres"
     container_name: postgres_user
     ports:
-      - "5432"
+      - "5445:5433"
     volumes:
-      - db-data:/var/lib/postgresql_user/data
+      - db-data_user:/var/lib/postgresql_user/data
     networks:
       - backendnet
     environment:
@@ -34,9 +34,9 @@ services:
     image: "postgres"
     container_name: postgres_post
     ports:
-      - "5432"
+      - "5446:5432"
     volumes:
-      - db-data:/var/lib/postgresql_post/data
+      - db-data_post:/var/lib/postgresql_post/data
     networks:
       - backendnet
     environment:
@@ -49,7 +49,7 @@ services:
     image: "postservice"
     container_name: "postservice"
     ports:
-      - "8081:8081"
+      - "8081:8080"
     depends_on:
       - dbpostgresql_post
     networks:
@@ -61,9 +61,9 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
 volumes:
-  db-data:
+  db-data_user:
+  db-data_post:
 networks:
   backendnet:
     driver: bridge
 # docker-compose build && docker-compose up
-

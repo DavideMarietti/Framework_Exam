@@ -7,22 +7,10 @@
     <list default="true" id="444e865e-081b-428e-8e34-39f1ffaa289b" name="Changes" comment="checkpoint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/Dockerfile (copy)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/DockerfileGIOWorking26-11-2020" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/SAVdocker-compose" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/assembly.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/docker-comGIO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/docker-compose (copy).yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/start.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/wait-for-it.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/target/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/app.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/target/app.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/app.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/app.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/app.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/app.jar.original" afterDir="false" />
@@ -138,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679148369895</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="checkpoint">
+      <created>1679150527952</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679150527953</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
