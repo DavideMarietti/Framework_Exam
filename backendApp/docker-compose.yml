@@ -5,7 +5,7 @@ services:
     image: "postgres"
     container_name: postgres_user
     ports:
-      - "5445:5433"
+      - "5445:5432"
     volumes:
       - db-data_user:/var/lib/postgresql_user/data
     networks:
@@ -17,7 +17,7 @@ services:
       restart: unless-stopped
   app-user:
     build: user-service
-    image: "userservice"
+    image: userservice:latest
     container_name: "userservice"
     ports:
       - "8080:8080"
@@ -46,7 +46,7 @@ services:
       restart: unless-stopped
   app-post:
     build: post-service
-    image: "postservice"
+    image: postservice:latest
     container_name: "postservice"
     ports:
       - "8081:8080"
