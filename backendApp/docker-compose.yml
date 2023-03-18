@@ -31,7 +31,7 @@ services:
           - dbpostgresql
         networks:
           - appbootrestnet
-  app:
+  app-user:
     build: user-service
     image: appbootrest
     container_name: appbootrest
@@ -46,6 +46,22 @@ services:
      - SPRING_DATASOURCE_USERNAME=admin
      - SPRING_DATASOURCE_PASSWORD=admin
      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  app-post:
+    build: post-service
+    image: appbootpost
+    container_name: appbootpost
+    ports:
+      - "8081:8081"
+    depends_on:
+      - dbpostgresql
+    networks:
+      - appbootrestnet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql:5432/testdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
 volumes:
   db-data:
   pgadmin-data:
