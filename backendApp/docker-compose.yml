@@ -1,72 +1,69 @@
 version: '3'
 
 services:
-  dbpostgresql:
-    container_name: postres
+  dbpostgresql_user:
     image: "postgres"
+    container_name: postgres_user
     ports:
       - "5432"
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql_user/data
     networks:
-      - appbootrestnet
+      - backendnet
     environment:
-      POSTGRES_DB: testdb
+      POSTGRES_DB: userdb
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       restart: unless-stopped
-  pgadmin:
-        container_name: pgadmin4_container
-        image: dpage/pgadmin4
-        restart: always
-        environment:
-          PGADMIN_DEFAULT_EMAIL: admin@admin.com
-          PGADMIN_DEFAULT_PASSWORD: root
-          PGADMIN_LISTEN_PORT: 50
-        ports:
-          - "5050:50"
-        volumes:
-          - pgadmin-data:/var/lib/pgadmin
-        depends_on:
-          - dbpostgresql
-        networks:
-          - appbootrestnet
   app-user:
     build: user-service
-    image: appbootrest
-    container_name: appbootrest
+    image: "userservice"
+    container_name: "userservice"
     ports:
       - "8080:8080"
     depends_on:
-      - dbpostgresql
+      - dbpostgresql_user
     networks:
-      - appbootrestnet
+      - backendnet
     environment:
-     - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql:5432/testdb
+     - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_user:5432/userdb
      - SPRING_DATASOURCE_USERNAME=admin
      - SPRING_DATASOURCE_PASSWORD=admin
      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  dbpostgresql_post:
+    image: "postgres"
+    container_name: postgres_post
+    ports:
+      - "5432"
+    volumes:
+      - db-data:/var/lib/postgresql_post/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: postdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
   app-post:
     build: post-service
-    image: appbootpost
-    container_name: appbootpost
+    image: "postservice"
+    container_name: "postservice"
     ports:
       - "8081:8081"
     depends_on:
-      - dbpostgresql
+      - dbpostgresql_post
     networks:
-      - appbootrestnet
+      - backendnet
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql:5432/testdb
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_post:5432/postdb
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
 volumes:
   db-data:
-  pgadmin-data:
 networks:
-  appbootrestnet:
+  backendnet:
     driver: bridge
 # docker-compose build && docker-compose up
 

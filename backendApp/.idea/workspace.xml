@@ -4,17 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="444e865e-081b-428e-8e34-39f1ffaa289b" name="Changes" comment="started adding user service">
-      <change afterPath="$PROJECT_DIR$/user-service/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/SpringRestPostgreSqlApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+    <list default="true" id="444e865e-081b-428e-8e34-39f1ffaa289b" name="Changes" comment="checkpoint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/Dockerfile (copy)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/DockerfileGIOWorking26-11-2020" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/SAVdocker-compose" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/assembly.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/docker-comGIO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/docker-compose (copy).yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/start.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/dockerUNUSED/wait-for-it.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/app.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/app.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/app.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/app.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/app.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/app.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,23 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/backendApp/user-service&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/backendApp",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\user-service\src\main\java\microservice" />
       <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp" />
+      <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\user-service\src\main\java\microservice" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679139175913</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="checkpoint">
+      <created>1679148369895</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679148369895</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,6 +146,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="started adding user service" />
-    <option name="LAST_COMMIT_MESSAGE" value="started adding user service" />
+    <MESSAGE value="checkpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkpoint" />
   </component>
 </project>
