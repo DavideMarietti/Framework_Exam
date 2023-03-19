@@ -3,7 +3,10 @@
             (auth_out)='receiveAuth($event)'
             (auth_in)='receiveAuth_($event)'
 ></app-header>
-<app-jumbotron [titolo]="titolo" [sottotitolo]="sottotitolo"></app-jumbotron>
+<app-jumbotron [titolo]="titolo"
+               [sottotitolo]="sottotitolo"
+               [autenticato]="autenticato"
+></app-jumbotron>
 <app-login (auth_out)='receiveAuth($event)'
            (auth_in)='receiveAuth_($event)'
            (user_data)='receiveUser($event)'

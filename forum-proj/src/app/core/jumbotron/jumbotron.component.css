@@ -16,7 +16,7 @@
   background: #000 url(https://i0.wp.com/futurodigitale.infocert.it/wp-content/uploads/sites/7/2021/04/Finance-2021.jpg?fit=1500%2C570&ssl=1)
   top center no-repeat;
 	width: 100%;
-	height: 80%;
+	height: 90%;
 	background-size: cover;
 	overflow: hidden;
 	position: absolute;
@@ -31,15 +31,23 @@
 
 .jumbotron {
 	position: relative;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	min-height: 150px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	min-height: 50px;
   margin-bottom: 0.5%;
 }
 
 .jumbotron .container {
 	position: relative;
 	z-index: 2;
+}
+
+.btn-success {
+  background-color: #A1FFA1;
+  border-color: darkslategray;
+  border-width: 1px;
+  color: #333333;
+  font-weight: 450;
 }
 
 
