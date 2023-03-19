@@ -1,5 +1,5 @@
 <app-header [autenticato]="autenticato"
-            [image]="img"
+            [utenteforum]="utenteforum"
             (auth_out)='receiveAuth($event)'
             (auth_in)='receiveAuth_($event)'
 ></app-header>
@@ -10,7 +10,9 @@
 <app-login (auth_out)='receiveAuth($event)'
            (auth_in)='receiveAuth_($event)'
            (user_data)='receiveUser($event)'
-           (user_img)='receiveImg($event)'
            *ngIf="autenticazione"
 ></app-login>
 <!--router-outlet></--router-outlet-->
+<app-left-nav></app-left-nav>
+<app-main-page></app-main-page>
+<app-right-nav></app-right-nav>

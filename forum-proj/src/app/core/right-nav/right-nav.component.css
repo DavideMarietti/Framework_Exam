@@ -1,0 +1,28 @@
+:host {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  background-color: lightpink;
+}
+
+.search-form {
+  display: flex;
+  padding: 5px;
+  gap: 5px;
+}
+
+.search-label {
+  padding: 0px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #A1FFA1;
+  border-color: darkslategray;
+  border-width: 1px;
+  color: #333333;
+  font-weight: 450;
+  border-radius: 5px;
+  padding: 5px;
+}

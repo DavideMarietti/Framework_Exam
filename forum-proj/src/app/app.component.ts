@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {readBooleanType, readStringType} from "@angular/compiler-cli/src/ngtsc/metadata/src/util";
+import {Utente} from "./variable-type";
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,7 @@ export class AppComponent {
   title = 'forum-proj';
   titolo: string = "Welcome user!";
   sottotitolo: string = "--Log in for full access--";
-  img: string = "/assets/images/default-user-icon.png"
-  username: string | null = "";
+  utenteforum = new Utente("","","","","",0,"/assets/images/default-user-icon.png");
   autenticato: boolean | null = false;
   autenticazione: boolean | null = false;
 
@@ -20,8 +20,12 @@ export class AppComponent {
       this.setTitles();
       if(!this.autenticato){
         this.autenticazione = false;
-        this.username = "";
-        this.img = "/assets/images/default-user-icon.png"
+        this.utenteforum.username = "";
+        this.utenteforum.nome = "";
+        this.utenteforum.cognome = "";
+        this.utenteforum.sesso = "";
+        this.utenteforum.eta = 0;
+        this.utenteforum.image = "/assets/images/default-user-icon.png"
       }
   }
 
@@ -29,13 +33,9 @@ export class AppComponent {
     this.autenticazione = value;
   }
 
-  receiveUser(value: string) {
-    this.username = value;
+  receiveUser(value: Utente) {
+    this.utenteforum = value;
     this.setTitles();
-  }
-
-  receiveImg(value: string) {
-    this.img = value;
   }
 
   setTitles(){
@@ -44,7 +44,8 @@ export class AppComponent {
       this.titolo = "Welcome user!";
     }else{
       this.sottotitolo = "";
-      this.titolo = "Welcome " + this.username + "!";
+      this.titolo = "Welcome " + this.utenteforum.nome + "!";
     }
   }
 }
+

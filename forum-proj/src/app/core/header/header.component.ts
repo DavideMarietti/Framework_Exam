@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Utente} from "../../variable-type";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() autenticato: boolean | null = false;
-  @Input() image: string | null = "";
+  @Input() utenteforum: Utente = new Utente("","","","","",0,"/assets/images/default-user-icon.png");
   @Output() auth_out = new EventEmitter<boolean>();
   @Output() auth_in = new EventEmitter<boolean>();
 

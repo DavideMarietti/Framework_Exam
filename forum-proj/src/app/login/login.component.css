@@ -1,20 +1,42 @@
-.login-container{
-  margin-top: 3%;
-  margin-bottom: 5%;
-  margin-left: 35%;
+:host {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 1.5fr 3fr 2.5fr;
+}
 
+.log-form{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  z-index: 101;
+  background-color: white;
+  padding: 8%;
 }
-.login-form{
-  padding: 7%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+.log-form-1 {
+  text-align: right;
 }
-.login-form h3{
+
+.log-form-2 {
+  text-align: center;
+}
+
+.btn-close {
+  text-align: right;
+}
+
+h3{
   text-align: center;
   color: #333;
 }
-.login-container form{
-  padding: 5%;
-}
+
 .btnSubmit
 {
   width: 40%;
@@ -23,12 +45,12 @@
   border: none;
   cursor: pointer;
 }
-.login-form .btnSubmit{
+.btnSubmit{
   font-weight: 600;
   color: #fff;
   background-color: #0062cc;
 }
-.login-form .ForgetPwd{
+.ForgetPwd{
   color: #0062cc;
   font-weight: 600;
   text-decoration: none;
@@ -37,3 +59,16 @@
 .form-group {
   margin-top: 3%;
 }
+
+.alert {
+  padding: 2px;
+  background-color: lightcoral;
+  border-radius: 5px;
+}
+
+.ok{
+  padding: 2px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+

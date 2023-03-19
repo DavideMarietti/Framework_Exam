@@ -1,37 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/images/homepage_logo.png" width="40" height="40" class="d-inline-block align-middle" alt="">
-        PupoPersonalEconomy
-      </a>
+<!--nav> <class="navbar navbar-expand-lg navbar-light bg-dark-subtle "-->
+        <div class="nav-1">
+        <a class="navbar-brand" href="\">
+          <img src="./assets/images/homepage_logo.png" width="40" height="40" class="d-inline-block align-middle" alt="">
+          PupoPersonalEconomy
+        </a>
+        </div>
 
-      <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle thumbnail dduser" data-bs-toggle="dropdown" aria-expanded="false">
-          <img class="img-circle" src="{{image}}" width="38" height="38">
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item"
-                 href="#"
-                 *ngIf="!autenticato"
-                 (click) = login()
-          >Accedi</a></li>
-          <li><a class="dropdown-item"
-                 href="#"
-                 *ngIf="!autenticato"
-          >Registrati</a></li>
-          <li><a class="dropdown-item"
-                 href="#"
-                 *ngIf="autenticato"
-            >Profile</a></li>
-          <div class="dropdown-divider"
-                 *ngIf="autenticato"
-          ></div>
-          <li><a class="dropdown-item"
-                 href="#"
-                 *ngIf="autenticato"
-                 (click) = logout()
-          >Logout</a></li>
-        </ul>
-      </div>
-  </div>
-</nav>
+          <div class="nav-2">
+            <button type="button" class="btn btn-default dropdown-toggle thumbnail " data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="img-circle" src="{{utenteforum.image}}" width="38" height="38">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                     href="#"
+                     *ngIf="!autenticato"
+                     (click) = login()
+              >Accedi</a></li>
+              <li><a class="dropdown-item"
+                     href="#"
+                     *ngIf="!autenticato"
+              >Registrati</a></li>
+              <li><a class="dropdown-item"
+                     href="#"
+                     *ngIf="autenticato"
+              >Profile</a></li>
+              <div class="dropdown-divider"
+                   *ngIf="autenticato"
+              ></div>
+              <li><a class="dropdown-item"
+                     href="#"
+                     *ngIf="autenticato"
+                     (click) = logout()
+              >Logout</a></li>
+            </ul>
+          </div>
+<!--/nav-->
