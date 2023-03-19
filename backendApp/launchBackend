@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd ./user-service
+./mvnw -DskipTests=true clean package
+
+cd ../post-service
+./mvnw -DskipTests=true clean package
+
+cd ..
+docker-compose build
+docker-compose up

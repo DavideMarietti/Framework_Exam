@@ -1,0 +1,69 @@
+version: '3'
+
+services:
+  dbpostgresql_user:
+    image: "postgres"
+    container_name: postgres_user
+    ports:
+      - "5445:5432"
+    volumes:
+      - db-data_user:/var/lib/postgresql_user/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: userdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
+  app-user:
+    build: user-service
+    image: userservice:latest
+    container_name: "userservice"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql_user
+    networks:
+      - backendnet
+    environment:
+     - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_user:5432/userdb
+     - SPRING_DATASOURCE_USERNAME=admin
+     - SPRING_DATASOURCE_PASSWORD=admin
+     - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  dbpostgresql_post:
+    image: "postgres"
+    container_name: postgres_post
+    ports:
+      - "5446:5432"
+    volumes:
+      - db-data_post:/var/lib/postgresql_post/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: postdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
+  app-post:
+    build: post-service
+    image: postservice:latest
+    container_name: "postservice"
+    ports:
+      - "8081:8080"
+    depends_on:
+      - dbpostgresql_post
+    networks:
+      - backendnet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_post:5432/postdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+volumes:
+  db-data_user:
+  db-data_post:
+networks:
+  backendnet:
+    driver: bridge
+# docker-compose build && docker-compose up
