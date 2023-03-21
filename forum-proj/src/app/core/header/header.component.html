@@ -1,7 +1,8 @@
 
         <div class="nav-1">
-        <a class="navbar-brand" href="\">
-          <img src="./assets/images/homepage_logo.png" width="40" height="40" class="d-inline-block align-middle" alt="">
+        <a class="navbar-brand"
+           (click)=setPage(1)
+        ><img src="./assets/images/homepage_logo.png" width="40" height="40" class="d-inline-block align-middle" alt="">
           PupoPersonalEconomy
         </a>
         </div>
@@ -23,10 +24,10 @@
               <li><a class="dropdown-item"
                      href="#"
                      *ngIf="control.autenticato"
+                     (click)=setPage(3);
               >Profile</a></li>
               <div class="dropdown-divider"
                    *ngIf="control.autenticato"
-                   (click)=setPage(3)
               ></div>
               <li><a class="dropdown-item"
                      href="#"

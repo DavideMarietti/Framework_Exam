@@ -17,32 +17,42 @@ export class Utente {
   }
 }
 
-export class Comment {
+export class Post {
   testo: string;
   autore: string;
-  parentID: number;
   id: number;
   like: number;
   dislike: number;
   num: number = 0;
-
-  constructor(testo: string, autore: string, parentID: number, like: number, dislike: number) {
+  opencomments: boolean;
+  constructor(testo: string, autore: string, like: number, dislike: number) {
     this.testo = testo;
     this.autore = autore;
-    this.parentID = parentID;
     this.id = this.num;
     this.num++;
     this.like = like;
     this.dislike = dislike;
+    this.opencomments = false;
   }
 }
 
-export class Thread extends Comment{
-  title: string;
+export class Comment extends Post{
+  parentID: number;
 
-  constructor(title: string,testo: string, autore: string, parentID: number, like: number, dislike: number) {
-    super(testo, autore, parentID, like, dislike);
+  constructor(testo: string, autore: string, parentID: number, like: number, dislike: number) {
+    super(testo, autore, like, dislike);
+    this.parentID = parentID;
+  }
+}
+
+export class Thread extends Post{
+  title: string;
+  expandthread: boolean;
+
+  constructor(title: string,testo: string, autore: string, like: number, dislike: number) {
+    super(testo, autore, like, dislike);
     this.title = title;
+    this.expandthread = false;
   }
 }
 

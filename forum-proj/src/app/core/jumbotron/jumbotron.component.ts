@@ -8,7 +8,7 @@ import {Controller, Utente} from "../../variable-type";
 })
 export class JumbotronComponent implements OnInit {
 
-  @Input() control = new Controller(false, false, false, 1)
+  control = new Controller(false, false, false, 1);
   @Input() user = new Utente("","","","","",0,"/assets/images/default-user-icon.png");
   @Output() control_ = new EventEmitter<Controller>();
   @Output() user_ = new EventEmitter<Utente>();

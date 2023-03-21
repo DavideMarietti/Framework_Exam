@@ -3,8 +3,7 @@
             [user]="user"
             (user_)='UserController($event)'
 ></app-header>
-<app-jumbotron [control]="control"
-               (control_)='ControllerIN($event)'
+<app-jumbotron (control_)='ControllerIN($event)'
                [user]="user"
                (user_)='UserController($event)'
                [titolo]="titolo"
@@ -17,5 +16,9 @@
 ></app-login>
 <!--router-outlet></--router-outlet-->
 <app-left-nav></app-left-nav>
-<app-main-page></app-main-page>
+<app-main-page [control]="control"
+               (control_)='ControllerIN($event)'
+               [user]="user"
+               (user_)='UserController($event)'
+></app-main-page>
 <app-right-nav></app-right-nav>
