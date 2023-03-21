@@ -1,1 +1,6 @@
-<p>main-page works!</p>
+<app-threads *ngIf="control.pagectrl === 1"
+></app-threads>
+<app-graphs *ngIf="control.pagectrl === 2"
+></app-graphs>
+<app-profile *ngIf="control.pagectrl === 3"
+></app-profile>

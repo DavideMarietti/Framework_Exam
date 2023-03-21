@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Controller, Utente} from "../../variable-type";
 
 @Component({
   selector: 'app-jumbotron',
@@ -7,14 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class JumbotronComponent implements OnInit {
 
+  @Input() control = new Controller(false, false, false, 1)
+  @Input() user = new Utente("","","","","",0,"/assets/images/default-user-icon.png");
+  @Output() control_ = new EventEmitter<Controller>();
+  @Output() user_ = new EventEmitter<Utente>();
   @Input() titolo: string = "";
   @Input() sottotitolo: string = "";
-  @Input() Show: boolean = true;
-  @Input() autenticato: boolean | null = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  setPage(value: number) {
+    this.control.pagectrl = value;
+    this.control_.emit(this.control);
+  }
 }

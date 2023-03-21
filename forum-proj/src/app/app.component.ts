@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {readBooleanType, readStringType} from "@angular/compiler-cli/src/ngtsc/metadata/src/util";
-import {Utente} from "./variable-type";
+import {Controller, Utente} from "./variable-type";
 
 @Component({
   selector: 'app-root',
@@ -11,40 +10,34 @@ export class AppComponent {
   title = 'forum-proj';
   titolo: string = "Welcome user!";
   sottotitolo: string = "--Log in for full access--";
-  utenteforum = new Utente("","","","","",0,"/assets/images/default-user-icon.png");
-  autenticato: boolean | null = false;
-  autenticazione: boolean | null = false;
+  user = new Utente("","","","","",1,"/assets/images/default-user-icon.png");
+  control = new Controller(false, false, false, 1);
 
-  receiveAuth(value: boolean) {
-      this.autenticato = value;
-      this.setTitles();
-      if(!this.autenticato){
-        this.autenticazione = false;
-        this.utenteforum.username = "";
-        this.utenteforum.nome = "";
-        this.utenteforum.cognome = "";
-        this.utenteforum.sesso = "";
-        this.utenteforum.eta = 0;
-        this.utenteforum.image = "/assets/images/default-user-icon.png"
-      }
+  ControllerIN(value: Controller){
+    this.control = value;
+    if(!this.control.autenticato){
+      this.user.username = "";
+      this.user.nome = "";
+      this.user.cognome = "";
+      this.user.sesso = "";
+      this.user.eta = 0;
+      this.user.image = "/assets/images/default-user-icon.png";
+    }
+    this.setTitles();
   }
 
-  receiveAuth_(value: boolean) {
-    this.autenticazione = value;
-  }
-
-  receiveUser(value: Utente) {
-    this.utenteforum = value;
+  UserController(value: Utente) {
+    this.user = value;
     this.setTitles();
   }
 
   setTitles(){
-    if(!this.autenticato){
+    if(!this.control.autenticato){
       this.sottotitolo = "--Log in for full access--";
       this.titolo = "Welcome user!";
     }else{
       this.sottotitolo = "";
-      this.titolo = "Welcome " + this.utenteforum.nome + "!";
+      this.titolo = "Welcome " + this.user.nome + "!";
     }
   }
 }

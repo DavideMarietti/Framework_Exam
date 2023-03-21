@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {timeout} from "rxjs";
-import {Utente} from "../variable-type";
+import {Controller, Utente} from "../variable-type";
 
 @Component({
   selector: 'app-login',
@@ -8,17 +8,17 @@ import {Utente} from "../variable-type";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  utenteforum = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
+  /*utenteforum = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
+*/
+  @Input() control = new Controller(false, false, false, 1)
+  user = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
+  @Output() control_ = new EventEmitter<Controller>();
+  @Output() user_ = new EventEmitter<Utente>();
 
-  user: string = "";
-  psw: string = "";
+  username: string = "";
+  password: string = "";
   errore: boolean = false;
   valido: boolean = false;
-  @Output() auth_out = new EventEmitter<boolean>();
-  @Output() auth_in = new EventEmitter<boolean>();
-  @Output() user_data = new EventEmitter<Utente>();
-
-  img: string = "/assets/images/default-user-icon.png";
 
   constructor() {
   }
@@ -27,21 +27,22 @@ export class LoginComponent implements OnInit{
   }
 
   login = () : void => {
-    if (this.user === this.utenteforum.username && this.psw === this.utenteforum.password) {
+    if (this.username === this.user.username && this.password === this.user.password) {
       this.valido = true;
       setTimeout(() => {
-        this.auth_out.emit(true);
-        this.auth_in.emit(false);
+        this.control.autenticato = true;
+        this.control.loginform = false;
+        this.control_.emit(this.control)
         this.errore = false;
-        this.user_data.emit(this.utenteforum);
+        this.user_.emit(this.user);
       },2000)
-    }
-    else {
+    } else {
       this.errore = true;
     }
   }
 
   close_login_form() {
-    this.auth_in.emit(false);
+    this.control.loginform = false;
+    this.control_.emit(this.control);
   }
 }

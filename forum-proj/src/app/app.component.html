@@ -1,16 +1,19 @@
-<app-header [autenticato]="autenticato"
-            [utenteforum]="utenteforum"
-            (auth_out)='receiveAuth($event)'
-            (auth_in)='receiveAuth_($event)'
+<app-header [control]="control"
+            (control_)='ControllerIN($event)'
+            [user]="user"
+            (user_)='UserController($event)'
 ></app-header>
-<app-jumbotron [titolo]="titolo"
+<app-jumbotron [control]="control"
+               (control_)='ControllerIN($event)'
+               [user]="user"
+               (user_)='UserController($event)'
+               [titolo]="titolo"
                [sottotitolo]="sottotitolo"
-               [autenticato]="autenticato"
 ></app-jumbotron>
-<app-login (auth_out)='receiveAuth($event)'
-           (auth_in)='receiveAuth_($event)'
-           (user_data)='receiveUser($event)'
-           *ngIf="autenticazione"
+<app-login [control]="control"
+           (control_)='ControllerIN($event)'
+           (user_)='UserController($event)'
+           *ngIf="control.loginform"
 ></app-login>
 <!--router-outlet></--router-outlet-->
 <app-left-nav></app-left-nav>
