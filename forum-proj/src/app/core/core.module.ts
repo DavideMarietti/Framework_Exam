@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ThreadsComponent } from './main-page/threads/threads.component';
 import { GraphsComponent } from './main-page/graphs/graphs.component';
 import { ProfileComponent } from './main-page/profile/profile.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -22,9 +23,10 @@ import { ProfileComponent } from './main-page/profile/profile.component';
     GraphsComponent,
     ProfileComponent
   ],
-  imports: [
-    CommonModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule
+    ],
   exports: [
     HeaderComponent,
     JumbotronComponent,
