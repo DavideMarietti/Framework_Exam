@@ -1,22 +1,19 @@
 .thread-box {
-  background: #A1FFA1;
+  background: lightsteelblue;
   padding: 5px;
-  border: 10px rebeccapurple;
+  border: 1px solid darkslategray;
   border-radius: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
   display: grid;
-  grid-template-columns: 40px 8fr 1fr;
+  grid-template-columns: 40px 8fr;
+  color: darkslategray;
 }
 
 .thread-sub1 {
-  background: #0062cc;
-  display: grid;
-  justify-items: center;
-  position: absolute;
-  vertical-align: center;
+  align-content: center;
   grid-column-start: 1;
   grid-column-end: 2;
+  border: 1px solid black;
 }
 
 .reaction-icon {
@@ -26,37 +23,64 @@
 }
 
 .reaction p {
-  position: relative;
-  top: 45%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+
 }
 
 .thread-sub2 {
-  background: darkorange;
   grid-column-start: 2;
   grid-column-end: 3;
   display: grid;
 }
 
-h1 {
+.thread-author {
+  font-size: 12px;
+}
+
+.thread-sub2 h1 {
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .thread-sub2 p {
-  text-align: justify;
+  text-align: left;
 }
 
 .thread-sub3 {
-  background: lightslategrey;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  display: grid;
-  justify-items: center;
+  display: block;
 }
 
 .comment-icon {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
+}
+
+.comment {
+  display: flex;
+}
+
+.comment p {
+  margin-left: 3px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.comment-box {
+  background: lightgrey;
+  padding: 5px;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 40px 8fr 1fr;
+  color: darkslategray;
 }
