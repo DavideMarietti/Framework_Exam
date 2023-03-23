@@ -1,0 +1,8 @@
+.stock-chart-container {
+  height: 300px;
+}
+
+.highcharts-container {
+  height: 100%;
+  width: 100%;
+}
