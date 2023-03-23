@@ -1,0 +1,26 @@
+[
+  {
+    "testo": "Hey bro! Sei un grande!!",
+    "autore": "Lollo",
+    "id": 2,
+    "like": 31,
+    "dislike": 30,
+    "parentID": 1
+  },
+  {
+    "testo": "Per me è cipolla",
+    "autore": "Andre",
+    "id": 4,
+    "like": 15,
+    "dislike": 1,
+    "parentID": 3
+  },
+  {
+    "testo": "A me piacciono i treni",
+    "autore": "Lollo",
+    "id": 5,
+    "like": 2,
+    "dislike": 1,
+    "parentID": 2
+  }
+]

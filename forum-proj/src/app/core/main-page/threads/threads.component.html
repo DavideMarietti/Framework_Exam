@@ -14,14 +14,14 @@
     <div class="thread-sub2">
       <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
       <h1 (click)=expand()
-      >{{thread.title}}</h1>
+      >{{thread.titolo}}</h1>
       <p class="thread-text"
-         *ngIf="thread.expandthread"
+         *ngIf="thread.expand"
       >{{thread.testo}}</p>
 
       <div class="thread-sub3">
         <div class="comment"
-             *ngIf="thread.expandthread"
+             *ngIf="thread.expand"
              (click)=expand_comments()
         ><img src="./assets/images/chat.png"
                  class="comment-icon"
@@ -31,14 +31,14 @@
         <div class="answer">
           <img src="./assets/images/reply.png"
                class="comment-icon"
-               *ngIf="thread.expandthread && control.autenticato"
+               *ngIf="thread.expand && control.autenticato"
           ></div>
       </div>
 
     </div>
   </div>
 
-  <div class="comment-box" *ngIf="thread.opencomments">
+  <div class="comment-box" *ngIf="thread">
     <div class="comment-sub1">
       <img src="./assets/images/arrow-up.png" class="reaction-icon">
       <p class="reaction-p">{{thread.like-thread.dislike}}</p>
@@ -61,7 +61,7 @@
       <div class="answer">
         <img src="./assets/images/reply.png"
              class="comment-icon"
-             *ngIf="thread.expandthread && control.autenticato"
+             *ngIf="thread.expand && control.autenticato"
         ></div>
     </div>
   </div>
