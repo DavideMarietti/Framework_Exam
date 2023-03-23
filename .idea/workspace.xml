@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="added users json">
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/login/login.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="added users json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +65,7 @@
       <workItem from="1679561728081" duration="900000" />
       <workItem from="1679563573298" duration="387000" />
       <workItem from="1679564011076" duration="17000" />
-      <workItem from="1679565356777" duration="11224000" />
+      <workItem from="1679565356777" duration="11365000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -160,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679580447747</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added users json">
+      <created>1679580583793</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679580583793</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
