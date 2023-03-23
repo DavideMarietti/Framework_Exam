@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Controller, Utente} from "../../variable-type";
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() autenticato: boolean | null = false;
-  @Input() image: string | null = "";
-  @Output() auth_out = new EventEmitter<boolean>();
-  @Output() auth_in = new EventEmitter<boolean>();
+  @Input() control: Controller;
+  @Input() user: Utente;
+  @Output() control_ = new EventEmitter<Controller>();
+  @Output() user_ = new EventEmitter<Utente>();
 
   constructor() { }
 
@@ -17,11 +18,18 @@ export class HeaderComponent implements OnInit {
   }
 
   logout = () : void => {
-    this.auth_out.emit(false);
+    this.control.autenticato = false;
+    this.control_.emit(this.control);
   }
 
-  login = () : void => {
-    this.auth_in.emit(true);
+  loginopen = () : void => {
+    this.control.loginform = true;
+    this.control_.emit(this.control);
+  }
+
+  setPage(value: number) {
+    this.control.pagectrl = value;
+    this.control_.emit(this.control);
   }
 }
 

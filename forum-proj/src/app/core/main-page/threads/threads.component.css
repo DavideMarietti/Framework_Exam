@@ -1,0 +1,62 @@
+.thread-box {
+  background: #A1FFA1;
+  padding: 5px;
+  border: 10px rebeccapurple;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: grid;
+  grid-template-columns: 40px 8fr 1fr;
+}
+
+.thread-sub1 {
+  background: #0062cc;
+  display: grid;
+  justify-items: center;
+  position: absolute;
+  vertical-align: center;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.reaction-icon {
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.reaction p {
+  position: relative;
+  top: 45%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.thread-sub2 {
+  background: darkorange;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+}
+
+h1 {
+  cursor: pointer;
+}
+
+.thread-sub2 p {
+  text-align: justify;
+}
+
+.thread-sub3 {
+  background: lightslategrey;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  display: grid;
+  justify-items: center;
+}
+
+.comment-icon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}

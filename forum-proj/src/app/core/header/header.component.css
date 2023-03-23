@@ -1,12 +1,38 @@
+:host {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: lightslategrey;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nav-1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  text-align: left;
+  padding: 20px;
+}
+
+.nav-2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: inline;
+  text-align: right;
+  padding: 20px;
+}
+
 img {
   display: inline-block;
 }
 
-.dduser {
-  margin-right: 50px;
-  margin-left: 20px;
+.img-circle {
+  border-radius: 50%;
 }
 
-nav {
-  margin-bottom: 0.8%;
+a {
+  cursor: pointer;
 }
+
+

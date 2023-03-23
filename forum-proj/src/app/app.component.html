@@ -1,13 +1,24 @@
-<app-header [autenticato]="autenticato"
-            [image]="img"
-            (auth_out)='receiveAuth($event)'
-            (auth_in)='receiveAuth_($event)'
+<app-header [control]="control"
+            (control_)='ControllerIN($event)'
+            [user]="user"
+            (user_)='UserController($event)'
 ></app-header>
-<app-jumbotron [titolo]="titolo" [sottotitolo]="sottotitolo"></app-jumbotron>
-<app-login (auth_out)='receiveAuth($event)'
-           (auth_in)='receiveAuth_($event)'
-           (user_data)='receiveUser($event)'
-           (user_img)='receiveImg($event)'
-           *ngIf="autenticazione"
+<app-jumbotron (control_)='ControllerIN($event)'
+               [user]="user"
+               (user_)='UserController($event)'
+               [titolo]="titolo"
+               [sottotitolo]="sottotitolo"
+></app-jumbotron>
+<app-login [control]="control"
+           (control_)='ControllerIN($event)'
+           (user_)='UserController($event)'
+           *ngIf="control.loginform"
 ></app-login>
 <!--router-outlet></--router-outlet-->
+<app-left-nav></app-left-nav>
+<app-main-page [control]="control"
+               (control_)='ControllerIN($event)'
+               [user]="user"
+               (user_)='UserController($event)'
+></app-main-page>
+<app-right-nav></app-right-nav>

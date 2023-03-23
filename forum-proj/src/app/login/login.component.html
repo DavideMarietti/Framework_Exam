@@ -1,26 +1,30 @@
-<div class="container login-container">
-  <div class="row">
-    <div class="col-md-6 login-form">
-      <button class="btn-close"
-              (click)=close_login_form()
-      ></button>
-      <h3>Login Form</h3>
-      <div class="form-group">
-        <input type="text" class="form-control"  id="userId" placeholder="Nome Utente" [(ngModel)] = "username" >
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control"  id="password" placeholder="Password" [(ngModel)] = "password">
-      </div>
-      <div class="form-group">
-        <button (click) = login() class="btnSubmit">Connetti</button>
-      </div>
-      <div class="form-group">
-        <a href="#" class="ForgetPwd">Password Dimenticata?</a>
-      </div>
-      <div class="alert alert-danger" role="alert" *ngIf='errore'>
-        {{errMsg}}
-      </div>
+<div class="log-form">
+  <div class="log-form-1">
+    <button class="btn-close"
+            (click)=close_login_form()
+    ></button>
+  </div>
+  <div class="log-form-2">
+    <h3>Login</h3>
+    <div class="form-group">
+      <input type="text" class="form-control"  id="userId" placeholder="Nome Utente" [(ngModel)] = "username" >
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control"  id="password" placeholder="Password" [(ngModel)] = "password">
+    </div>
+    <div class="form-group">
+      <button (click) = login() class="btnSubmit">Connetti</button>
+    </div>
+    <div class="form-group">
+      <a href="#" class="ForgetPwd">Password Dimenticata?</a>
+    </div>
+    <div class="alert"
+         *ngIf='errore'
+    ><strong>Attenzione!</strong> Username o password errati.
+    </div>
+    <div class="ok"
+         *ngIf='valido'
+    >Accesso effettuato con successo!!
     </div>
   </div>
 </div>
-
