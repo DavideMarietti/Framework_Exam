@@ -4,23 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="444e865e-081b-428e-8e34-39f1ffaa289b" name="Changes" comment="finalmente funziona qualcosa. Impostati servizi user e post.">
+    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/post-service/post-service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-registry/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Frameworks.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launchBackend" beforeDir="false" afterPath="$PROJECT_DIR$/launchBackend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/app.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/app.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/app.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/app.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/app.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/app.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/javasampleapproach/springrest/postgresql/repo/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="package-info" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,120 +55,43 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2NBDMkVbcJk8eZIvfylYAwhljUg" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2NO2dRbSMzH5QLQoSGrVbrKJV5d" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/backendApp",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/backendApp/service-registry/src/main/resources",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp" />
-      <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\user-service\src\main\java\microservice" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\service-registry\src\main\resources" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="demo [-DskipTests=true,clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="-DskipTests=true" />
-                <option value="clean" />
-                <option value="install" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$/user-service" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="444e865e-081b-428e-8e34-39f1ffaa289b" name="Changes" comment="" />
-      <created>1679128536050</created>
+      <changelist id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="" />
+      <created>1679520895101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679128536050</updated>
+      <updated>1679520895101</updated>
     </task>
-    <task id="LOCAL-00001" summary="started adding user service">
-      <created>1679133306000</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1679133306002</updated>
-    </task>
-    <task id="LOCAL-00002" summary="started adding user service">
-      <created>1679139175913</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1679139175913</updated>
-    </task>
-    <task id="LOCAL-00003" summary="checkpoint">
-      <created>1679148369895</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1679148369895</updated>
-    </task>
-    <task id="LOCAL-00004" summary="checkpoint">
-      <created>1679150527952</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1679150527953</updated>
-    </task>
-    <task id="LOCAL-00005" summary="finalmente funziona qualcosa. Impostati servizi user e post.">
-      <created>1679152691876</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1679152691877</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="started adding user service" />
-    <MESSAGE value="checkpoint" />
-    <MESSAGE value="finalmente funziona qualcosa. Impostati servizi user e post." />
-    <option name="LAST_COMMIT_MESSAGE" value="finalmente funziona qualcosa. Impostati servizi user e post." />
   </component>
 </project>

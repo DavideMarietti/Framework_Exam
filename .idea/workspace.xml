@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="Improved graphic" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2N5qw0cBztmwwZwcOFWDz7tI44L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Codes/startingpoint-lezione090223",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Codes\DV\Framework_Exam\forum-proj\src\assets\images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="" />
+      <created>1678964527850</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678964527850</updated>
+      <workItem from="1678964529770" duration="13502000" />
+      <workItem from="1679003431423" duration="8188000" />
+      <workItem from="1679011765915" duration="3912000" />
+      <workItem from="1679073297431" duration="3916000" />
+      <workItem from="1679241018556" duration="4127000" />
+      <workItem from="1679245292668" duration="20715000" />
+      <workItem from="1679271971727" duration="1023000" />
+      <workItem from="1679273026767" duration="1521000" />
+      <workItem from="1679299145676" duration="99000" />
+      <workItem from="1679350108809" duration="15828000" />
+      <workItem from="1679425283145" duration="7890000" />
+      <workItem from="1679561728081" duration="900000" />
+    </task>
+    <task id="LOCAL-00001" summary="pupopeligroso">
+      <created>1678984343530</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678984343530</updated>
+    </task>
+    <task id="LOCAL-00002" summary="pupopeligroso">
+      <created>1678984354672</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678984354672</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add:&#10;- Welcome message based on logged user or no-logged user&#10;- Log in form appears only if you click &quot;Accedi&quot;&#10;- Log out function&#10;- Dynamic dropdown menù based on logged user or no-logged user">
+      <created>1679011676389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679011676389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add:&#10;- Welcome message based on logged user or no-logged user&#10;- Log in form appears only if you click &quot;Accedi&quot;&#10;- Log out function&#10;- Dynamic dropdown menù based on logged user or no-logged user">
+      <created>1679012192101</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679012192101</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Codice &quot;snellito&quot; un po'">
+      <created>1679015705633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679015705633</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Codice &quot;snellito&quot; un po'">
+      <created>1679015743661</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679015743661</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Moved tha nav bar and added brand logo">
+      <created>1679245140573</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679245140574</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Reduced Bootstrap usage">
+      <created>1679269967894</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679269967894</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added global controller">
+      <created>1679358217555</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679358217555</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added threads">
+      <created>1679366143903</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679366143903</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Improved graphic">
+      <created>1679562402716</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679562402716</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pupopeligroso" />
+    <MESSAGE value="Add:&#10;- Welcome message based on logged user or no-logged user&#10;- Log in form appears only if you click &quot;Accedi&quot;&#10;- Log out function&#10;- Dynamic dropdown menù based on logged user or no-logged user" />
+    <MESSAGE value="Codice &quot;snellito&quot; un po'" />
+    <MESSAGE value="Moved tha nav bar and added brand logo" />
+    <MESSAGE value="Reduced Bootstrap usage" />
+    <MESSAGE value="Added global controller" />
+    <MESSAGE value="Added threads" />
+    <MESSAGE value="Improved graphic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved graphic" />
+  </component>
+</project>
