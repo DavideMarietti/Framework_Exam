@@ -3,9 +3,24 @@
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 5;
-  background-color: #A1FFA1;
+  background: darkslategray;
   text-align: center;
   border: black;
   border-width: 1px;
+  color: whitesmoke;
+  font-size: 15px;
+  padding: 5px;
 }
+
+.chat-sidenav {
+  align-content: center;
+}
+
+img {
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 

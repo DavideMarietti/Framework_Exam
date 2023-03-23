@@ -12,7 +12,7 @@
     </div>
 
     <div class="thread-sub2">
-      <p class="thread-author"><i>Author <b>{{thread.autore}}</b></i></p>
+      <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
       <h1 (click)=expand()
       >{{thread.title}}</h1>
       <p class="thread-text"
@@ -39,20 +39,20 @@
   </div>
 
   <div class="comment-box" *ngIf="thread.opencomments">
-    <div class="thread-sub1">
+    <div class="comment-sub1">
       <img src="./assets/images/arrow-up.png" class="reaction-icon">
       <p class="reaction-p">{{thread.like-thread.dislike}}</p>
       <img src="./assets/images/arrow-down.png" class="reaction-icon">
       <img class="down-arrow">
     </div>
 
-    <div class="thread-sub2">
-      <p class="thread-author"><i>Author <b>{{thread.autore}}</b></i></p>
-      <p class="thread-text"
+    <div class="comment-sub2">
+      <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
+      <p class="comment-text"
       >{{thread.testo}}</p>
     </div>
 
-    <div class="thread-sub3">
+    <div class="comment-sub3">
       <div class="comment">
         <img src="./assets/images/chat.png"
              class="comment-icon"

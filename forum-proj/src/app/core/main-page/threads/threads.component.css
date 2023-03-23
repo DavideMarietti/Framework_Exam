@@ -13,7 +13,6 @@
   align-content: center;
   grid-column-start: 1;
   grid-column-end: 2;
-  border: 1px solid black;
 }
 
 .reaction-icon {
