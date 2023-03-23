@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit{
   /*utenteforum = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
 */
   @Input() control: Controller;
-  user = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
+  user = new Utente("Andrea72","aaa","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
   @Output() control_ = new EventEmitter<Controller>();
   @Output() user_ = new EventEmitter<Utente>();
 
