@@ -1,4 +1,4 @@
-C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\repo\CustomerRepository.java
-C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\model\Customer.java
 C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\SpringRestPostgreSqlApplication.java
-C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\controller\CustomerController.java
+C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\repo\PostRepository.java
+C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\controller\PostController.java
+C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp\post-service\src\main\java\com\javasampleapproach\springrest\postgresql\model\Post.java
