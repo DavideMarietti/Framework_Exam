@@ -48,10 +48,7 @@
 
     <div class="thread-sub2">
       <p class="thread-author"><i>Author <b>{{thread.autore}}</b></i></p>
-      <h1 (click)=expand()
-      >{{thread.title}}</h1>
       <p class="thread-text"
-         *ngIf="thread.expandthread"
       >{{thread.testo}}</p>
     </div>
 
