@@ -1,45 +1,6 @@
 
   <div class="thread-box">
     <div class="thread-sub1">
-      <img src="./assets/images/arrow-up.png"
-           class="reaction-icon"
-           (click)=reactionControl(true)>
-      <p class="reaction-p">{{thread.like-thread.dislike}}</p>
-      <img src="./assets/images/arrow-down.png"
-           class="reaction-icon"
-           (click)=reactionControl(false)>
-      <img class="down-arrow">
-    </div>
-
-    <div class="thread-sub2">
-      <p class="thread-author"><i>Author <b>{{thread.autore}}</b></i></p>
-      <h1 (click)=expand()
-      >{{thread.title}}</h1>
-      <p class="thread-text"
-         *ngIf="thread.expandthread"
-      >{{thread.testo}}</p>
-
-      <div class="thread-sub3">
-        <div class="comment"
-             *ngIf="thread.expandthread"
-             (click)=expand_comments()
-        ><img src="./assets/images/chat.png"
-                 class="comment-icon"
-        ><p>12</p>
-        </div>
-
-        <div class="answer">
-          <img src="./assets/images/reply.png"
-               class="comment-icon"
-               *ngIf="thread.expandthread && control.autenticato"
-          ></div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="comment-box" *ngIf="thread.opencomments">
-    <div class="thread-sub1">
       <img src="./assets/images/arrow-up.png" class="reaction-icon">
       <p class="reaction-p">{{thread.like-thread.dislike}}</p>
       <img src="./assets/images/arrow-down.png" class="reaction-icon">
@@ -47,7 +8,7 @@
     </div>
 
     <div class="thread-sub2">
-      <p class="thread-author"><i>Author <b>{{thread.autore}}</b></i></p>
+      <p class="thread-author">{{thread.autore}}</p>
       <h1 (click)=expand()
       >{{thread.title}}</h1>
       <p class="thread-text"
@@ -56,8 +17,9 @@
     </div>
 
     <div class="thread-sub3">
-      <div class="comment">
-        <img src="./assets/images/chat.png"
+      <div class="comment"
+           (click)=expand_comments()
+      ><img src="./assets/images/chat.png"
              class="comment-icon"
         ><p>12</p>
       </div>
@@ -66,5 +28,36 @@
              class="comment-icon"
              *ngIf="thread.expandthread && control.autenticato"
         ></div>
+    </div>
+
+    <div class="comment-box thread-box" *ngIf="thread.opencomments">
+      <div class="thread-sub1">
+        <img src="./assets/images/arrow-up.png" class="reaction-icon">
+        <p class="reaction-p">{{thread.like-thread.dislike}}</p>
+        <img src="./assets/images/arrow-down.png" class="reaction-icon">
+        <img class="down-arrow">
+      </div>
+
+      <div class="thread-sub2">
+        <p class="thread-author">{{thread.autore}}</p>
+        <h1 (click)=expand()
+        >{{thread.title}}</h1>
+        <p class="thread-text"
+           *ngIf="thread.expandthread"
+        >{{thread.testo}}</p>
+      </div>
+
+      <div class="thread-sub3">
+        <div class="comment">
+          <img src="./assets/images/chat.png"
+               class="comment-icon"
+          ><p>12</p>
+        </div>
+        <div class="answer">
+          <img src="./assets/images/reply.png"
+               class="comment-icon"
+               *ngIf="thread.expandthread && control.autenticato"
+          ></div>
+      </div>
     </div>
   </div>
