@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit{
         this.control_.emit(this.control)
         this.errore = false;
         this.user_.emit(this.user);
-      },2000)
+      },1000)
     } else {
       this.errore = true;
     }
