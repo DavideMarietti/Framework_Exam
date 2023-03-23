@@ -5,15 +5,18 @@
   grid-row-end: 5;
   background: darkslategray;
   text-align: center;
-  border: black;
-  border-width: 1px;
+  border: 1px solid black;
   color: whitesmoke;
   font-size: 15px;
   padding: 5px;
 }
 
-.chat-sidenav {
+.chart-sidenav {
   align-content: center;
+}
+
+.chart-sidenav::before {
+  opacity: 0.7;
 }
 
 img {
