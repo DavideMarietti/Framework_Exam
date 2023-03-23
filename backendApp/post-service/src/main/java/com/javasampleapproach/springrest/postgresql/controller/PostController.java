@@ -22,68 +22,69 @@ import com.javasampleapproach.springrest.postgresql.repo.PostRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v2")
+@RequestMapping("/api/v1")
 public class PostController {
 
-    @Autowired
-    PosttRepository repository;
+	@Autowired
+	PostRepository repository;
 
-    @GetMapping("/customers")
-    public List<Post> getAllPosts() {
-        System.out.println("Get all Posts...");
+	@GetMapping("/posts")
+	public List<Post> getAllPosts() {
+		System.out.println("Get all Posts...");
 
-        List<Post> posts = new ArrayList<>();
-        repository.findAll().forEach(posts::add);
+		List<Post> posts = new ArrayList<>();
+		repository.findAll().forEach(posts::add);
 
-        return posts;
-    }
+		return posts;
+	}
 
-    @PostMapping(value = "/posts/create")
-    public Post postPost(@RequestBody Post post) {
+	@PostMapping(value = "/posts/create")
+	public Post postPost(@RequestBody Post post) {
 
-        Post _post = repository.save(new Post(post.getName(), post.getAge()));
-        return _customer;
-    }
+		Post _post = repository.save(new Post(post.getTitle(), post.getText(), post.getAge()));
+		return _post;
+	}
 
-    @DeleteMapping("/posts/{id}")
-    public ResponseEntity<String> deletePost(@PathVariable("id") long id) {
-        System.out.println("Delete Post with ID = " + id + "...");
+	@DeleteMapping("/posts/{id}")
+	public ResponseEntity<String> deletePost(@PathVariable("id") long id) {
+		System.out.println("Delete Post with ID = " + id + "...");
 
-        repository.deleteById(id);
+		repository.deleteById(id);
 
-        return new ResponseEntity<>("POst has been deleted!", HttpStatus.OK);
-    }
+		return new ResponseEntity<>("Post has been deleted!", HttpStatus.OK);
+	}
 
-    @DeleteMapping("/posts/delete")
-    public ResponseEntity<String> deleteAllPosts() {
-        System.out.println("Delete All Posts...");
+	@DeleteMapping("/posts/delete")
+	public ResponseEntity<String> deleteAllPosts() {
+		System.out.println("Delete All Posts...");
 
-        repository.deleteAll();
+		repository.deleteAll();
 
-        return new ResponseEntity<>("All posts have been deleted!", HttpStatus.OK);
-    }
+		return new ResponseEntity<>("All posts have been deleted!", HttpStatus.OK);
+	}
 
-    @GetMapping(value = "posts/age/{age}")
-    public List<Post> findByAge(@PathVariable int age) {
+	@GetMapping(value = "posts/age/{age}")
+	public List<Post> findByAge(@PathVariable int age) {
 
-        List<Post> posts = repository.findByAge(age);
-        return posts;
-    }
+		List<Post> posts = repository.findByAge(age);
+		return posts;
+	}
 
-    @PutMapping("/posts/{id}")
-    public ResponseEntity<Post> updatePost(@PathVariable("id") long id, @RequestBody Post post) {
-        System.out.println("Update Post with ID = " + id + "...");
+	@PutMapping("/posts/{id}")
+	public ResponseEntity<Post> updatePost(@PathVariable("id") long id, @RequestBody Post post) {
+		System.out.println("Update Post with ID = " + id + "...");
 
-        Optional<Post> postData = repository.findById(id);
+		Optional<Post> postData = repository.findById(id);
 
-        if (postData.isPresent()) {
-            Post _post = postData.get();
-            _post.setName(post.getName());
-            _post.setAge(post.getAge());
-            _post.setActive(post.isActive());
-            return new ResponseEntity<>(repository.save(_post), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+		if (postData.isPresent()) {
+			Post _post = postData.get();
+			_post.setTitle(post.getTitle());
+			_post.setText(post.getText());
+			_post.setAge(post.getAge());
+			_post.setActive(post.isActive());
+			return new ResponseEntity<>(repository.save(_post), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
 }

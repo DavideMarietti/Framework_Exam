@@ -1,0 +1,10 @@
+.container {
+    background-color: blueviolet;
+}
+
+.row {
+    background-color: coral;
+    width: 100%;
+    border-radius: 15px;
+}
+

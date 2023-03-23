@@ -8,64 +8,73 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "post")
+@Table(name = "post1")
 public class Post {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   private long id;
 
-    @Column(name = "title")
-    private String title;
+   @Column(name = "title")
+   private String title;
 
-    @Column(name = "text")
-    private String text;
+   @Column(name = "text")
+   private String text;
 
-    @Column(name = "user")
-    private String user;
+   @Column(name = "age")
+   private int age;
 
-    @Column(name = "active")
-    private boolean active;
+   @Column(name = "active")
+   private boolean active;
 
-    public Post() {
-    }
+   public Post() {
+   }
 
-    public Post(String title, int user) {
-        this.title = title;
-        this.user = user;
-        this.active = false;
-    }
+   public Post(String title, String text, int age) {
+      this.title = title;
+      this.text = text;
+      this.age = age;
+      this.active = false;
+   }
 
-    public long getId() {
-        return id;
-    }
+   public long getId() {
+      return id;
+   }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+   public void setTitle(String title) {
+      this.title = title;
+   }
 
-    public String getTitle() {
-        return this.title;
-    }
+   public String getTitle() {
+      return this.title;
+   }
 
-    public void setText(String text) {
-        this.text = text;
-    }
+   public void setText(String text) {
+      this.text = text;
+   }
 
-    public int getText() {
-        return this.text;
-    }
+   public String getText() {
+      return this.text;
+   }
 
-    public boolean isActive() {
-        return active;
-    }
+   public void setAge(int age) {
+      this.age = age;
+   }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+   public int getAge() {
+      return this.age;
+   }
 
-    @Override
-    public String toString() {
-        return "Post [id=" + id + ", title=" + title + ", text=" + text + ", active=" + active + "]";
-    }
+   public boolean isActive() {
+      return active;
+   }
+
+   public void setActive(boolean active) {
+      this.active = active;
+   }
+
+   @Override
+   public String toString() {
+      return "Post [id=" + id + ", title=" + title + ", age=" + age + ", active=" + active + "]";
+   }
 }
