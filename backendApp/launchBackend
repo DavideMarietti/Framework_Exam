@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#cd ./service-registry
+#./mvnw -DskipTests=true clean package
+
 cd ./user-service
 ./mvnw -DskipTests=true clean package
 

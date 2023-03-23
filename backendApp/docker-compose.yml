@@ -1,11 +1,21 @@
 version: '3'
 
 services:
+  service-registry:
+    #build: user-service
+    image: service-registry:latest
+    container_name: service-registry
+    ports:
+      - "8761:8761"
+    networks:
+      - backendnet
   dbpostgresql_user:
     image: "postgres"
     container_name: postgres_user
     ports:
       - "5445:5432"
+    depends_on:
+      - service-registry
     volumes:
       - db-data_user:/var/lib/postgresql_user/data
     networks:
@@ -22,6 +32,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
+      - service-registry
       - dbpostgresql_user
     networks:
       - backendnet
@@ -30,11 +41,15 @@ services:
      - SPRING_DATASOURCE_USERNAME=admin
      - SPRING_DATASOURCE_PASSWORD=admin
      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+     - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
+     - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
   dbpostgresql_post:
     image: "postgres"
     container_name: postgres_post
     ports:
       - "5446:5432"
+    depends_on:
+      - service-registry
     volumes:
       - db-data_post:/var/lib/postgresql_post/data
     networks:
@@ -51,6 +66,7 @@ services:
     ports:
       - "8081:8080"
     depends_on:
+      - service-registry
       - dbpostgresql_post
     networks:
       - backendnet
