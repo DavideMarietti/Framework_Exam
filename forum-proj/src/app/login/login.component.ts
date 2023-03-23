@@ -11,6 +11,8 @@ import users_sample from "../users_sample.json"
 export class LoginComponent implements OnInit{
   @Input() control: Controller;
 
+  users: Utente[] = [];
+
   @Output() control_ = new EventEmitter<Controller>();
   @Output() user_ = new EventEmitter<Utente>();
 
@@ -26,7 +28,6 @@ export class LoginComponent implements OnInit{
     for(let aa of users_sample){
       this.users.push(aa);
     }
-    this.users.push(this.obj);
   }
 
   login = () : void => {

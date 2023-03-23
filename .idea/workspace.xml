@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="added graphs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/left-nav/left-nav.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/left-nav/left-nav.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/left-nav/left-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/left-nav/left-nav.component.html" afterDir="false" />
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="added users json">
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/variable-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/variable-type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +67,7 @@
       <workItem from="1679561728081" duration="900000" />
       <workItem from="1679563573298" duration="387000" />
       <workItem from="1679564011076" duration="17000" />
-      <workItem from="1679565356777" duration="10924000" />
+      <workItem from="1679565356777" duration="11224000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -158,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679567451423</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added users json">
+      <created>1679580447747</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679580447747</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +187,7 @@
     <MESSAGE value="Added threads" />
     <MESSAGE value="Improved graphic" />
     <MESSAGE value="added graphs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added graphs" />
+    <MESSAGE value="added users json" />
+    <option name="LAST_COMMIT_MESSAGE" value="added users json" />
   </component>
 </project>
