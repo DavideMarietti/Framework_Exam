@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 
 
 @Component({
@@ -8,16 +11,31 @@ import * as Highcharts from 'highcharts';
   template: '<div class="chart-container" [id]="chartId"></div>',
   styleUrls: ['./stock-chart.component.css']
 })
-export class StockChartComponent implements OnInit {
-  @Input() stockData: any;
 
+
+export class StockChartComponent implements OnInit {
+
+  private  stockData: any; 
+  /*@Input() stockData: any;*/
+
+  private apiKey = 'GI9ZJ7T8NBICANYP';
+  private apiUrl = 'https://www.alphavantage.co/query';
+  private http: HttpClient
   chartId = 'stock-chart';
+
+  getStockData(symbol: string): Observable<any> {
+    const url = `${this.apiUrl}?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${this.apiKey}`;
+    console.log(this.http.get(url)); 
+    return this.http.get(url);
+  }
 
   constructor() { }
 
   ngOnInit(): void {
     const seriesData: { x: number, y: number }[] = [];
 
+    
+    this.stockData = this.getStockData('SPY')
     console.log(this.stockData); 
     console.log("ciao");
 
