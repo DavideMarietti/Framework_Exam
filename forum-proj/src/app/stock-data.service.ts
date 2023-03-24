@@ -14,6 +14,7 @@ export class StockDataService {
 
   getStockData(symbol: string): Observable<any> {
     const url = `${this.apiUrl}?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${this.apiKey}`;
+    console.log(this.http.get(url)); 
     return this.http.get(url);
   }
 }

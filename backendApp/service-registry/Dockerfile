@@ -1,5 +1,5 @@
-FROM openjdk:17-alpine
+FROM adoptopenjdk/openjdk11
 EXPOSE 8761
 ARG DEPENDENCY=target
-ADD ${DEPENDENCY}/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD ${DEPENDENCY}/*.jar service-registry.jar
+ENTRYPOINT ["java","-jar","/service-registry.jar"]
