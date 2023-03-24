@@ -9,9 +9,10 @@ services:
       - "8761:8761"
     networks:
       - backendnet
+
   dbpostgresql_user:
     image: "postgres"
-    container_name: postgres_user
+    container_name: postgres-user
     ports:
       - "5445:5432"
     depends_on:
@@ -25,10 +26,11 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       restart: unless-stopped
+
   app-user:
-    build: user-service
-    image: userservice:latest
-    container_name: "userservice"
+    #build: user-service
+    image: user-service:latest
+    container_name: user-service
     ports:
       - "8080:8080"
     depends_on:
@@ -43,9 +45,12 @@ services:
      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
      - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
      - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
+     - SPRING_PROFILES_ACTIVE=docker
+     - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
+
   dbpostgresql_post:
     image: "postgres"
-    container_name: postgres_post
+    container_name: postgres-post
     ports:
       - "5446:5432"
     depends_on:
@@ -59,10 +64,11 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       restart: unless-stopped
+
   app-post:
-    build: post-service
-    image: postservice:latest
-    container_name: "postservice"
+    #build: post-service
+    image: post-service:latest
+    container_name: post-service
     ports:
       - "8081:8080"
     depends_on:
@@ -75,11 +81,16 @@ services:
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
+      - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
+      - SPRING_PROFILES_ACTIVE=docker
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
 
 volumes:
   db-data_user:
   db-data_post:
+
 networks:
   backendnet:
     driver: bridge
-# docker-compose build && docker-compose up
+# (docker-compose) build && docker-compose up
