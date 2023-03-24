@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
+
+
 @Component({
   selector: 'app-stock-chart',
   template: '<div class="chart-container" [id]="chartId"></div>',
@@ -16,6 +18,9 @@ export class StockChartComponent implements OnInit {
   ngOnInit(): void {
     const seriesData: { x: number, y: number }[] = [];
 
+    console.log(this.stockData); 
+    console.log("ciao");
+
     Object.keys(this.stockData).forEach(date => {
       const dataPoint = {
         x: new Date(date).getTime(),
@@ -23,6 +28,8 @@ export class StockChartComponent implements OnInit {
       };
       seriesData.push(dataPoint);
     });
+
+    console.log("ciao post");
 
     const chartOptions: Highcharts.Options = {
       xAxis: {
