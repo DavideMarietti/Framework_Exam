@@ -1,11 +1,12 @@
 export class Utente {
-  public username : string;
-  public password: string;
-  public nome : string;
-  public cognome : string;
-  public sesso : string;
-  public eta : number;
-  public image: string;
+  username : string;
+  password: string;
+  nome : string;
+  cognome : string;
+  sesso : string;
+  eta : number;
+  image: string;
+
   constructor(username: string, password: string, nome: string, cognome: string, sesso: string, eta: number, image: string) {
     this.username = username;
     this.password = password;
@@ -17,42 +18,45 @@ export class Utente {
   }
 }
 
-export class Post {
+export class Comment{
   testo: string;
   autore: string;
   id: number;
   like: number;
   dislike: number;
-  num: number = 0;
-  opencomments: boolean;
-  constructor(testo: string, autore: string, like: number, dislike: number) {
-    this.testo = testo;
-    this.autore = autore;
-    this.id = this.num;
-    this.num++;
-    this.like = like;
-    this.dislike = dislike;
-    this.opencomments = false;
-  }
-}
-
-export class Comment extends Post{
+  view?: boolean;
   parentID: number;
 
-  constructor(testo: string, autore: string, parentID: number, like: number, dislike: number) {
-    super(testo, autore, like, dislike);
+  constructor(id: number,testo: string, autore: string, parentID: number, like: number, dislike: number) {
+    this.testo = testo;
+    this.autore = autore;
+    this.id = id;
+    this.like = like;
+    this.dislike = dislike;
+    this.view = false;
     this.parentID = parentID;
   }
 }
 
-export class Thread extends Post{
-  title: string;
-  expandthread: boolean;
+export class Thread{
+  testo: string;
+  autore: string;
+  id: number;
+  like: number;
+  dislike: number;
+  view?: boolean;
+  titolo: string;
+  expand?: boolean;
 
-  constructor(title: string,testo: string, autore: string, like: number, dislike: number) {
-    super(testo, autore, like, dislike);
-    this.title = title;
-    this.expandthread = false;
+  constructor(id: number,title: string,testo: string, autore: string, like: number, dislike: number) {
+    this.testo = testo;
+    this.autore = autore;
+    this.id = id;
+    this.like = like;
+    this.dislike = dislike;
+    this.view = true;
+    this.titolo = title;
+    this.expand = false;
   }
 }
 

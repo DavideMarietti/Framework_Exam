@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {timeout} from "rxjs";
 import {Controller, Utente} from "../variable-type";
+import users_sample from "../users_sample.json"
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,10 @@ import {Controller, Utente} from "../variable-type";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  /*utenteforum = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
-*/
   @Input() control: Controller;
-  user = new Utente("Andrea72","pupopeligroso95","Andrea","Rocio","Uomo", 31,"/assets/images/user.png");
+
+  users: Utente[] = [];
+
   @Output() control_ = new EventEmitter<Controller>();
   @Output() user_ = new EventEmitter<Utente>();
 
@@ -24,19 +25,27 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    for(let aa of users_sample){
+      this.users.push(aa);
+    }
   }
 
   login = () : void => {
-    if (this.username === this.user.username && this.password === this.user.password) {
-      this.valido = true;
-      setTimeout(() => {
-        this.control.autenticato = true;
-        this.control.loginform = false;
-        this.control_.emit(this.control)
-        this.errore = false;
-        this.user_.emit(this.user);
-      },1000)
-    } else {
+    let test: boolean = false;
+    for (let user in this.users){
+      if (this.username === this.users[user].username && this.password === this.users[user].password) {
+        this.valido = true;
+        test = true;
+        setTimeout(() => {
+          this.control.autenticato = true;
+          this.control.loginform = false;
+          this.control_.emit(this.control)
+          this.errore = false;
+          this.user_.emit(this.users[user]);
+        },2000)
+      }
+    }
+    if(!test){
       this.errore = true;
     }
   }
@@ -45,4 +54,17 @@ export class LoginComponent implements OnInit{
     this.control.loginform = false;
     this.control_.emit(this.control);
   }
+
+  /*initPlants() {
+
+    const res = await fetch("../data/plants.json");
+    const users = await res.json();
+
+    try {
+      for (let user of users) {
+        user
+      }
+    } catch (err) {
+    }
+  }*/
 }

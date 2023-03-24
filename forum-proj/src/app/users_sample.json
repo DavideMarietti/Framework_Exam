@@ -1,0 +1,29 @@
+[
+  {
+    "username": "Andre",
+    "password": "pupopeligroso95",
+    "nome": "Andrea",
+    "cognome": "Balbo Mossetto",
+    "sesso": "Uomo",
+    "eta": 45,
+    "image": "/assets/images/user.png"
+  },
+  {
+    "username": "Lollo",
+    "password": "test",
+    "nome": "Lorenzo",
+    "cognome": "Gianotti",
+    "sesso": "Uomo",
+    "eta": 26,
+    "image": "/assets/images/user.png"
+  },
+  {
+    "username": "Ali",
+    "password": "test",
+    "nome": "Alice",
+    "cognome": "Pregnolato",
+    "sesso": "Donna",
+    "eta": 97,
+    "image": "/assets/images/user.png"
+  }
+]

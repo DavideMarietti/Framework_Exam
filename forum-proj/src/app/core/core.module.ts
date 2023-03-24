@@ -8,6 +8,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ThreadsComponent } from './main-page/threads/threads.component';
 import { GraphsComponent } from './main-page/graphs/graphs.component';
 import { ProfileComponent } from './main-page/profile/profile.component';
+import { StockChartComponent } from '../stock-chart/stock-chart.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -20,10 +22,12 @@ import { ProfileComponent } from './main-page/profile/profile.component';
     MainPageComponent,
     ThreadsComponent,
     GraphsComponent,
-    ProfileComponent
+    ProfileComponent,
+    StockChartComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,

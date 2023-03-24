@@ -1,28 +1,29 @@
 
-  <div class="thread-box">
+  <div class="thread-box" *ngFor="let thread of threads; trackBy:identify">
+    <input type="hidden" [(ngModel)]="thread.id">
     <div class="thread-sub1">
       <img src="./assets/images/arrow-up.png"
            class="reaction-icon"
-           (click)=reactionControl(true)>
+           (click)=reactionControlUp()>
       <p class="reaction-p">{{thread.like-thread.dislike}}</p>
       <img src="./assets/images/arrow-down.png"
            class="reaction-icon"
-           (click)=reactionControl(false)>
+           (click)=reactionControlDown()>
       <img class="down-arrow">
     </div>
 
     <div class="thread-sub2">
       <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
       <h1 (click)=expand()
-      >{{thread.title}}</h1>
+      >{{thread.titolo}}</h1>
       <p class="thread-text"
-         *ngIf="thread.expandthread"
+         *ngIf="thread.expand"
       >{{thread.testo}}</p>
 
+      <!--(click)=expand_comments()-->
       <div class="thread-sub3">
         <div class="comment"
-             *ngIf="thread.expandthread"
-             (click)=expand_comments()
+             *ngIf="thread.expand"
         ><img src="./assets/images/chat.png"
                  class="comment-icon"
         ><p>12</p>
@@ -31,25 +32,25 @@
         <div class="answer">
           <img src="./assets/images/reply.png"
                class="comment-icon"
-               *ngIf="thread.expandthread && control.autenticato"
+               *ngIf="thread.expand && control.autenticato"
           ></div>
       </div>
 
     </div>
   </div>
 
-  <div class="comment-box" *ngIf="thread.opencomments">
+  <!--div class="comment-box" *ngIf="threads[thread]">
     <div class="comment-sub1">
       <img src="./assets/images/arrow-up.png" class="reaction-icon">
-      <p class="reaction-p">{{thread.like-thread.dislike}}</p>
+      <p class="reaction-p">{{threads[thread].like-threads[thread].dislike}}</p>
       <img src="./assets/images/arrow-down.png" class="reaction-icon">
       <img class="down-arrow">
     </div>
 
     <div class="comment-sub2">
-      <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
+      <p class="author"><i>Author <b>{{threads[thread].autore}}</b></i></p>
       <p class="comment-text"
-      >{{thread.testo}}</p>
+      >{{threads[thread].testo}}</p>
     </div>
 
     <div class="comment-sub3">
@@ -61,7 +62,7 @@
       <div class="answer">
         <img src="./assets/images/reply.png"
              class="comment-icon"
-             *ngIf="thread.expandthread && control.autenticato"
+             *ngIf="threads[thread].expand && control.autenticato"
         ></div>
     </div>
-  </div>
+  </div-->
