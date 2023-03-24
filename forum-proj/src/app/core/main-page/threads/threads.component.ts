@@ -15,8 +15,6 @@ export class ThreadsComponent {
   @Input() user: Utente;
   @Input() control: Controller;
 
-  @Input('ngModel')model: number;
-
   threads: Thread[] = [];
   comments: Comment[] = [];
 
@@ -29,31 +27,24 @@ export class ThreadsComponent {
     }
   }
 
-  expand() {
-    const index = this.threads.findIndex(aa => aa.id === this.model);
-    this.threads[index].expand = !this.threads[index].expand;
+  expand(i) {
+    this.threads[i].expand = !this.threads[i].expand;
+    this.threads.forEach((element, index) => {
+      if(i !== index){
+        element.expand = false;
+      }
+    })
   }
 
-  /*expand_comments() {
-    this.model.view = !this.model.view;
-    this.threadControl(this.model);
-  }*/
-
-  reactionControlUp() {
+  reactionControlUp(i) {
     if(this.control.autenticato){
-      const index = this.threads.findIndex(aa => aa.id === this.model);
-      this.threads[index].like++;
+      this.threads[i].like++;
     }
   }
 
-  reactionControlDown() {
+  reactionControlDown(i) {
     if(this.control.autenticato){
-      const index = this.threads.findIndex(aa => aa.id === this.model);
-      this.threads[index].dislike++;
+      this.threads[i].dislike++;
     }
-  }
-
-  identify(index, thread){
-    return thread;
   }
 }

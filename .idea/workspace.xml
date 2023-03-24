@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="threads-sample">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="forse funzionano i threads">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/core.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
     </list>
@@ -73,7 +71,9 @@
       <workItem from="1679564011076" duration="17000" />
       <workItem from="1679565356777" duration="11365000" />
       <workItem from="1679580728328" duration="9602000" />
-      <workItem from="1679603907783" duration="9222000" />
+      <workItem from="1679603907783" duration="10245000" />
+      <workItem from="1679614817408" duration="645000" />
+      <workItem from="1679692874302" duration="6832000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -187,7 +187,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679584846232</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="forse funzionano i threads">
+      <created>1679614502330</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679614502330</updated>
+    </task>
+    <task id="LOCAL-00018" summary="forse funzionano i threads">
+      <created>1679614740703</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1679614740703</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +231,7 @@
     <MESSAGE value="added users json" />
     <MESSAGE value="profile --" />
     <MESSAGE value="threads-sample" />
-    <option name="LAST_COMMIT_MESSAGE" value="threads-sample" />
+    <MESSAGE value="forse funzionano i threads" />
+    <option name="LAST_COMMIT_MESSAGE" value="forse funzionano i threads" />
   </component>
 </project>

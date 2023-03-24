@@ -1,20 +1,18 @@
-
-  <div class="thread-box" *ngFor="let thread of threads; trackBy:identify">
-    <input type="hidden" [(ngModel)]="thread.id">
+  <div class="thread-box" *ngFor="let thread of threads; let i = index" [attr.data-index]="i">
     <div class="thread-sub1">
       <img src="./assets/images/arrow-up.png"
            class="reaction-icon"
-           (click)=reactionControlUp()>
+           (click)=reactionControlUp(i)>
       <p class="reaction-p">{{thread.like-thread.dislike}}</p>
       <img src="./assets/images/arrow-down.png"
            class="reaction-icon"
-           (click)=reactionControlDown()>
+           (click)=reactionControlDown(i)>
       <img class="down-arrow">
     </div>
 
     <div class="thread-sub2">
       <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
-      <h1 (click)=expand()
+      <h1 (click)=expand(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
          *ngIf="thread.expand"
