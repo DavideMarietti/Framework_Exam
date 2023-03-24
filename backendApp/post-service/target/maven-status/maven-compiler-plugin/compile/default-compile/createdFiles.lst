@@ -1,0 +1,4 @@
+com\javasampleapproach\springrest\postgresql\model\Post.class
+com\javasampleapproach\springrest\postgresql\controller\PostController.class
+com\javasampleapproach\springrest\postgresql\SpringRestPostgreSqlApplication.class
+com\javasampleapproach\springrest\postgresql\repo\PostRepository.class
