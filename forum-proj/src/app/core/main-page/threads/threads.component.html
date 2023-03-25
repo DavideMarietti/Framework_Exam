@@ -25,14 +25,18 @@
                *ngIf="thread.expand"
           ><img src="./assets/images/chat.png"
                 class="comment-icon"
-          ><p>12</p>
+          ><p>{{thread.commcounter}}</p>
           </div>
 
-          <div class="answer">
-            <img src="./assets/images/reply.png"
-                 class="comment-icon"
-                 *ngIf="thread.expand && control.autenticato"
-            ></div>
+          <div class="answer"
+               *ngIf="thread.expand && control.autenticato"
+               (click)="answer_form(i)"
+          ><img src="./assets/images/reply.png"
+                 class="comment-icon">
+            <textarea *ngIf="thread.answer">
+
+            </textarea>
+          </div>
         </div>
       </div>
     </div>
@@ -52,7 +56,7 @@
       </div>
 
       <div class="thread-sub2">
-        <p class="author"><i>Author <b>{{comment.autore}}</b></i></p>
+        <p class="author"><i>Author <b>{{comment.autore}} level {{comment.level}}</b></i></p>
         <p class="thread-text"
         >{{comment.testo}}</p>
       </div>
@@ -62,7 +66,7 @@
              (click)=expand_comments(i,false)
         ><img src="./assets/images/chat.png"
               class="comment-icon"
-        ><p>12</p>
+        ><p>{{comment.commcounter}}</p>
         </div>
 
         <div class="answer">

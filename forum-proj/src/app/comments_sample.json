@@ -5,7 +5,9 @@
     "id": 2,
     "like": 31,
     "dislike": 30,
-    "parentID": 1
+    "parentID": 1,
+    "commcounter": 0,
+    "level": 0
   },
   {
     "testo": "Per me è cipolla",
@@ -13,7 +15,9 @@
     "id": 4,
     "like": 15,
     "dislike": 1,
-    "parentID": 3
+    "parentID": 3,
+    "commcounter": 0,
+    "level": 0
   },
   {
     "testo": "A me piacciono i treni",
@@ -21,6 +25,18 @@
     "id": 5,
     "like": 2,
     "dislike": 1,
-    "parentID": 2
+    "parentID": 2,
+    "commcounter": 0,
+    "level": 0
+  },
+  {
+    "testo": "terzo commento test",
+    "autore": "Alice",
+    "id": 6,
+    "like": 28,
+    "dislike": 1,
+    "parentID": 5,
+    "commcounter": 0,
+    "level": 0
   }
 ]
