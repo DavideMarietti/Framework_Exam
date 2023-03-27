@@ -1,11 +1,22 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
+import java.util.Date;
+
+
+/*
+  {
+    "username": "Ali",
+    "password": "test",
+    "nome": "Alice",
+    "cognome": "Pregnolato",
+    "sesso": "Donna",
+    "eta": 97,
+    "image": "/assets/images/user.png"
+  }
+ */
 
 @Entity
 @Table(name = "user1")
@@ -18,67 +29,100 @@ public class User {
 	@Column(name = "username")
 	private String username;
 
-	@Column(name = "email")
-	private String email;
+	@Column(name = "password")
+	private String password;
 
-	@Column(name = "pwd")
-	private String pwd;
+	@Column(name = "nome")
+	private String nome;
 
-	@Column(name = "age")
-	private int age;
+	@Column(name = "cognome")
+	private String cognome;
 
-	@Column(name = "active")
-	private boolean active;
+	@Column(name = "sesso")
+	private String sesso;
+
+	@Column(name = "eta")
+	private int eta;
+
+	@Column(name = "image")
+	private String image;
+
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "iscrizione")
+	private Date iscrizione;
 
 	public User() {
 	}
 
-	public User(String username, String email, String pwd, int age) {
+	// todo: l'immagine al momento e forzata, creare ma verrà caricata al momento
+	public User(String username, String password, String nome, String cognome,
+					String sesso, int eta) {
 		this.username = username;
-		this.email = email;
-		this.pwd = pwd;
-		this.age = age;
-		this.active = false;
+		this.password = password;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.sesso = sesso;
+		this.eta = eta;
+		this.image = "/assets/images/user.png";
 	}
 
 	public long getId() {
 		return id;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
 	public String getUsername() {
 		return this.username;
 	}
 
-	public String getEmail() { return this.email; }
-
-	public void setEmail(String email) { this.email = email; }
-
-	public String getPwd() { return this.pwd; }
-
-	public void setPwd(String pwd) { this.pwd = pwd; }
-
-	public void setAge(int age) {
-		this.age = age;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public int getAge() {
-		return this.age;
+	public String getPassword() { return this.password; }
+
+	public void setPassword(String password) { this.password = password; }
+
+	public String getNome() { return this.nome; }
+
+	public void setNome(String nome) { this.nome = nome; }
+
+	public String getCognome() { return this.cognome; }
+
+	public void setCognome(String cognome) { this.cognome = cognome; }
+
+	public String getSesso() { return this.sesso; }
+
+	public void setSesso(String sesso) { this.sesso = sesso; }
+
+	public int getEta() {
+		return this.eta;
 	}
 
-	public boolean isActive() {
-		return active;
+	public void setEta(int eta) {
+		this.eta = eta;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
-	}
+	public String getImage() { return this.image; }
+
+	public void setImage(String image) { this.image = image; }
+
+	public Date getIscrizione() { return this.iscrizione; }
+
+	public void setIscrizione(Date iscrizione) { this.iscrizione = iscrizione; }
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", pwd=" + pwd + ", age=" + age + ", active=" + active + "]";
+		return "User{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
+				", nome='" + nome + '\'' +
+				", cognome='" + cognome + '\'' +
+				", sesso='" + sesso + '\'' +
+				", eta=" + eta +
+				", image='" + image + '\'' +
+				", iscrizione='" + iscrizione + '\'' +
+				'}';
 	}
 }

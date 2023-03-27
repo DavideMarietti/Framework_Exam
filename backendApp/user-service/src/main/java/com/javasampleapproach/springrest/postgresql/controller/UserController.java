@@ -41,7 +41,8 @@ public class UserController {
 	@PostMapping(value = "/users/create")
 	public User postUser(@RequestBody User user) {
 
-		User _user = repository.save(new User(user.getUsername(), user.getEmail(), user.getPwd(), user.getAge()));
+		User _user = repository.save(new User(user.getUsername(), user.getPassword(), user.getNome(), user.getCognome(),
+												user.getSesso(), user.getEta()));
 		return _user;
 	}
 
@@ -63,10 +64,10 @@ public class UserController {
 		return new ResponseEntity<>("All users have been deleted!", HttpStatus.OK);
 	}
 
-	@GetMapping(value = "users/age/{age}")
-	public List<User> findByAge(@PathVariable int age) {
+	@GetMapping(value = "users/eta/{eta}")
+	public List<User> findByEta(@PathVariable int eta) {
 
-		List<User> users = repository.findByAge(age);
+		List<User> users = repository.findByEta(eta);
 		return users;
 	}
 
@@ -79,10 +80,11 @@ public class UserController {
 		if (userData.isPresent()) {
 			User _user = userData.get();
 			_user.setUsername(user.getUsername());
-			_user.setEmail(user.getEmail());
-			_user.setPwd(user.getPwd());
-			_user.setAge(user.getAge());
-			_user.setActive(user.isActive());
+			_user.setPassword(user.getPassword());
+			_user.setNome(user.getNome());
+			_user.setCognome(user.getCognome());
+			_user.setSesso(user.getSesso());
+			_user.setEta(user.getEta());
 			return new ResponseEntity<>(repository.save(_user), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
