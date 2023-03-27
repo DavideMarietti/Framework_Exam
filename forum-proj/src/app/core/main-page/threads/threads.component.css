@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: 40px 8fr;
   color: darkslategray;
+
 }
 
 .thread-sub1 {
@@ -78,7 +79,9 @@
   padding: 5px;
   border: 1px solid darkslategray;
   border-radius: 5px;
-  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
   display: grid;
   grid-template-columns: 40px 8fr 1fr;
   color: darkslategray;

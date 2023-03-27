@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="Ora thread e relativi commenti (anche in risposta ad altri commenti) funzionano e sono visualizzati in modo interattivo.">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/comments_sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/comments_sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/threads_sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/threads_sample.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/variable-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/variable-type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,8 @@
       <workItem from="1679580728328" duration="9602000" />
       <workItem from="1679603907783" duration="9222000" />
       <workItem from="1679707897563" duration="12352000" />
-      <workItem from="1679768862501" duration="4139000" />
+      <workItem from="1679768862501" duration="5587000" />
+      <workItem from="1679933800445" duration="1219000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -198,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679735272990</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread">
+      <created>1679774581353</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1679774581353</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +234,7 @@
     <MESSAGE value="profile --" />
     <MESSAGE value="threads-sample" />
     <MESSAGE value="Ora thread e relativi commenti (anche in risposta ad altri commenti) funzionano e sono visualizzati in modo interattivo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ora thread e relativi commenti (anche in risposta ad altri commenti) funzionano e sono visualizzati in modo interattivo." />
+    <MESSAGE value="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread" />
+    <option name="LAST_COMMIT_MESSAGE" value="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread" />
   </component>
 </project>

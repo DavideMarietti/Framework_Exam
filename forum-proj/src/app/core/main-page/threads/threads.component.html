@@ -43,7 +43,9 @@
   </div>
 
   <div *ngFor="let comment of comments; let i = index" [attr.data-index]="i">
-    <div class="comment-box" *ngIf="comment.view">
+    <div class="comment-box"
+         [ngStyle]="{'margin-left': comment.level*10+'px'}"
+         *ngIf="comment.view">
       <div class="thread-sub1">
         <img src="./assets/images/arrow-up.png"
              class="reaction-icon"
