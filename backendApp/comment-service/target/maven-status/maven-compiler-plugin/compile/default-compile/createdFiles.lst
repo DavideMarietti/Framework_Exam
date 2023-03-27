@@ -1,0 +1,4 @@
+com\javasampleapproach\springrest\postgresql\model\Comment.class
+com\javasampleapproach\springrest\postgresql\controller\CommentController.class
+com\javasampleapproach\springrest\postgresql\SpringRestPostgreSqlApplication.class
+com\javasampleapproach\springrest\postgresql\repo\CommentRepository.class

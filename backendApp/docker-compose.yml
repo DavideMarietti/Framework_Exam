@@ -86,11 +86,51 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
 
+  dbpostgresql_comment:
+    image: "postgres"
+    container_name: postgres-comment
+    ports:
+      - "5447:5432"
+    depends_on:
+      - service-registry
+    volumes:
+      - db-data_comment:/var/lib/postgresql_comment/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: commentdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
+
+  app-comment:
+    #build: comment-service
+    image: comment-service:latest
+    container_name: comment-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - service-registry
+      - dbpostgresql_comment
+    networks:
+      - backendnet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_comment:5432/commentdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
+      - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
+      - SPRING_PROFILES_ACTIVE=docker
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
+
 volumes:
   db-data_user:
   db-data_post:
+  db-data_comment:
 
 networks:
   backendnet:
     driver: bridge
+
 # (docker-compose) build && docker-compose up

@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="ffefefe">
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/SpringRestPostgreSqlApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/launchBackend" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/launchBackend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,26 +49,39 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2N5qw0cBztmwwZwcOFWDz7tI44L" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gianotti/Documents/GitHub/examJS&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Codes\\DV\\Framework_Exam\\forum-proj\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/backendApp/comment-service/pom.xml",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "ts.external.directory.path": "C:\\Codes\\DV\\Framework_Exam\\forum-proj\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp" />
       <recent name="C:\Codes\DV\Framework_Exam\forum-proj\src\assets\images" />
     </key>
   </component>
