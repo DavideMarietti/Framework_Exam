@@ -1,5 +1,6 @@
 package com.javasampleapproach.springrest.postgresql.controller;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,7 +40,7 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/users/create")
-	public User postUser(@RequestBody User user) {
+	public User postUser(@RequestBody User user) throws ParseException {
 
 		User _user = repository.save(new User(user.getUsername(), user.getPassword(), user.getNome(), user.getCognome(),
 												user.getSesso(), user.getEta()));

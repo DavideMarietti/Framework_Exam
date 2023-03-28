@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 cd ./service-registry
 ./mvnw -DskipTests=true clean package
 docker build -t service-registry .
