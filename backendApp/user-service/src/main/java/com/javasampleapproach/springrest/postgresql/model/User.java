@@ -44,15 +44,13 @@ public class User {
 	@Column(name = "image")
 	private String image;
 
-	//@CreationTimestamp
-	//@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "iscrizione")
 	private Date iscrizione;
 
 	public User() {
 	}
 
-	// todo: l'immagine al momento e forzata, creare ma verrà caricata al momento
+	// Todo: l'immagine al momento e forzata, creare ma verrà caricata al momento
 	public User(String username, String password, String nome, String cognome,
 					String sesso, int eta) {
 		this.username = username;
