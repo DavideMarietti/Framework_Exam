@@ -1,10 +1,6 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /*
@@ -53,14 +49,12 @@ public class User {
 	@Column(name = "iscrizione")
 	private Date iscrizione;
 
-	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
 	public User() {
 	}
 
 	// todo: l'immagine al momento e forzata, creare ma verrà caricata al momento
 	public User(String username, String password, String nome, String cognome,
-					String sesso, int eta) throws ParseException {
+					String sesso, int eta) {
 		this.username = username;
 		this.password = password;
 		this.nome = nome;
@@ -71,7 +65,7 @@ public class User {
 		this.iscrizione = new java.util.Date();
 	}
 
-	// Costruttore utilizzato per inizializzare gli utenti nel DB
+	// Costruttore utilizzato nel config per inizializzare gli utenti
 	public User(String username, String password, String nome, String cognome,
 					String sesso, int eta, String image, Date iscrizione) {
 		this.username = username;

@@ -1,16 +1,12 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 /*
   {
     "testo": "Per me è cipolla",
-    "autore": "Andre",
+    "author": "Andre",
     "id": 4,
     "like": 15,
     "dislike": 1,
@@ -18,7 +14,7 @@ import javax.persistence.Table;
     "commcounter": 0,
     "level": 0
   }
- */
+*/
 
 @Entity
 @Table(name = "comment1")
@@ -28,66 +24,121 @@ public class Comment {
    @GeneratedValue(strategy = GenerationType.AUTO)
    private long id;
 
-   @Column(name = "title")
-   private String title;
+   @Column(name = "testo")
+   private String testo;
 
-   @Column(name = "text")
-   private String text;
+   @Column(name = "author")
+   private String author;
 
-   @Column(name = "age")
-   private int age;
+   @Column(name = "like")
+   private int like;
 
-   @Column(name = "active")
-   private boolean active;
+   @Column(name = "dislike")
+   private int dislike;
+
+   @Column(name = "parentid")
+   private int parentid;
+
+   @Column(name = "level")
+   private int level;
+
+   @Column(name = "creato")
+   private Date creato;
 
    public Comment() {
    }
 
-   public Comment(String title, String text, int age) {
-      this.title = title;
-      this.text = text;
-      this.age = age;
-      this.active = false;
+   public Comment(String testo, String author, int parentid, int level) {
+      this.testo = testo;
+      this.author = author;
+      this.parentid = parentid;
+      this.level = level;
+      this.like = 0;
+      this.dislike = 0;
+      this.creato = new java.util.Date();
+   }
+
+   // Costruttore utilizzato nel config per inizializzare i commenti
+   public Comment(String testo, String author, int like, int dislike, int parentid, int level, Date creato) {
+      this.testo = testo;
+      this.author = author;
+      this.parentid = parentid;
+      this.level = level;
+      this.like = like;
+      this.dislike = dislike;
+      this.creato = creato;
    }
 
    public long getId() {
       return id;
    }
 
-   public void setTitle(String title) {
-      this.title = title;
+   public String getTesto() {
+      return testo;
    }
 
-   public String getTitle() {
-      return this.title;
+   public void setTesto(String testo) {
+      this.testo = testo;
    }
 
-   public void setText(String text) {
-      this.text = text;
+   public String getAuthor() {
+      return author;
    }
 
-   public String getText() {
-      return this.text;
+   public void setAuthor(String author) {
+      this.author = author;
    }
 
-   public void setAge(int age) {
-      this.age = age;
+   public int getLike() {
+      return like;
    }
 
-   public int getAge() {
-      return this.age;
+   public void setLike(int like) {
+      this.like = like;
    }
 
-   public boolean isActive() {
-      return active;
+   public int getDislike() {
+      return dislike;
    }
 
-   public void setActive(boolean active) {
-      this.active = active;
+   public void setDislike(int dislike) {
+      this.dislike = dislike;
+   }
+
+   public int getParentid() {
+      return parentid;
+   }
+
+   public void setParentid(int parentid) {
+      this.parentid = parentid;
+   }
+
+   public int getLevel() {
+      return level;
+   }
+
+   public void setLevel(int level) {
+      this.level = level;
+   }
+
+   public Date getCreato() {
+      return creato;
+   }
+
+   public void setCreato(Date creato) {
+      this.creato = creato;
    }
 
    @Override
    public String toString() {
-      return "<comment> [id=" + id + ", title=" + title + ", age=" + age + ", active=" + active + "]";
+      return "Comment{" +
+              "id=" + id +
+              ", testo='" + testo + '\'' +
+              ", author='" + author + '\'' +
+              ", like=" + like +
+              ", dislike=" + dislike +
+              ", parentid=" + parentid +
+              ", level=" + level +
+              '}';
    }
 }

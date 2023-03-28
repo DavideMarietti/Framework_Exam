@@ -42,7 +42,7 @@ public class UserConfig {
                  "pupopeligroso95",
                  "Andrea",
                  "Balbo Mossetto",
-                 "Uomo",
+                 "him/him",
                  45,
                  "/assets/images/user.png",
                  new Timestamp(time1)
@@ -52,7 +52,7 @@ public class UserConfig {
                  "test",
                  "Lorenzo",
                  "Gianotti",
-                 "Uomo",
+                 "him/him",
                  26,
                  "/assets/images/user.png",
                  new Timestamp(time2)
@@ -62,7 +62,7 @@ public class UserConfig {
                  "test",
                  "Alice",
                  "Pregnolato",
-                 "Donna",
+                 "him/him",
                  97,
                  "/assets/images/user.png",
                  new Timestamp(time3)
@@ -72,7 +72,7 @@ public class UserConfig {
                  "pollo1234",
                  "Davide",
                  "Marietti",
-                 "maschio",
+                 "her/her",
                  29,
                  "/assets/images/user.png",
                  new Timestamp(time4)
@@ -82,7 +82,7 @@ public class UserConfig {
                  "eccomi231",
                  "Alex",
                  "Giovannoni",
-                 "maschio",
+                 "him/her",
                  37,
                  "/assets/images/user.png",
                  new Timestamp(time5)

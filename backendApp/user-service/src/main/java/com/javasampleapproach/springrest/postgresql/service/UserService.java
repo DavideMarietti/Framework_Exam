@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +30,7 @@ public class UserService {
       return users;
    }
 
-   public User addNewUser(User user) throws ParseException {
+   public User addNewUser(User user) {
 
       List<User> userOptional = userRepository.findByEta(user.getEta());
       if (userOptional.size() > 0) {
@@ -68,7 +67,6 @@ public class UserService {
 
    public ResponseEntity<User> updateUser(long id, User user) {
       System.out.println("Update User with ID = " + id + "...");
-
       Optional<User> userData = userRepository.findById(id);
 
       if (userData.isPresent()) {

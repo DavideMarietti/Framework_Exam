@@ -1,6 +1,5 @@
 package com.javasampleapproach.springrest.postgresql.controller;
 
-import java.text.ParseException;
 import java.util.List;
 
 import com.javasampleapproach.springrest.postgresql.service.UserService;
@@ -23,40 +22,40 @@ import com.javasampleapproach.springrest.postgresql.model.User;
 @RequestMapping("/api/v1")
 public class UserController {
 
-	private final UserService userService;
+   private final UserService userService;
 
-	@Autowired
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
+   @Autowired
+   public UserController(UserService userService) {
+      this.userService = userService;
+   }
 
-	@GetMapping("/users")
-	public List<User> getAllUsers() {
-		return userService.getAllUsers();
-	}
+   @GetMapping("/users")
+   public List<User> getAllUsers() {
+      return userService.getAllUsers();
+   }
 
-	@PostMapping(value = "/users/create")
-	public User postUser(@RequestBody User user) throws ParseException {
-		return userService.addNewUser(user);
-	}
+   @PostMapping(value = "/users/create")
+   public User postUser(@RequestBody User user) {
+      return userService.addNewUser(user);
+   }
 
-	@DeleteMapping("/users/{id}")
-	public ResponseEntity<String> deleteUser(@PathVariable("id") long id) {
-		return userService.removeUser(id);
-	}
+   @DeleteMapping("/users/{id}")
+   public ResponseEntity<String> deleteUser(@PathVariable("id") long id) {
+      return userService.removeUser(id);
+   }
 
-	@DeleteMapping("/users/delete")
-	public ResponseEntity<String> deleteAllUsers() {
-		return userService.removeAllUsers();
-	}
+   @DeleteMapping("/users/delete")
+   public ResponseEntity<String> deleteAllUsers() {
+      return userService.removeAllUsers();
+   }
 
-	@GetMapping(value = "users/eta/{eta}")
-	public List<User> findByEta(@PathVariable int eta) {
-		return userService.findUserByEta(eta);
-	}
+   @GetMapping(value = "users/eta/{eta}")
+   public List<User> findByEta(@PathVariable int eta) {
+      return userService.findUserByEta(eta);
+   }
 
-	@PutMapping("/users/{id}")
-	public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
-		return userService.updateUser(id, user);
-	}
+   @PutMapping("/users/{id}")
+   public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
+      return userService.updateUser(id, user);
+   }
 }

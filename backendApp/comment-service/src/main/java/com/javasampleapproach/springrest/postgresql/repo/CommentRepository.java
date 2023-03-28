@@ -6,7 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.javasampleapproach.springrest.postgresql.model.Comment;
 
+
+// Responsible for customized data access
 public interface CommentRepository extends CrudRepository<Comment, Long> {
-	List<Comment> findByAge(int age);
+	List<Comment> findByAuthor(String author);
 }
 
