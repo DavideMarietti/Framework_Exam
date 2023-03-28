@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 /*
   {
@@ -30,66 +31,112 @@ public class Post {
    @GeneratedValue(strategy = GenerationType.AUTO)
    private long id;
 
-   @Column(name = "title")
-   private String title;
+   @Column(name = "titolo")
+   private String titolo;
 
-   @Column(name = "text")
-   private String text;
+   @Column(name = "testo", length = 2048)
+   private String testo;
 
-   @Column(name = "age")
-   private int age;
+   @Column(name = "autore")
+   private String autore;
 
-   @Column(name = "active")
-   private boolean active;
+   @Column(name = "like")
+   private int like;
+
+   @Column(name = "dislike")
+   private int dislike;
+
+   @Column(name = "creato")
+   private Date creato;
+
 
    public Post() {
    }
 
-   public Post(String title, String text, int age) {
-      this.title = title;
-      this.text = text;
-      this.age = age;
-      this.active = false;
+   public Post(String titolo, String testo, String autore) {
+      this.titolo = titolo;
+      this.testo = testo;
+      this.autore = autore;
+      this.like = 0;
+      this.dislike = 0;
+      this.creato = new java.util.Date();
+   }
+
+   public Post(String titolo, String testo, String autore, int like, int dislike, Date creato) {
+      this.titolo = titolo;
+      this.testo = testo;
+      this.autore = autore;
+      this.like = like;
+      this.dislike = dislike;
+      this.creato = creato;
    }
 
    public long getId() {
       return id;
    }
 
-   public void setTitle(String title) {
-      this.title = title;
+   public void setId(long id) {
+      this.id = id;
    }
 
-   public String getTitle() {
-      return this.title;
+   public String getTitolo() {
+      return titolo;
    }
 
-   public void setText(String text) {
-      this.text = text;
+   public void setTitolo(String titolo) {
+      this.titolo = titolo;
    }
 
-   public String getText() {
-      return this.text;
+   public String getTesto() {
+      return testo;
    }
 
-   public void setAge(int age) {
-      this.age = age;
+   public void setTesto(String testo) {
+      this.testo = testo;
    }
 
-   public int getAge() {
-      return this.age;
+   public String getAutore() {
+      return autore;
    }
 
-   public boolean isActive() {
-      return active;
+   public void setAutore(String autore) {
+      this.autore = autore;
    }
 
-   public void setActive(boolean active) {
-      this.active = active;
+   public int getLike() {
+      return like;
+   }
+
+   public void setLike(int like) {
+      this.like = like;
+   }
+
+   public int getDislike() {
+      return dislike;
+   }
+
+   public void setDislike(int dislike) {
+      this.dislike = dislike;
+   }
+
+   public Date getCreato() {
+      return creato;
+   }
+
+   public void setCreato(Date creato) {
+      this.creato = creato;
    }
 
    @Override
    public String toString() {
-      return "Post [id=" + id + ", title=" + title + ", age=" + age + ", active=" + active + "]";
+      return "Post{" +
+              "id=" + id +
+              ", titolo='" + titolo + '\'' +
+              ", testo='" + testo + '\'' +
+              ", autore='" + autore + '\'' +
+              ", like=" + like +
+              ", dislike=" + dislike +
+              ", creato=" + creato +
+              '}';
    }
 }

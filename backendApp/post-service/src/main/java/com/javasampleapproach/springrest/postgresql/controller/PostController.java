@@ -41,7 +41,7 @@ public class PostController {
 	@PostMapping(value = "/posts/create")
 	public Post postPost(@RequestBody Post post) {
 
-		Post _post = repository.save(new Post(post.getTitle(), post.getText(), post.getAge()));
+		Post _post = repository.save(new Post(post.getTitolo(), post.getTesto(), post.getAutore()));
 		return _post;
 	}
 
@@ -63,10 +63,10 @@ public class PostController {
 		return new ResponseEntity<>("All posts have been deleted!", HttpStatus.OK);
 	}
 
-	@GetMapping(value = "posts/age/{age}")
-	public List<Post> findByAge(@PathVariable int age) {
+	@GetMapping(value = "posts/titolo/{titolo}")
+	public List<Post> findByTitolo(@PathVariable String titolo) {
 
-		List<Post> posts = repository.findByAge(age);
+		List<Post> posts = repository.findByTitolo(titolo);
 		return posts;
 	}
 
@@ -78,10 +78,10 @@ public class PostController {
 
 		if (postData.isPresent()) {
 			Post _post = postData.get();
-			_post.setTitle(post.getTitle());
-			_post.setText(post.getText());
-			_post.setAge(post.getAge());
-			_post.setActive(post.isActive());
+			_post.setTitolo(post.getTitolo());
+			_post.setTesto(post.getTesto());
+			_post.setLike(post.getLike());
+			_post.setDislike(post.getDislike());
 			return new ResponseEntity<>(repository.save(_post), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

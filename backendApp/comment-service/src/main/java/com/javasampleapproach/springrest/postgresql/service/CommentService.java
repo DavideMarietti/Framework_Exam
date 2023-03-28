@@ -50,7 +50,7 @@ public class CommentService {
       return new ResponseEntity<>("All comments have been deleted!", HttpStatus.OK);
    }
 
-   public List<Comment> findCommentByAuthor(String author) {
+   public List<Comment> getCommentsByAuthor(String author) {
       List<Comment> comments = commentRepository.findByAuthor(author);
 
       return comments;

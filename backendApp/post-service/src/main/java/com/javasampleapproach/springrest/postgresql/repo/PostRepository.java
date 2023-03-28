@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.javasampleapproach.springrest.postgresql.model.Post;
 
 public interface PostRepository extends CrudRepository<Post, Long> {
-	List<Post> findByAge(int age);
+	List<Post> findByTitolo(String titolo);
 }
 

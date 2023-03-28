@@ -13,7 +13,7 @@ import java.util.Date;
     "eta": 97,
     "image": "/assets/images/user.png"
   }
- */
+*/
 
 @Entity
 @Table(name = "user1")

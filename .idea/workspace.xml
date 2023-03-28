@@ -5,32 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="set up comment obj + added config folder + added service folder to comment service.">
-      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/config/CommentConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/CommentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/service/CommentService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/repo/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/repo/PostRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/UserConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/UserConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/config/UserConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/config/UserConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" afterDir="false" />
     </list>
@@ -252,7 +251,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680001182571</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="set up comment obj + added config folder + added service folder to comment service.">
+      <created>1680017960064</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680017960065</updated>
+    </task>
+    <task id="LOCAL-00021" summary="set up comment obj + added config folder + added service folder to comment service.">
+      <created>1680018027854</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680018027854</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

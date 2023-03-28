@@ -50,8 +50,8 @@ public class CommentController {
    }
 
    @GetMapping(value = "comments/author/{author}")
-   public List<Comment> findCommentByAuthor(@PathVariable String author) {
-      return commentService.findCommentByAuthor(author);
+   public List<Comment> findCommentsByAuthor(@PathVariable String author) {
+      return commentService.getCommentsByAuthor(author);
    }
 
    @PutMapping("/comments/{id}")
