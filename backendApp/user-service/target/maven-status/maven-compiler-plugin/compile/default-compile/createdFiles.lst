@@ -1,5 +1,6 @@
 com\javasampleapproach\springrest\postgresql\controller\UserController.class
 com\javasampleapproach\springrest\postgresql\model\User.class
 com\javasampleapproach\springrest\postgresql\SpringRestPostgreSqlApplication.class
+com\javasampleapproach\springrest\postgresql\service\UserService.class
 com\javasampleapproach\springrest\postgresql\config\UserConfig.class
 com\javasampleapproach\springrest\postgresql\repo\UserRepository.class

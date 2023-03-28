@@ -7,6 +7,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+  {
+    "id": 3,
+    "titolo": "Conto deposito - Perchè?",
+    "testo": "I BOT in perdita per carità, ma quale può essere una perdita reale su prodotti a scadenza breve?
+               L’aumento del tasso deciso annualmente. Quindi se tu avevi un BOT che rendeva 2% in 9 mesi e l’aumento dei tassi
+               fa andare a rendere i bot 3% in 9 mesi (aumento folle) puoi o attender quei mesi o vendere in perdita di quella
+               differenza di % di rendimento",
+    "autore": "Lollo",
+    "like": 15,
+    "dislike": 7,
+    "commcounter": 0
+  }
+ */
+
 @Entity
 @Table(name = "post1")
 public class Post {

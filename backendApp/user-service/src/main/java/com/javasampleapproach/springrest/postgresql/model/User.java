@@ -1,13 +1,11 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 
 /*
   {
@@ -70,7 +68,7 @@ public class User {
 		this.sesso = sesso;
 		this.eta = eta;
 		this.image = "/assets/images/user.png";
-		this.iscrizione = dateFormat.parse(String.valueOf(new Date()));
+		this.iscrizione = new java.util.Date();
 	}
 
 	// Costruttore utilizzato per inizializzare gli utenti nel DB

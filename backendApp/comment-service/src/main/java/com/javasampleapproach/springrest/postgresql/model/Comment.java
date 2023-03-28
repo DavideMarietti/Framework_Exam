@@ -7,6 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+  {
+    "testo": "Per me è cipolla",
+    "autore": "Andre",
+    "id": 4,
+    "like": 15,
+    "dislike": 1,
+    "parentID": 3,
+    "commcounter": 0,
+    "level": 0
+  }
+ */
+
 @Entity
 @Table(name = "comment1")
 public class Comment {
