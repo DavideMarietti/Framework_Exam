@@ -1,0 +1,75 @@
+:host {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 1.5fr 3fr 2.5fr;
+}
+
+.signin-form{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  z-index: 101;
+  background-color: white;
+  padding: 8%;
+}
+
+.signin-form-1 {
+  text-align: right;
+}
+
+.signin-form-2 {
+  text-align: center;
+}
+
+.btn-close {
+  text-align: right;
+}
+
+h3{
+  text-align: center;
+  color: #333;
+}
+
+.btnSubmit
+{
+  width: 40%;
+  border-radius: 0.5rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+.btnSubmit{
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+
+
+.form-group {
+  margin-top: 3%;
+}
+
+.alert {
+  padding: 2px;
+  background-color: lightcoral;
+  border-radius: 5px;
+}
+
+.ok{
+  padding: 2px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+.button {
+  padding: 5px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
