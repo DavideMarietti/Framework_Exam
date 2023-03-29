@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="adding API to the user service">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="adding like-dislike API to the post and comment services.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" afterDir="false" />
@@ -296,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680078093970</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="adding like-dislike API to the post and comment services.">
+      <created>1680087239900</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680087239901</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +341,7 @@
     <MESSAGE value="added service folder to post obj." />
     <MESSAGE value="adding postid field to the comment obj." />
     <MESSAGE value="adding API to the user service" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding API to the user service" />
+    <MESSAGE value="adding like-dislike API to the post and comment services." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding like-dislike API to the post and comment services." />
   </component>
 </project>
