@@ -72,7 +72,7 @@ public class UserConfig {
                  "pollo1234",
                  "Davide",
                  "Marietti",
-                 "her/her",
+                 "him/him",
                  29,
                  "/assets/images/user.png",
                  new Timestamp(time4)

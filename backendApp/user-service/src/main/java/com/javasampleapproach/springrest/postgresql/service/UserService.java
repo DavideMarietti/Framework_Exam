@@ -31,11 +31,12 @@ public class UserService {
    }
 
    public User addNewUser(User user) {
-
-      List<User> userOptional = userRepository.findByEta(user.getEta());
+      List<User> userOptional = userRepository.findByUsername(user.getUsername());
+      /*
       if (userOptional.size() > 0) {
-         throw new IllegalStateException("Eta already registered");
+      throw new IllegalStateException("Username already registered.");
       }
+      */
 
       User _user = new User(user.getUsername(), user.getPassword(), user.getNome(), user.getCognome(),
               user.getSesso(), user.getEta());
@@ -61,6 +62,24 @@ public class UserService {
 
    public List<User> findUserByEta(int eta) {
       List<User> users = userRepository.findByEta(eta);
+
+      return users;
+   }
+
+   public List<User> findUserByUsername(String username) {
+      List<User> users = userRepository.findByUsername(username);
+
+      return users;
+   }
+
+   public List<User> findUserByNome(String nome) {
+      List<User> users = userRepository.findByNome(nome);
+
+      return users;
+   }
+
+   public List<User> findUserByCognome(String cognome) {
+      List<User> users = userRepository.findByCognome(cognome);
 
       return users;
    }

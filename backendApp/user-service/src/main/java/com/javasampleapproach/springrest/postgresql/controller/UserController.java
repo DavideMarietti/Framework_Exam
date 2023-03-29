@@ -54,6 +54,21 @@ public class UserController {
       return userService.findUserByEta(eta);
    }
 
+   @GetMapping(value = "users/username/{username}")
+   public List<User> findByUsername(@PathVariable String username) {
+      return userService.findUserByUsername(username);
+   }
+
+   @GetMapping(value = "users/nome/{nome}")
+   public List<User> findByNome(@PathVariable String nome) {
+      return userService.findUserByNome(nome);
+   }
+
+   @GetMapping(value = "users/cognome/{cognome}")
+   public List<User> findByCognome(@PathVariable String cognome) {
+      return userService.findUserByCognome(cognome);
+   }
+
    @PutMapping("/users/{id}")
    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
       return userService.updateUser(id, user);
