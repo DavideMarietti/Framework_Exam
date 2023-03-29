@@ -6,10 +6,11 @@ import java.util.Date;
 /*
   {
     "testo": "Per me è cipolla",
-    "author": "Andre",
+    "autore": "Andre",
     "id": 4,
     "like": 15,
     "dislike": 1,
+    "postid": 0,
     "parentID": 3,
     "commcounter": 0,
     "level": 0
@@ -27,14 +28,17 @@ public class Comment {
    @Column(name = "testo")
    private String testo;
 
-   @Column(name = "author")
-   private String author;
+   @Column(name = "autore")
+   private String autore;
 
    @Column(name = "like")
    private int like;
 
    @Column(name = "dislike")
    private int dislike;
+
+   @Column(name = "postid")
+   private int postid;
 
    @Column(name = "parentid")
    private int parentid;
@@ -48,9 +52,10 @@ public class Comment {
    public Comment() {
    }
 
-   public Comment(String testo, String author, int parentid, int level) {
+   public Comment(String testo, String autore, int postid, int parentid, int level) {
       this.testo = testo;
-      this.author = author;
+      this.autore = autore;
+      this.postid = postid;
       this.parentid = parentid;
       this.level = level;
       this.like = 0;
@@ -59,9 +64,10 @@ public class Comment {
    }
 
    // Costruttore utilizzato nel config per inizializzare i commenti
-   public Comment(String testo, String author, int like, int dislike, int parentid, int level, Date creato) {
+   public Comment(String testo, String autore, int like, int dislike, int postid, int parentid, int level, Date creato) {
       this.testo = testo;
-      this.author = author;
+      this.autore = autore;
+      this.postid = postid;
       this.parentid = parentid;
       this.level = level;
       this.like = like;
@@ -81,12 +87,12 @@ public class Comment {
       this.testo = testo;
    }
 
-   public String getAuthor() {
-      return author;
+   public String getAutore() {
+      return autore;
    }
 
-   public void setAuthor(String author) {
-      this.author = author;
+   public void setAutore(String autore) {
+      this.autore = autore;
    }
 
    public int getLike() {
@@ -103,6 +109,14 @@ public class Comment {
 
    public void setDislike(int dislike) {
       this.dislike = dislike;
+   }
+
+   public int getPostid() {
+      return postid;
+   }
+
+   public void setPostid(int postid) {
+      this.postid = postid;
    }
 
    public int getParentid() {
@@ -134,9 +148,10 @@ public class Comment {
       return "Comment{" +
               "id=" + id +
               ", testo='" + testo + '\'' +
-              ", author='" + author + '\'' +
+              ", autore='" + autore + '\'' +
               ", like=" + like +
               ", dislike=" + dislike +
+              ", postid=" + postid +
               ", parentid=" + parentid +
               ", level=" + level +
               ", creato=" + creato +

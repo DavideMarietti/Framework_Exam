@@ -31,7 +31,8 @@ public class CommentService {
    }
 
    public Comment addNewComment(Comment comment) {
-      Comment _comment = commentRepository.save(new Comment(comment.getTesto(), comment.getAuthor(), comment.getParentid(), comment.getLevel()));
+      Comment _comment = commentRepository.save(new Comment(comment.getTesto(), comment.getAutore(), comment.getPostid(),
+              comment.getParentid(), comment.getLevel()));
 
       return _comment;
    }
@@ -50,8 +51,8 @@ public class CommentService {
       return new ResponseEntity<>("All comments have been deleted!", HttpStatus.OK);
    }
 
-   public List<Comment> getCommentsByAuthor(String author) {
-      List<Comment> comments = commentRepository.findByAuthor(author);
+   public List<Comment> getCommentsByAutore(String autore) {
+      List<Comment> comments = commentRepository.findByAutore(autore);
 
       return comments;
    }
@@ -63,9 +64,10 @@ public class CommentService {
       if (commentData.isPresent()) {
          Comment _comment = commentData.get();
          _comment.setTesto(comment.getTesto());
-         _comment.setAuthor(comment.getAuthor());
+         _comment.setAutore(comment.getAutore());
          _comment.setLike(comment.getLike());
          _comment.setDislike(comment.getDislike());
+         _comment.setPostid(comment.getPostid());
          _comment.setParentid(comment.getParentid());
          _comment.setLevel(comment.getLevel());
          return new ResponseEntity<>(commentRepository.save(_comment), HttpStatus.OK);

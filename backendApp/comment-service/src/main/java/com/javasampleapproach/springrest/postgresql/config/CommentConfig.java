@@ -38,6 +38,7 @@ public class CommentConfig {
                  "Lollo",
                  31,
                  30,
+                 0,
                  1,
                  0,
                  new Timestamp(time1)
@@ -46,6 +47,7 @@ public class CommentConfig {
                  "Per me è cipolla",
                  "Andre",
                  15,
+                 1,
                  1,
                  3,
                  0,
@@ -56,6 +58,7 @@ public class CommentConfig {
                  "Lollo",
                  2,
                  1,
+                 1,
                  2,
                  0,
                  new Timestamp(time3)
@@ -64,6 +67,7 @@ public class CommentConfig {
                  "terzo commento test",
                  "Alice",
                  28,
+                 1,
                  1,
                  5,
                  0,

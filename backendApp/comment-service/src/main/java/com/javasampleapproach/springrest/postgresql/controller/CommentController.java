@@ -49,9 +49,9 @@ public class CommentController {
       return commentService.deleteAllComments();
    }
 
-   @GetMapping(value = "comments/author/{author}")
-   public List<Comment> findCommentsByAuthor(@PathVariable String author) {
-      return commentService.getCommentsByAuthor(author);
+   @GetMapping(value = "comments/autore/{autore}")
+   public List<Comment> findCommentsByAutore(@PathVariable String autore) {
+      return commentService.getCommentsByAutore(autore);
    }
 
    @PutMapping("/comments/{id}")

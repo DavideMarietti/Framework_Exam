@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="set up post obj + added config folder.">
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" afterDir="false" />
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="added service folder to post obj.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680023700421</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added service folder to post obj.">
+      <created>1680024744590</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680024744593</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +300,7 @@
     <MESSAGE value="added service folder to user service" />
     <MESSAGE value="set up comment obj + added config folder + added service folder to comment service." />
     <MESSAGE value="set up post obj + added config folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="set up post obj + added config folder." />
+    <MESSAGE value="added service folder to post obj." />
+    <option name="LAST_COMMIT_MESSAGE" value="added service folder to post obj." />
   </component>
 </project>

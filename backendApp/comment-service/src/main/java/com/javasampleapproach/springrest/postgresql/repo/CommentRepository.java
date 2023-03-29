@@ -9,6 +9,6 @@ import com.javasampleapproach.springrest.postgresql.model.Comment;
 
 // Responsible for customized data access
 public interface CommentRepository extends CrudRepository<Comment, Long> {
-	List<Comment> findByAuthor(String author);
+   List<Comment> findByAutore(String autore);
 }
 
