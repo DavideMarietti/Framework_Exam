@@ -35,7 +35,7 @@ public class PostService {
       return _post;
    }
 
-   public ResponseEntity<String> deletePost( long id) {
+   public ResponseEntity<String> deletePost(long id) {
       System.out.println("Delete Post with ID = " + id + "...");
 
       postRepository.deleteById(id);
@@ -68,6 +68,34 @@ public class PostService {
          _post.setTesto(post.getTesto());
          _post.setLike(post.getLike());
          _post.setDislike(post.getDislike());
+         return new ResponseEntity<>(postRepository.save(_post), HttpStatus.OK);
+      } else {
+         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      }
+   }
+
+   public ResponseEntity<Post> giveLike(long postId, Integer userId) {
+      System.out.println("User with ID = " + userId + " gives a like to the post with ID = " + postId);
+
+      Optional<Post> postData = postRepository.findById(postId);
+
+      if (postData.isPresent()) {
+         Post _post = postData.get();
+         _post.giveLike(userId);
+         return new ResponseEntity<>(postRepository.save(_post), HttpStatus.OK);
+      } else {
+         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      }
+   }
+
+   public ResponseEntity<Post> giveDislike(long postId, Integer userId) {
+      System.out.println("User with ID = " + userId + " gives a like to the post with ID = " + postId);
+
+      Optional<Post> postData = postRepository.findById(postId);
+
+      if (postData.isPresent()) {
+         Post _post = postData.get();
+         _post.giveDislike(userId);
          return new ResponseEntity<>(postRepository.save(_post), HttpStatus.OK);
       } else {
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);

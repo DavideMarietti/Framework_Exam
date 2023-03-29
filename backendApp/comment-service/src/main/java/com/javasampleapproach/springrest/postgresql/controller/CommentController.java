@@ -58,4 +58,14 @@ public class CommentController {
    public ResponseEntity<Comment> updateComment(@PathVariable("id") long id, @RequestBody Comment comment) {
       return commentService.updateComment(id, comment);
    }
+
+   @PutMapping("/comments/like/{id}")
+   public ResponseEntity<Comment> giveLike(@PathVariable("id") long commentId, @RequestBody Integer userId) {
+      return commentService.giveLike(commentId, userId);
+   }
+
+   @PutMapping("/comments/dislike/{id}")
+   public ResponseEntity<Comment> giveDislike(@PathVariable("id") long commentId, @RequestBody Integer userId) {
+      return commentService.giveDislike(commentId, userId);
+   }
 }

@@ -1,19 +1,21 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /*
   {
     "testo": "Per me è cipolla",
     "autore": "Andre",
     "id": 4,
-    "like": 15,
-    "dislike": 1,
+    "like": [1,2,3],
+    "dislike": [4],
     "postid": 0,
-    "parentID": 3,
-    "commcounter": 0,
-    "level": 0
+    "parentid": 3,
+    "level": 0,
+    "creato": "2021-03-25T00:00:00.000+00:00"
   }
 */
 
@@ -31,11 +33,13 @@ public class Comment {
    @Column(name = "autore")
    private String autore;
 
+   @ElementCollection
    @Column(name = "like")
-   private int like;
+   private List<Integer> like;
 
+   @ElementCollection
    @Column(name = "dislike")
-   private int dislike;
+   private List<Integer> dislike;
 
    @Column(name = "postid")
    private int postid;
@@ -58,13 +62,14 @@ public class Comment {
       this.postid = postid;
       this.parentid = parentid;
       this.level = level;
-      this.like = 0;
-      this.dislike = 0;
+      this.like = new ArrayList<Integer>();
+      this.dislike = new ArrayList<Integer>();
       this.creato = new java.util.Date();
    }
 
    // Costruttore utilizzato nel config per inizializzare i commenti
-   public Comment(String testo, String autore, int like, int dislike, int postid, int parentid, int level, Date creato) {
+   public Comment(String testo, String autore, List<Integer> like, List<Integer> dislike, int postid, int parentid,
+                  int level, Date creato) {
       this.testo = testo;
       this.autore = autore;
       this.postid = postid;
@@ -95,20 +100,34 @@ public class Comment {
       this.autore = autore;
    }
 
-   public int getLike() {
+   public List<Integer> getLike() {
       return like;
    }
 
-   public void setLike(int like) {
+   public void setLike(List<Integer> like) {
       this.like = like;
    }
 
-   public int getDislike() {
+   public void giveLike(Integer userid) {
+      if (this.dislike.contains(userid)) {
+         this.dislike.remove(userid);
+      }
+      this.like.add(userid);
+   }
+
+   public List<Integer> getDislike() {
       return dislike;
    }
 
-   public void setDislike(int dislike) {
+   public void setDislike(List<Integer> dislike) {
       this.dislike = dislike;
+   }
+
+   public void giveDislike(Integer userid) {
+      if (this.like.contains(userid)) {
+         this.like.remove(userid);
+      }
+      this.dislike.add(userid);
    }
 
    public int getPostid() {

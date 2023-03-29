@@ -22,40 +22,50 @@ import com.javasampleapproach.springrest.postgresql.service.PostService;
 @RequestMapping("/api/v1")
 public class PostController {
 
-	private final PostService postService;
+   private final PostService postService;
 
-	@Autowired
-	public PostController(PostService postService) {
-		this.postService = postService;
-	}
+   @Autowired
+   public PostController(PostService postService) {
+      this.postService = postService;
+   }
 
-	@GetMapping("/posts")
-	public List<Post> getAllPosts() {
-		return postService.getAllPosts();
-	}
+   @GetMapping("/posts")
+   public List<Post> getAllPosts() {
+      return postService.getAllPosts();
+   }
 
-	@PostMapping(value = "/posts/create")
-	public Post postPost(@RequestBody Post post) {
-		return postService.crateNewPost(post);
-	}
+   @PostMapping(value = "/posts/create")
+   public Post postPost(@RequestBody Post post) {
+      return postService.crateNewPost(post);
+   }
 
-	@DeleteMapping("/posts/{id}")
-	public ResponseEntity<String> deletePost(@PathVariable("id") long id) {
-		return postService.deletePost(id);
-	}
+   @DeleteMapping("/posts/{id}")
+   public ResponseEntity<String> deletePost(@PathVariable("id") long id) {
+      return postService.deletePost(id);
+   }
 
-	@DeleteMapping("/posts/delete")
-	public ResponseEntity<String> deleteAllPosts() {
-		return postService.deleteAllPosts();
-	}
+   @DeleteMapping("/posts/delete")
+   public ResponseEntity<String> deleteAllPosts() {
+      return postService.deleteAllPosts();
+   }
 
-	@GetMapping(value = "posts/titolo/{titolo}")
-	public List<Post> findByTitolo(@PathVariable String titolo) {
-		return postService.findPostByTitolo(titolo);
-	}
+   @GetMapping(value = "posts/titolo/{titolo}")
+   public List<Post> findByTitolo(@PathVariable String titolo) {
+      return postService.findPostByTitolo(titolo);
+   }
 
-	@PutMapping("/posts/{id}")
-	public ResponseEntity<Post> updatePost(@PathVariable("id") long id, @RequestBody Post post) {
-		return postService.updatePost(id, post);
-	}
+   @PutMapping("/posts/{id}")
+   public ResponseEntity<Post> updatePost(@PathVariable("id") long id, @RequestBody Post post) {
+      return postService.updatePost(id, post);
+   }
+
+   @PutMapping("/posts/like/{id}")
+   public ResponseEntity<Post> giveLike(@PathVariable("id") long postId, @RequestBody Integer userId) {
+      return postService.giveLike(postId, userId);
+   }
+
+   @PutMapping("/posts/dislike/{id}")
+   public ResponseEntity<Post> giveDislike(@PathVariable("id") long postId, @RequestBody Integer userId) {
+      return postService.giveDislike(postId, userId);
+   }
 }

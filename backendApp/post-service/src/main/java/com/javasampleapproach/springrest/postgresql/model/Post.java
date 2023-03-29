@@ -1,12 +1,9 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /*
   {
@@ -17,9 +14,9 @@ import java.util.Date;
                fa andare a rendere i bot 3% in 9 mesi (aumento folle) puoi o attender quei mesi o vendere in perdita di quella
                differenza di % di rendimento",
     "autore": "Lollo",
-    "like": 15,
-    "dislike": 7,
-    "commcounter": 0
+    "like": [1,2],
+    "dislike": [0],
+    "creato": "2021-03-25T00:00:00.000+00:00"
   }
  */
 
@@ -40,11 +37,13 @@ public class Post {
    @Column(name = "autore")
    private String autore;
 
+   @ElementCollection
    @Column(name = "like")
-   private int like;
+   private List<Integer> like;
 
+   @ElementCollection
    @Column(name = "dislike")
-   private int dislike;
+   private List<Integer> dislike;
 
    @Column(name = "creato")
    private Date creato;
@@ -57,12 +56,12 @@ public class Post {
       this.titolo = titolo;
       this.testo = testo;
       this.autore = autore;
-      this.like = 0;
-      this.dislike = 0;
+      this.like = new ArrayList<Integer>();
+      this.dislike = new ArrayList<Integer>();
       this.creato = new java.util.Date();
    }
 
-   public Post(String titolo, String testo, String autore, int like, int dislike, Date creato) {
+   public Post(String titolo, String testo, String autore, List<Integer> like, List<Integer> dislike, Date creato) {
       this.titolo = titolo;
       this.testo = testo;
       this.autore = autore;
@@ -103,20 +102,34 @@ public class Post {
       this.autore = autore;
    }
 
-   public int getLike() {
+   public List<Integer> getLike() {
       return like;
    }
 
-   public void setLike(int like) {
+   public void setLike(List<Integer> like) {
       this.like = like;
    }
 
-   public int getDislike() {
+   public void giveLike(Integer userid) {
+      if (this.dislike.contains(userid)) {
+         this.dislike.remove(userid);
+      }
+      this.like.add(userid);
+   }
+
+   public List<Integer> getDislike() {
       return dislike;
    }
 
-   public void setDislike(int dislike) {
+   public void setDislike(List<Integer> dislike) {
       this.dislike = dislike;
+   }
+
+   public void giveDislike(Integer userid) {
+      if (this.like.contains(userid)) {
+         this.like.remove(userid);
+      }
+      this.dislike.add(userid);
    }
 
    public Date getCreato() {

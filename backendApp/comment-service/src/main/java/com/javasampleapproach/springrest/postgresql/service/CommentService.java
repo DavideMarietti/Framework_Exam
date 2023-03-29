@@ -75,4 +75,33 @@ public class CommentService {
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
       }
    }
+
+
+   public ResponseEntity<Comment> giveLike(long commentId, Integer userId) {
+      System.out.println("User with ID = " + userId + " gives a like to the comment with ID = " + commentId);
+
+      Optional<Comment> commentData = commentRepository.findById(commentId);
+
+      if (commentData.isPresent()) {
+         Comment _comment = commentData.get();
+         _comment.giveLike(userId);
+         return new ResponseEntity<>(commentRepository.save(_comment), HttpStatus.OK);
+      } else {
+         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      }
+   }
+
+   public ResponseEntity<Comment> giveDislike(long commentId, Integer userId) {
+      System.out.println("User with ID = " + userId + " gives a like to the comment with ID = " + commentId);
+
+      Optional<Comment> commentData = commentRepository.findById(commentId);
+
+      if (commentData.isPresent()) {
+         Comment _comment = commentData.get();
+         _comment.giveDislike(userId);
+         return new ResponseEntity<>(commentRepository.save(_comment), HttpStatus.OK);
+      } else {
+         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      }
+   }
 }

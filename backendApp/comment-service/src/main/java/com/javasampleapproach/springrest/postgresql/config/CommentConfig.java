@@ -36,8 +36,8 @@ public class CommentConfig {
          Comment comment1 = new Comment(
                  "Hey bro! Sei un grande!!",
                  "Lollo",
-                 31,
-                 30,
+                 List.of(1, 2),
+                 List.of(0),
                  0,
                  1,
                  0,
@@ -46,8 +46,8 @@ public class CommentConfig {
          Comment comment2 = new Comment(
                  "Per me è cipolla",
                  "Andre",
-                 15,
-                 1,
+                 List.of(1, 2),
+                 List.of(0),
                  1,
                  3,
                  0,
@@ -56,8 +56,8 @@ public class CommentConfig {
          Comment comment3 = new Comment(
                  "A me piacciono i treni",
                  "Lollo",
-                 2,
-                 1,
+                 List.of(1, 2),
+                 List.of(0),
                  1,
                  2,
                  0,
@@ -66,8 +66,8 @@ public class CommentConfig {
          Comment comment4 = new Comment(
                  "terzo commento test",
                  "Alice",
-                 28,
-                 1,
+                 List.of(1, 2),
+                 List.of(0),
                  1,
                  5,
                  0,
