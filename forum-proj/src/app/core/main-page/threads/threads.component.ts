@@ -35,6 +35,8 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     });
 
     this.isFetching = true;
+
+
     this.threadService.fetchThreads().subscribe(
       threads => {
         this.isFetching = false;
@@ -153,21 +155,16 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   }*/
 
   comment_counter() {
-    console.log("suca")
-    this.threads.forEach((elem, ind) => {
-      elem.commcounter = 0;
-    });
-    this.comments.forEach((elem, ind) => {
-      elem.commcounter = 0;
-    });
+    this.threads.forEach((element, index) => {element.commcounter = 0;});
+    this.comments.forEach((element, index) => {element.commcounter = 0;});
     this.comments.reverse().forEach((element, index) => {
       this.threads.forEach((elem, ind) => {
-        if (elem.id === element.parentid) {
+        if (elem.id === element.parentid && element.level === 0) {
           elem.commcounter = elem.commcounter + 1 + element.commcounter;
         }
       });
       this.comments.forEach((elem, ind) => {
-        if (elem.id === element.parentid) {
+        if (elem.id === element.parentid && element.level > 0) {
           elem.commcounter = elem.commcounter + 1 + element.commcounter;
         }
       });
@@ -187,7 +184,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     let levelValue: number = 0;
     if (threadcheck) {
       parentidvalue = this.threads[i].id;
-      levelValue = 1;
+      levelValue = 0;
       txt = this.testo_;
       this.testo_ = "";
       this.threads[i].answer = false;
@@ -203,7 +200,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     this.comments.push(newCM);
     if (threadcheck) {
       this.comments.forEach((element, index) => {
-        if (element.level >= 1) {
+        if (element.level >= 0) {
           element.view = false;
         }
       });
