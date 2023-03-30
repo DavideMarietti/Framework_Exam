@@ -1,11 +1,8 @@
 package com.javasampleapproach.springrest.postgresql.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,73 +15,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javasampleapproach.springrest.postgresql.model.Post;
-import com.javasampleapproach.springrest.postgresql.repo.PostRepository;
+import com.javasampleapproach.springrest.postgresql.service.PostService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1")
 public class PostController {
 
-	@Autowired
-	PostRepository repository;
+   private final PostService postService;
 
-	@GetMapping("/posts")
-	public List<Post> getAllPosts() {
-		System.out.println("Get all Posts...");
+   @Autowired
+   public PostController(PostService postService) {
+      this.postService = postService;
+   }
 
-		List<Post> posts = new ArrayList<>();
-		repository.findAll().forEach(posts::add);
+   @GetMapping("/posts")
+   public List<Post> getAllPosts() {
+      return postService.getAllPosts();
+   }
 
-		return posts;
-	}
+   @PostMapping(value = "/posts/create")
+   public Post postPost(@RequestBody Post post) {
+      return postService.crateNewPost(post);
+   }
 
-	@PostMapping(value = "/posts/create")
-	public Post postPost(@RequestBody Post post) {
+   @DeleteMapping("/posts/{id}")
+   public ResponseEntity<String> deletePost(@PathVariable("id") long id) {
+      return postService.deletePost(id);
+   }
 
-		Post _post = repository.save(new Post(post.getTitle(), post.getText(), post.getAge()));
-		return _post;
-	}
+   @DeleteMapping("/posts/delete")
+   public ResponseEntity<String> deleteAllPosts() {
+      return postService.deleteAllPosts();
+   }
 
-	@DeleteMapping("/posts/{id}")
-	public ResponseEntity<String> deletePost(@PathVariable("id") long id) {
-		System.out.println("Delete Post with ID = " + id + "...");
+   @GetMapping(value = "posts/titolo/{titolo}")
+   public List<Post> findByTitolo(@PathVariable String titolo) {
+      return postService.findPostByTitolo(titolo);
+   }
 
-		repository.deleteById(id);
+   @PutMapping("/posts/{id}")
+   public ResponseEntity<Post> updatePost(@PathVariable("id") long id, @RequestBody Post post) {
+      return postService.updatePost(id, post);
+   }
 
-		return new ResponseEntity<>("Post has been deleted!", HttpStatus.OK);
-	}
+   @PutMapping("/posts/like/{id}")
+   public ResponseEntity<Post> giveLike(@PathVariable("id") long postId, @RequestBody Integer userId) {
+      return postService.giveLike(postId, userId);
+   }
 
-	@DeleteMapping("/posts/delete")
-	public ResponseEntity<String> deleteAllPosts() {
-		System.out.println("Delete All Posts...");
-
-		repository.deleteAll();
-
-		return new ResponseEntity<>("All posts have been deleted!", HttpStatus.OK);
-	}
-
-	@GetMapping(value = "posts/age/{age}")
-	public List<Post> findByAge(@PathVariable int age) {
-
-		List<Post> posts = repository.findByAge(age);
-		return posts;
-	}
-
-	@PutMapping("/posts/{id}")
-	public ResponseEntity<Post> updatePost(@PathVariable("id") long id, @RequestBody Post post) {
-		System.out.println("Update Post with ID = " + id + "...");
-
-		Optional<Post> postData = repository.findById(id);
-
-		if (postData.isPresent()) {
-			Post _post = postData.get();
-			_post.setTitle(post.getTitle());
-			_post.setText(post.getText());
-			_post.setAge(post.getAge());
-			_post.setActive(post.isActive());
-			return new ResponseEntity<>(repository.save(_post), HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
+   @PutMapping("/posts/dislike/{id}")
+   public ResponseEntity<Post> giveDislike(@PathVariable("id") long postId, @RequestBody Integer userId) {
+      return postService.giveDislike(postId, userId);
+   }
 }

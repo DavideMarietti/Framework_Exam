@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Framework_Exam.iml" filepath="$PROJECT_DIR$/.idea/Framework_Exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backendApp/comment-service/comment-service.iml" filepath="$PROJECT_DIR$/backendApp/comment-service/comment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forum-proj/forum-proj.iml" filepath="$PROJECT_DIR$/forum-proj/forum-proj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backendApp/post-service/post-service.iml" filepath="$PROJECT_DIR$/backendApp/post-service/post-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backendApp/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/backendApp/service-registry/service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backendApp/user-service/user-service.iml" filepath="$PROJECT_DIR$/backendApp/user-service/user-service.iml" />
     </modules>
   </component>
 </project>

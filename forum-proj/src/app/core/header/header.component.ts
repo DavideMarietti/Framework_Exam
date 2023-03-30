@@ -27,6 +27,11 @@ export class HeaderComponent implements OnInit {
     this.control_.emit(this.control);
   }
 
+  registopen = () : void => {
+    this.control.registform = true;
+    this.control_.emit(this.control);
+  }
+
   setPage(value: number) {
     this.control.pagectrl = value;
     this.control_.emit(this.control);

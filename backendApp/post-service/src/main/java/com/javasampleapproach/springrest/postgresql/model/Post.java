@@ -1,11 +1,24 @@
 package com.javasampleapproach.springrest.postgresql.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/*
+  {
+    "id": 3,
+    "titolo": "Conto deposito - Perchè?",
+    "testo": "I BOT in perdita per carità, ma quale può essere una perdita reale su prodotti a scadenza breve?
+               L’aumento del tasso deciso annualmente. Quindi se tu avevi un BOT che rendeva 2% in 9 mesi e l’aumento dei tassi
+               fa andare a rendere i bot 3% in 9 mesi (aumento folle) puoi o attender quei mesi o vendere in perdita di quella
+               differenza di % di rendimento",
+    "autore": "Lollo",
+    "like": [1,2],
+    "dislike": [0],
+    "creato": "2021-03-25T00:00:00.000+00:00"
+  }
+ */
 
 @Entity
 @Table(name = "post1")
@@ -15,66 +28,128 @@ public class Post {
    @GeneratedValue(strategy = GenerationType.AUTO)
    private long id;
 
-   @Column(name = "title")
-   private String title;
+   @Column(name = "titolo")
+   private String titolo;
 
-   @Column(name = "text")
-   private String text;
+   @Column(name = "testo", length = 2048)
+   private String testo;
 
-   @Column(name = "age")
-   private int age;
+   @Column(name = "autore")
+   private String autore;
 
-   @Column(name = "active")
-   private boolean active;
+   @ElementCollection
+   @Column(name = "like")
+   private List<Integer> like;
+
+   @ElementCollection
+   @Column(name = "dislike")
+   private List<Integer> dislike;
+
+   @Column(name = "creato")
+   private Date creato;
+
 
    public Post() {
    }
 
-   public Post(String title, String text, int age) {
-      this.title = title;
-      this.text = text;
-      this.age = age;
-      this.active = false;
+   public Post(String titolo, String testo, String autore) {
+      this.titolo = titolo;
+      this.testo = testo;
+      this.autore = autore;
+      this.like = new ArrayList<Integer>();
+      this.dislike = new ArrayList<Integer>();
+      this.creato = new java.util.Date();
+   }
+
+   public Post(String titolo, String testo, String autore, List<Integer> like, List<Integer> dislike, Date creato) {
+      this.titolo = titolo;
+      this.testo = testo;
+      this.autore = autore;
+      this.like = like;
+      this.dislike = dislike;
+      this.creato = creato;
    }
 
    public long getId() {
       return id;
    }
 
-   public void setTitle(String title) {
-      this.title = title;
+   public void setId(long id) {
+      this.id = id;
    }
 
-   public String getTitle() {
-      return this.title;
+   public String getTitolo() {
+      return titolo;
    }
 
-   public void setText(String text) {
-      this.text = text;
+   public void setTitolo(String titolo) {
+      this.titolo = titolo;
    }
 
-   public String getText() {
-      return this.text;
+   public String getTesto() {
+      return testo;
    }
 
-   public void setAge(int age) {
-      this.age = age;
+   public void setTesto(String testo) {
+      this.testo = testo;
    }
 
-   public int getAge() {
-      return this.age;
+   public String getAutore() {
+      return autore;
    }
 
-   public boolean isActive() {
-      return active;
+   public void setAutore(String autore) {
+      this.autore = autore;
    }
 
-   public void setActive(boolean active) {
-      this.active = active;
+   public List<Integer> getLike() {
+      return like;
+   }
+
+   public void setLike(List<Integer> like) {
+      this.like = like;
+   }
+
+   public void giveLike(Integer userid) {
+      if (this.dislike.contains(userid)) {
+         this.dislike.remove(userid);
+      }
+      this.like.add(userid);
+   }
+
+   public List<Integer> getDislike() {
+      return dislike;
+   }
+
+   public void setDislike(List<Integer> dislike) {
+      this.dislike = dislike;
+   }
+
+   public void giveDislike(Integer userid) {
+      if (this.like.contains(userid)) {
+         this.like.remove(userid);
+      }
+      this.dislike.add(userid);
+   }
+
+   public Date getCreato() {
+      return creato;
+   }
+
+   public void setCreato(Date creato) {
+      this.creato = creato;
    }
 
    @Override
    public String toString() {
-      return "Post [id=" + id + ", title=" + title + ", age=" + age + ", active=" + active + "]";
+      return "Post{" +
+              "id=" + id +
+              ", titolo='" + titolo + '\'' +
+              ", testo='" + testo + '\'' +
+              ", autore='" + autore + '\'' +
+              ", like=" + like +
+              ", dislike=" + dislike +
+              ", creato=" + creato +
+              '}';
    }
 }
