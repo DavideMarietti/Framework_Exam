@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, AfterContentInit} from '@angular/core';
 import {Comment, Controller, Thread, Utente} from "../../../variable-type";
 import {ThreadsService} from "./threads.service";
 import {HttpClient} from "@angular/common/http";
@@ -9,7 +9,7 @@ import {Subscription} from "rxjs";
   templateUrl: './threads.component.html',
   styleUrls: ['./threads.component.css']
 })
-export class ThreadsComponent implements OnInit {
+export class ThreadsComponent implements OnInit, AfterContentInit {
   @Input() user: Utente;
   @Input() control: Controller;
 
@@ -25,9 +25,10 @@ export class ThreadsComponent implements OnInit {
   testo_: string;
   testo__: string;
 
-  constructor(private http: HttpClient, private threadService: ThreadsService) {}
+  constructor(private http: HttpClient, private threadService: ThreadsService) {
+  }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.errorSub = this.threadService.error.subscribe(errorMessage => {
       // @ts-ignore
       this.errorFetching = errorMessage;
@@ -38,7 +39,12 @@ export class ThreadsComponent implements OnInit {
       threads => {
         this.isFetching = false;
         this.threads = threads;
-        console.log("threads: ", this.threads);
+        this.threads.forEach((element, index) => {
+          element.view = true;
+          element.expand = false;
+          element.answer = false;
+          console.log("thread : ", element);
+        });
       },
       error => {
         this.isFetching = false;
@@ -51,29 +57,23 @@ export class ThreadsComponent implements OnInit {
       comments => {
         this.isFetching = false;
         this.comments = comments;
-        console.log("comments: ", this.comments);
+        this.comments.forEach((element, index) => {
+          element.view = false;
+          element.answer = false;
+        });
+        //console.log("numero thread caricati : ", this.threads.length);
       },
       error => {
         this.isFetching = false;
         this.errorFetching = error.message;
       }
     );
-    console.log("numero thread caricati : ", this.threads.length);
-    this.reset_data();
-    this.comment_counter();
   }
 
-  reset_data(){
-    this.threads.forEach((element, index) => {
-      element.view = true;
-      element.expand = false;
-      element.answer = false;
-      console.log("thread : ", element);
-    });
-    this.comments.forEach((element, index) => {
-      element.view = false;
-      element.answer = false;
-    });
+
+
+  ngAfterContentInit(): void {
+    this.comment_counter();
   }
 
 
@@ -81,13 +81,15 @@ export class ThreadsComponent implements OnInit {
   expand_thread(i) {
     this.threads[i].expand = !this.threads[i].expand;
     this.threads.forEach((element, index) => {
-      if(i !== index){
+      if (i !== index) {
         element.expand = false;
         element.view = !this.threads[i].expand;
       }
     });
-    if(!this.threads[i].expand){
-      this.comments.forEach((element, index) => {element.view = false;});
+    if (!this.threads[i].expand) {
+      this.comments.forEach((element, index) => {
+        element.view = false;
+      });
     }
   }
 
@@ -103,23 +105,23 @@ export class ThreadsComponent implements OnInit {
   }
 
   expand_comments(i, threadcheck: boolean) {
-    if(threadcheck){
+    if (threadcheck) {
       this.comments.forEach((element, index) => {
-        if(element.parentid === this.threads[i].id){
+        if (element.parentid === this.threads[i].id) {
           element.view = !element.view;
-        }else{
+        } else {
           element.view = false;
         }
       });
-    }else{
+    } else {
       this.comments.forEach((element, index) => {
-        if(element.parentid === this.comments[i].id){
+        if (element.parentid === this.comments[i].id) {
           element.view = !element.view;
           this.comments.forEach((elem, ind) => {
-            if(elem.level === element.level-1 && elem.parentid === this.comments[i].parentid && elem.id !== this.comments[i].id){
+            if (elem.level === element.level - 1 && elem.parentid === this.comments[i].parentid && elem.id !== this.comments[i].id) {
               elem.view = !element.view;
             }
-            if(elem.level > element.level && !element.view){
+            if (elem.level > element.level && !element.view) {
               elem.view = false;
             }
           });
@@ -128,10 +130,10 @@ export class ThreadsComponent implements OnInit {
     }
   }
 
-  answer_form(i, threadcheck: boolean){
-    if(threadcheck){
+  answer_form(i, threadcheck: boolean) {
+    if (threadcheck) {
       this.threads[i].answer = !this.threads[i].answer;
-    }else{
+    } else {
       this.comments[i].answer = !this.comments[i].answer;
     }
   }
@@ -151,17 +153,22 @@ export class ThreadsComponent implements OnInit {
     });
   }*/
 
-  comment_counter(){
-    this.threads.forEach((elem, ind) => {elem.commcounter = 0;});
-    this.comments.forEach((elem, ind) => {elem.commcounter = 0;});
+  comment_counter() {
+    console.log("suca")
+    this.threads.forEach((elem, ind) => {
+      elem.commcounter = 0;
+    });
+    this.comments.forEach((elem, ind) => {
+      elem.commcounter = 0;
+    });
     this.comments.reverse().forEach((element, index) => {
       this.threads.forEach((elem, ind) => {
-        if(elem.id === element.parentid){
+        if (elem.id === element.parentid) {
           elem.commcounter = elem.commcounter + 1 + element.commcounter;
         }
       });
       this.comments.forEach((elem, ind) => {
-        if(elem.id === element.parentid){
+        if (elem.id === element.parentid) {
           elem.commcounter = elem.commcounter + 1 + element.commcounter;
         }
       });
@@ -169,23 +176,23 @@ export class ThreadsComponent implements OnInit {
     this.comments.reverse();
   }
 
-  addThread(){
+  addThread() {
     let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, [], [], "");
     this.threads.push(newTD);
     this.control.newthread = false;
   }
 
-  addComment(i, threadcheck: boolean){
+  addComment(i, threadcheck: boolean) {
     let txt: string = "";
     let parentidvalue: number = 0;
     let levelValue: number = 0;
-    if(threadcheck){
+    if (threadcheck) {
       parentidvalue = this.threads[i].id;
       levelValue = 1;
       txt = this.testo_;
       this.testo_ = "";
       this.threads[i].answer = false;
-    }else{
+    } else {
       parentidvalue = this.comments[i].id;
       levelValue = this.comments[i].level + 1;
       txt = this.testo__;
@@ -195,15 +202,15 @@ export class ThreadsComponent implements OnInit {
     let tempID: number = this.genID();
     let newCM = new Comment(tempID, txt, this.user.username, parentidvalue, [], [], levelValue, "");
     this.comments.push(newCM);
-    if(threadcheck){
+    if (threadcheck) {
       this.comments.forEach((element, index) => {
-        if(element.level >= 1){
+        if (element.level >= 1) {
           element.view = false;
         }
       });
-    }else{
+    } else {
       this.comments.forEach((element, index) => {
-        if(element.level > this.comments[i].level){
+        if (element.level > this.comments[i].level) {
           element.view = false;
         }
       });
@@ -216,12 +223,12 @@ export class ThreadsComponent implements OnInit {
   genID() {
     let count: number = 0;
     this.threads.forEach((element, index) => {
-      if(element.id >= count) {
+      if (element.id >= count) {
         count = element.id + 1;
       }
     });
     this.comments.forEach((element, index) => {
-      if(element.id >= count) {
+      if (element.id >= count) {
         count = element.id + 1;
       }
     });
