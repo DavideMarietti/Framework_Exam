@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="caricamento thread da sistemare">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="piedini azzurrini">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/login/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +108,7 @@
       <workItem from="1680170707674" duration="3571000" />
       <workItem from="1680179119191" duration="13000" />
       <workItem from="1680179316354" duration="2224000" />
-      <workItem from="1680182099976" duration="2736000" />
+      <workItem from="1680182099976" duration="6523000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -312,7 +320,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680182535804</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="caricamento thread da sistemare">
+      <created>1680185832238</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680185832238</updated>
+    </task>
+    <task id="LOCAL-00032" summary="giraffe arancioni">
+      <created>1680186401825</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1680186401825</updated>
+    </task>
+    <task id="LOCAL-00033" summary="piedini azzurrini">
+      <created>1680188516561</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1680188516561</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,6 +381,8 @@
     <MESSAGE value="adding API to the user service" />
     <MESSAGE value="adding like-dislike API to the post and comment services." />
     <MESSAGE value="caricamento thread da sistemare" />
-    <option name="LAST_COMMIT_MESSAGE" value="caricamento thread da sistemare" />
+    <MESSAGE value="giraffe arancioni" />
+    <MESSAGE value="piedini azzurrini" />
+    <option name="LAST_COMMIT_MESSAGE" value="piedini azzurrini" />
   </component>
 </project>

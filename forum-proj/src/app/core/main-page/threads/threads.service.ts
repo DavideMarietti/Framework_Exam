@@ -13,7 +13,7 @@ export class ThreadsService {
 
   fetchThreads() {
     return this.http
-      .get<Thread[]>('http://localhost:8081/api/v1/posts')
+      .get<Thread[]>('http://localhost:9191/api/v1/posts')
       .pipe(
         map(responseData => {
           return responseData;
@@ -27,7 +27,7 @@ export class ThreadsService {
 
   fetchComments() {
     return this.http
-      .get<Comment[]>('http://localhost:8082/api/v1/comments')
+      .get<Comment[]>('http://localhost:9191/api/v1/comments')
       .pipe(
         map(responseData => {
           return responseData;
@@ -43,7 +43,25 @@ export class ThreadsService {
     const postData = { titolo: titolo, testo: testo, autore: autore };
     return this.http
       .post<Thread>(
-        'http://localhost:8081/api/v1/posts/create',
+        'http://localhost:9191/api/v1/posts/create',
+        postData
+      )
+      .pipe(
+        map(responseData => {
+          return responseData;
+        }),
+        catchError(errorRes => {
+          // Send to analytics server
+          return throwError(errorRes);
+        })
+      );
+  }
+
+  createComment(testo: string, autore: string, parentid: number, level: number) {
+    const postData = {testo: testo, autore: autore, parentid: parentid, level: level };
+    return this.http
+      .post<Comment>(
+        'http://localhost:9191/api/v1/comments/create',
         postData
       )
       .pipe(

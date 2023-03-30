@@ -196,9 +196,18 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
       this.testo__ = "";
       this.comments[i].answer = false;
     }
-    let tempID: number = this.genID();
-    let newCM = new Comment(tempID, txt, this.user.username, parentidvalue, [], [], levelValue, "");
-    this.comments.push(newCM);
+    lastValueFrom(this.threadService.createComment(txt, this.user.username, parentidvalue, levelValue)).then(
+      comment => {
+        console.log("comment:", comment)
+        this.isFetching = false;
+        this.comments.push(new Comment(comment.id, comment.testo, comment.autore, comment.parentid, comment.like, comment.dislike, comment.level, comment.creato));
+      })
+      .catch(
+        error => {
+          this.isFetching = false;
+          this.errorFetching = error.message;
+        }
+      );
     if (threadcheck) {
       this.comments.forEach((element, index) => {
         if (element.level >= 0) {
@@ -214,21 +223,5 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     }
     this.expand_comments(i, threadcheck);
     this.comment_counter();
-  }
-
-
-  genID() {
-    let count: number = 0;
-    this.threads.forEach((element, index) => {
-      if (element.id >= count) {
-        count = element.id + 1;
-      }
-    });
-    this.comments.forEach((element, index) => {
-      if (element.id >= count) {
-        count = element.id + 1;
-      }
-    });
-    return count;
   }
 }

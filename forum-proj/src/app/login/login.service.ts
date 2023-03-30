@@ -14,7 +14,7 @@ export class LoginService {
 
   fetchUsers() {
     return this.http
-      .get<Utente[]>('http://localhost:8080/api/v1/users')
+      .get<Utente[]>('http://localhost:9191/api/v1/users')
       .pipe(
         catchError(errorRes => {
           // Send to analytics server
