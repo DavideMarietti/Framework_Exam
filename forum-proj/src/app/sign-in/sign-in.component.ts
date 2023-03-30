@@ -34,5 +34,5 @@ export class SignInComponent {
     console.log(data);
   }
 
-    }
+}
 

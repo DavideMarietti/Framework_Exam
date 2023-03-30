@@ -6,25 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="adding like-dislike API to the post and comment services.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/config/PostConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/config/PostConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/classes/com/javasampleapproach/springrest/postgresql/service/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/classes/com/javasampleapproach/springrest/postgresql/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/sign-in/sign-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/sign-in/sign-in.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680087239901</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="adding like-dislike API to the post and comment services.">
+      <created>1680087610060</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680087610061</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

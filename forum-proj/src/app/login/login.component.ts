@@ -1,7 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {timeout} from "rxjs";
+import {Subscription, timeout} from "rxjs";
 import {Controller, Utente} from "../variable-type";
 import users_sample from "../users_sample.json"
+import {HttpClient} from "@angular/common/http";
+import {LoginService} from "./login.service";
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,9 @@ export class LoginComponent implements OnInit{
   @Input() control: Controller;
 
   users: Utente[] = [];
+  isFetching = false;
+  errorFetching = null;
+  private errorSub: Subscription;
 
   @Output() control_ = new EventEmitter<Controller>();
   @Output() user_ = new EventEmitter<Utente>();
@@ -21,16 +26,33 @@ export class LoginComponent implements OnInit{
   errore: boolean = false;
   valido: boolean = false;
 
-  constructor() {
-  }
+  constructor(private http: HttpClient, private loginService: LoginService) {}
 
-  ngOnInit(): void {
-    for(let aa of users_sample){
+  ngOnInit() {
+    /*    for(let aa of users_sample){
       this.users.push(aa);
-    }
+    }     */
+
+    this.errorSub = this.loginService.error.subscribe(errorMessage => {
+      // @ts-ignore
+      this.errorFetching = errorMessage;
+    });
+
+    this.isFetching = true;
+    this.loginService.fetchUsers().subscribe(
+      users => {
+        this.isFetching = false;
+        this.users = users;
+      },
+      error => {
+        this.isFetching = false;
+        this.errorFetching = error.message;
+      }
+    );
   }
 
   login = () : void => {
+    console.log("users: ", this.users)
     let test: boolean = false;
     for (let user in this.users){
       if (this.username === this.users[user].username && this.password === this.users[user].password) {
@@ -67,4 +89,12 @@ export class LoginComponent implements OnInit{
     } catch (err) {
     }
   }*/
+
+  onHandleError() {
+    this.errorFetching = null;
+  }
+
+  ngOnDestroy() {
+    this.errorSub.unsubscribe();
+  }
 }

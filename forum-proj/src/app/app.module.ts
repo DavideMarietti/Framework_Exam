@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import {CoreModule} from "./core/core.module";
 import { SignInComponent } from './sign-in/sign-in.component';
+import {HttpClientModule} from "@angular/common/http";
 /*import { StockChartComponent } from './stock-chart/stock-chart.component';*/
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
