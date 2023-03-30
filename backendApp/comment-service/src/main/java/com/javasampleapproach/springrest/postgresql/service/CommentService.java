@@ -31,8 +31,7 @@ public class CommentService {
    }
 
    public Comment addNewComment(Comment comment) {
-      Comment _comment = commentRepository.save(new Comment(comment.getTesto(), comment.getAutore(), comment.getPostid(),
-              comment.getParentid(), comment.getLevel()));
+      Comment _comment = commentRepository.save(new Comment(comment.getTesto(), comment.getAutore(), comment.getParentid(), comment.getLevel()));
 
       return _comment;
    }
@@ -67,7 +66,6 @@ public class CommentService {
          _comment.setAutore(comment.getAutore());
          _comment.setLike(comment.getLike());
          _comment.setDislike(comment.getDislike());
-         _comment.setPostid(comment.getPostid());
          _comment.setParentid(comment.getParentid());
          _comment.setLevel(comment.getLevel());
          return new ResponseEntity<>(commentRepository.save(_comment), HttpStatus.OK);

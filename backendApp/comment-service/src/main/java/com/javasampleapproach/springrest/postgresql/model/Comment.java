@@ -41,9 +41,6 @@ public class Comment {
    @Column(name = "dislike")
    private List<Integer> dislike;
 
-   @Column(name = "postid")
-   private int postid;
-
    @Column(name = "parentid")
    private int parentid;
 
@@ -56,10 +53,9 @@ public class Comment {
    public Comment() {
    }
 
-   public Comment(String testo, String autore, int postid, int parentid, int level) {
+   public Comment(String testo, String autore, int parentid, int level) {
       this.testo = testo;
       this.autore = autore;
-      this.postid = postid;
       this.parentid = parentid;
       this.level = level;
       this.like = new ArrayList<Integer>();
@@ -68,11 +64,10 @@ public class Comment {
    }
 
    // Costruttore utilizzato nel config per inizializzare i commenti
-   public Comment(String testo, String autore, List<Integer> like, List<Integer> dislike, int postid, int parentid,
+   public Comment(String testo, String autore, List<Integer> like, List<Integer> dislike, int parentid,
                   int level, Date creato) {
       this.testo = testo;
       this.autore = autore;
-      this.postid = postid;
       this.parentid = parentid;
       this.level = level;
       this.like = like;
@@ -130,14 +125,6 @@ public class Comment {
       this.dislike.add(userid);
    }
 
-   public int getPostid() {
-      return postid;
-   }
-
-   public void setPostid(int postid) {
-      this.postid = postid;
-   }
-
    public int getParentid() {
       return parentid;
    }
@@ -170,7 +157,6 @@ public class Comment {
               ", autore='" + autore + '\'' +
               ", like=" + like +
               ", dislike=" + dislike +
-              ", postid=" + postid +
               ", parentid=" + parentid +
               ", level=" + level +
               ", creato=" + creato +

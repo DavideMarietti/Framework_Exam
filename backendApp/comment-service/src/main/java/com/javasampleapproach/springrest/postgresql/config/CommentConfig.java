@@ -38,7 +38,6 @@ public class CommentConfig {
                  "Lollo",
                  List.of(1, 2),
                  List.of(0),
-                 0,
                  1,
                  0,
                  new Timestamp(time1)
@@ -50,7 +49,6 @@ public class CommentConfig {
                  List.of(0),
                  1,
                  1,
-                 1,
                  new Timestamp(time2)
          );
          Comment comment3 = new Comment(
@@ -58,7 +56,6 @@ public class CommentConfig {
                  "Lollo",
                  List.of(1, 2),
                  List.of(0),
-                 1,
                  2,
                  2,
                  new Timestamp(time3)
@@ -68,7 +65,6 @@ public class CommentConfig {
                  "Alice",
                  List.of(1, 2),
                  List.of(0),
-                 1,
                  1,
                  1,
                  new Timestamp(time4)
