@@ -66,7 +66,7 @@
 
   <div *ngFor="let comment of comments; let i = index" [attr.data-index]="i">
     <div class="comment-box"
-         [ngStyle]="{'margin-left': comment.level*10+'px'}"
+         [ngStyle]="{'margin-left': (comment.level+1)*10+'px'}"
          *ngIf="comment.view">
 
       <div class="thread-sub2">

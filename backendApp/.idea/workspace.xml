@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="Added config to user service.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/comment-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/comment-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/repo/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/post-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/post-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/user-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/user-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

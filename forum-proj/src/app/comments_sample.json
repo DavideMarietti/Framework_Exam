@@ -2,7 +2,7 @@
   {
     "testo": "Hey bro! Sei un grande!!",
     "autore": "Lollo",
-    "id": 2,
+    "id": 1,
     "like": 31,
     "dislike": 30,
     "parentID": 1,
@@ -12,30 +12,30 @@
   {
     "testo": "Per me è cipolla",
     "autore": "Andre",
-    "id": 4,
+    "id": 2,
     "like": 15,
     "dislike": 1,
-    "parentID": 3,
+    "parentID": 1,
     "commcounter": 0,
-    "level": 0
+    "level": 1
   },
   {
     "testo": "A me piacciono i treni",
     "autore": "Lollo",
-    "id": 5,
+    "id": 3,
     "like": 2,
     "dislike": 1,
     "parentID": 2,
     "commcounter": 0,
-    "level": 0
+      "level": 2
   },
   {
     "testo": "terzo commento test",
     "autore": "Alice",
-    "id": 6,
+    "id": 4,
     "like": 28,
     "dislike": 1,
-    "parentID": 5,
+    "parentID": 1,
     "commcounter": 0,
     "level": 0
   }
