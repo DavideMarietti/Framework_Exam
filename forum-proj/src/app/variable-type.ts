@@ -29,7 +29,7 @@ export class Comment{
   view?: boolean;
   parentid: number;
   answer?: boolean;
-  commcounter?: number;
+  commcounter: number;
   level: number;
   creato: string;
 
@@ -58,7 +58,7 @@ export class Thread{
   titolo: string;
   expand?: boolean;
   answer?: boolean;
-  commcounter?: number;
+  commcounter: number;
   creato: string;
 
   constructor(id: number,title: string,testo: string, autore: string, like: number[], dislike: number[], creato: string) {

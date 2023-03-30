@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Comment, Controller, Thread, Utente} from "../../../variable-type";
-import threads_sample from "../../../threads_sample.json";
-import comments_sample from "../../../comments_sample.json";
 import {ThreadsService} from "./threads.service";
 import {HttpClient} from "@angular/common/http";
 import {Subscription} from "rxjs";
@@ -30,10 +28,6 @@ export class ThreadsComponent implements OnInit {
   constructor(private http: HttpClient, private threadService: ThreadsService) {}
 
   ngOnInit(): void{
-    //this.load_data();
-    //this.comment_counter();
-    //this.hierarchy_analyzer();
-
     this.errorSub = this.threadService.error.subscribe(errorMessage => {
       // @ts-ignore
       this.errorFetching = errorMessage;
@@ -44,7 +38,7 @@ export class ThreadsComponent implements OnInit {
       threads => {
         this.isFetching = false;
         this.threads = threads;
-        console.log("threads: ", threads);
+        console.log("threads: ", this.threads);
       },
       error => {
         this.isFetching = false;
@@ -57,32 +51,34 @@ export class ThreadsComponent implements OnInit {
       comments => {
         this.isFetching = false;
         this.comments = comments;
-        console.log("comments: ", comments);
+        console.log("comments: ", this.comments);
       },
       error => {
         this.isFetching = false;
         this.errorFetching = error.message;
       }
     );
+    console.log("numero thread caricati : ", this.threads.length);
+    this.reset_data();
+    this.comment_counter();
   }
 
-  load_data(){
-    /*
-    for(let aa of threads_sample){
-      this.threads.push(aa);
-    }
-    this.threads.forEach((element, index) => {element.view = true;});
-    for(let aa of comments_sample){
-      this.comments.push(aa);
-    }
-
-     */
+  reset_data(){
+    this.threads.forEach((element, index) => {
+      element.view = true;
+      element.expand = false;
+      element.answer = false;
+      console.log("thread : ", element);
+    });
+    this.comments.forEach((element, index) => {
+      element.view = false;
+      element.answer = false;
+    });
   }
 
 
 
   expand_thread(i) {
-    /*
     this.threads[i].expand = !this.threads[i].expand;
     this.threads.forEach((element, index) => {
       if(i !== index){
@@ -93,8 +89,6 @@ export class ThreadsComponent implements OnInit {
     if(!this.threads[i].expand){
       this.comments.forEach((element, index) => {element.view = false;});
     }
-
-     */
   }
 
   reactionControl(i: any, threadcheck: boolean, reactiontype: boolean) {
@@ -109,10 +103,9 @@ export class ThreadsComponent implements OnInit {
   }
 
   expand_comments(i, threadcheck: boolean) {
-    /*
     if(threadcheck){
       this.comments.forEach((element, index) => {
-        if(element.parentID === this.threads[i].id){
+        if(element.parentid === this.threads[i].id){
           element.view = !element.view;
         }else{
           element.view = false;
@@ -120,10 +113,10 @@ export class ThreadsComponent implements OnInit {
       });
     }else{
       this.comments.forEach((element, index) => {
-        if(element.parentID === this.comments[i].id){
+        if(element.parentid === this.comments[i].id){
           element.view = !element.view;
           this.comments.forEach((elem, ind) => {
-            if(elem.level === element.level-1 && elem.parentID === this.comments[i].parentID && elem.id !== this.comments[i].id){
+            if(elem.level === element.level-1 && elem.parentid === this.comments[i].parentid && elem.id !== this.comments[i].id){
               elem.view = !element.view;
             }
             if(elem.level > element.level && !element.view){
@@ -133,87 +126,74 @@ export class ThreadsComponent implements OnInit {
         }
       });
     }
-
-     */
   }
 
   answer_form(i, threadcheck: boolean){
-    /*
     if(threadcheck){
       this.threads[i].answer = !this.threads[i].answer;
     }else{
       this.comments[i].answer = !this.comments[i].answer;
     }
-     */
   }
 
-  hierarchy_analyzer() {
-    /*
+  /*hierarchy_analyzer() {
     this.comments.forEach((element, index) => {
       this.threads.forEach((elem, ind) => {
-        if(element.parentID === elem.id){
+        if(element.parentid === elem.id){
           element.level = 1;
         }
       });
       this.comments.forEach((elem, ind) => {
-        if(element.parentID === elem.id){
+        if(element.parentid === elem.id){
           element.level = elem.level + 1;
         }
       });
     });
-
-     */
-  }
+  }*/
 
   comment_counter(){
-    /*
     this.threads.forEach((elem, ind) => {elem.commcounter = 0;});
     this.comments.forEach((elem, ind) => {elem.commcounter = 0;});
     this.comments.reverse().forEach((element, index) => {
       this.threads.forEach((elem, ind) => {
-        if(elem.id === element.parentID){
+        if(elem.id === element.parentid){
           elem.commcounter = elem.commcounter + 1 + element.commcounter;
         }
       });
       this.comments.forEach((elem, ind) => {
-        if(elem.id === element.parentID){
+        if(elem.id === element.parentid){
           elem.commcounter = elem.commcounter + 1 + element.commcounter;
         }
       });
     });
     this.comments.reverse();
-
-     */
   }
 
   addThread(){
-    /*
-    let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, 0, 0, 0);
+    let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, [], [], "");
     this.threads.push(newTD);
     this.control.newthread = false;
-     */
   }
 
   addComment(i, threadcheck: boolean){
-    /*
     let txt: string = "";
-    let parentIDvalue: number = 0;
-    let Levelvalue: number = 0;
+    let parentidvalue: number = 0;
+    let levelValue: number = 0;
     if(threadcheck){
-      parentIDvalue = this.threads[i].id;
-      Levelvalue = 1;
+      parentidvalue = this.threads[i].id;
+      levelValue = 1;
       txt = this.testo_;
       this.testo_ = "";
       this.threads[i].answer = false;
     }else{
-      parentIDvalue = this.comments[i].id;
-      Levelvalue = this.comments[i].level + 1;
+      parentidvalue = this.comments[i].id;
+      levelValue = this.comments[i].level + 1;
       txt = this.testo__;
       this.testo__ = "";
       this.comments[i].answer = false;
     }
     let tempID: number = this.genID();
-    let newCM = new Comment(tempID, txt, this.user.username, parentIDvalue, 0, 0, 0, Levelvalue);
+    let newCM = new Comment(tempID, txt, this.user.username, parentidvalue, [], [], levelValue, "");
     this.comments.push(newCM);
     if(threadcheck){
       this.comments.forEach((element, index) => {
@@ -230,14 +210,10 @@ export class ThreadsComponent implements OnInit {
     }
     this.expand_comments(i, threadcheck);
     this.comment_counter();
-
-
-     */
   }
 
 
   genID() {
-    /*
     let count: number = 0;
     this.threads.forEach((element, index) => {
       if(element.id >= count) {
@@ -250,7 +226,5 @@ export class ThreadsComponent implements OnInit {
       }
     });
     return count;
-
-     */
   }
 }
