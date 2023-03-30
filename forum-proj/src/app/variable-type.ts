@@ -1,4 +1,5 @@
 export class Utente {
+  id: number;
   username : string;
   password: string;
   nome : string;
@@ -7,7 +8,8 @@ export class Utente {
   eta : number;
   image: string;
 
-  constructor(username: string, password: string, nome: string, cognome: string, sesso: string, eta: number, image: string) {
+  constructor(id: number, username: string, password: string, nome: string, cognome: string, sesso: string, eta: number, image: string) {
+    this.id = id;
     this.username = username;
     this.password = password;
     this.nome = nome;
@@ -27,10 +29,11 @@ export class Comment{
   view?: boolean;
   parentID: number;
   answer?: boolean;
-  commcounter: number;
+  commcounter?: number;
   level: number;
+  creato: string;
 
-  constructor(id: number,testo: string, autore: string, parentID: number, like: number, dislike: number, commcounter: number, level: number) {
+  constructor(id: number,testo: string, autore: string, parentID: number, like: number, dislike: number, level: number, creato: string) {
     this.testo = testo;
     this.autore = autore;
     this.id = id;
@@ -39,8 +42,9 @@ export class Comment{
     this.view = false;
     this.parentID = parentID;
     this.answer = false;
-    this.commcounter = commcounter;
+    this.commcounter = 0;
     this.level = level;
+    this.creato = creato;
   }
 }
 
@@ -54,9 +58,10 @@ export class Thread{
   titolo: string;
   expand?: boolean;
   answer?: boolean;
-  commcounter: number;
+  commcounter?: number;
+  creato: string;
 
-  constructor(id: number,title: string,testo: string, autore: string, like: number, dislike: number, commcounter: number) {
+  constructor(id: number,title: string,testo: string, autore: string, like: number, dislike: number, creato: string) {
     this.testo = testo;
     this.autore = autore;
     this.id = id;
@@ -66,7 +71,8 @@ export class Thread{
     this.titolo = title;
     this.expand = false;
     this.answer = false;
-    this.commcounter = commcounter;
+    this.commcounter = 0;
+    this.creato = creato;
   }
 }
 
