@@ -1,15 +1,18 @@
-  <div *ngFor="let thread of threads; let i = index" [attr.data-index]="i">
+<div *ngIf="control.autenticato && control.newthread"
+     class="newTD">
+  <div class="form-group part1">
+    <input type="text" class="form-control"  id="titolo" placeholder="Inserisci titolo..." [(ngModel)] = "titolo" >
+  </div>
+  <div class="form-group part3">
+    <textarea type="text" class="form-control"  id="testo" placeholder="Inserisci testo..." [(ngModel)] = "testo"></textarea>
+  </div>
+  <div class="form-group part2">
+    <button (click) = addThread() class="btnSubmit">Pubblica</button>
+  </div>
+</div>
+
+<div *ngFor="let thread of threads; let i = index" [attr.data-index]="i">
     <div class="thread-box" *ngIf="thread.view">
-      <div class="thread-sub1">
-        <img src="./assets/images/arrow-up.png"
-             class="reaction-icon"
-             (click)=reactionControl(i,true,true)>
-        <p class="reaction-p">{{thread.like-thread.dislike}}</p>
-        <img src="./assets/images/arrow-down.png"
-             class="reaction-icon"
-             (click)=reactionControl(i,true,false)>
-        <img class="down-arrow">
-      </div>
 
       <div class="thread-sub2">
         <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
@@ -19,43 +22,52 @@
            *ngIf="thread.expand"
         >{{thread.testo}}</p>
 
-        <div class="thread-sub3">
+        <div class="thread-bar">
+          <img src="./assets/images/arrow-up.png"
+               class="icon"
+               (click)=reactionControl(i,true,true)>
+          <p class="reaction-p">{{thread.like-thread.dislike}}</p>
+          <img src="./assets/images/arrow-down.png"
+               class="icon"
+               (click)=reactionControl(i,true,false)>
+
           <div class="comment"
                (click)=expand_comments(i,true)
                *ngIf="thread.expand"
           ><img src="./assets/images/chat.png"
-                class="comment-icon"
+                class="icon"
           ><p>{{thread.commcounter}}</p>
           </div>
 
           <div class="answer"
                *ngIf="thread.expand && control.autenticato"
-               (click)="answer_form(i)"
-          ><img src="./assets/images/reply.png"
-                 class="comment-icon">
-            <textarea *ngIf="thread.answer">
-
-            </textarea>
+               (click)="answer_form(i, true)"
+          ><img src="./assets/images/answer.png"
+                class="icon">
           </div>
+
+          <img src="./assets/images/send.png"
+               class="icon"
+               *ngIf="thread.answer"
+               (click)="addComment(i, true)">
         </div>
+
+        <textarea type="text"
+                  class="form-control"
+                  id="testo_"
+                  placeholder="Inserisci testo..."
+                  *ngIf="thread.answer"
+                  [(ngModel)] = "testo_"
+        ></textarea>
+
       </div>
     </div>
-  </div>
+</div>
 
   <div *ngFor="let comment of comments; let i = index" [attr.data-index]="i">
     <div class="comment-box"
          [ngStyle]="{'margin-left': comment.level*10+'px'}"
          *ngIf="comment.view">
-      <div class="thread-sub1">
-        <img src="./assets/images/arrow-up.png"
-             class="reaction-icon"
-             (click)=reactionControl(i,false,true)>
-        <p class="reaction-p">{{comment.like-comment.dislike}}</p>
-        <img src="./assets/images/arrow-down.png"
-             class="reaction-icon"
-             (click)=reactionControl(i,false,false)>
-        <img class="down-arrow">
-      </div>
 
       <div class="thread-sub2">
         <p class="author"><i>Author <b>{{comment.autore}} level {{comment.level}}</b></i></p>
@@ -63,19 +75,47 @@
         >{{comment.testo}}</p>
       </div>
 
-      <div class="thread-sub3">
+      <div class="thread-bar">
+        <img src="./assets/images/arrow-up.png"
+             class="icon"
+             (click)=reactionControl(i,false,true)>
+        <p class="reaction-p">{{comment.like-comment.dislike}}</p>
+        <img src="./assets/images/arrow-down.png"
+             class="icon"
+             (click)=reactionControl(i,false,false)>
+        <img class="down-arrow">
+
         <div class="comment"
              (click)=expand_comments(i,false)
         ><img src="./assets/images/chat.png"
-              class="comment-icon"
+              class="icon"
         ><p>{{comment.commcounter}}</p>
         </div>
 
-        <div class="answer">
-          <img src="./assets/images/reply.png"
-               class="comment-icon"
+        <div class="answer"
+        ><img src="./assets/images/answer.png"
+               class="icon"
                *ngIf="control.autenticato"
-          ></div>
+              (click)="answer_form(i, false)"
+        ></div>
+
+        <img src="./assets/images/send.png"
+             class="icon"
+             *ngIf="comment.answer"
+             (click)="addComment(i, false)">
+
       </div>
+
+      <textarea type="text"
+                class="form-control"
+                id="testo__"
+                placeholder="Inserisci testo..."
+                *ngIf="comment.answer"
+                [(ngModel)] = "testo__"
+      ></textarea>
+
     </div>
   </div>
+
+
+

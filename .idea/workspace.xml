@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="commenti su livelli diversi vengono spostati verso dx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/jumbotron/jumbotron.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/jumbotron/jumbotron.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/variable-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/variable-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/assets/images/arrow-down.png" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/assets/images/arrow-down.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/assets/images/arrow-up.png" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/assets/images/arrow-up.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/assets/images/chat.png" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/assets/images/chat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/assets/images/down_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/assets/images/reply.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/assets/images/up_arrow.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +90,9 @@
       <workItem from="1679707897563" duration="12352000" />
       <workItem from="1679768862501" duration="5587000" />
       <workItem from="1679933800445" duration="1219000" />
+      <workItem from="1679939659594" duration="7534000" />
+      <workItem from="1680039450117" duration="5864000" />
+      <workItem from="1680125704856" duration="9150000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -203,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679774581353</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="commenti su livelli diversi vengono spostati verso dx">
+      <created>1679939994496</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1679939994496</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +259,7 @@
     <MESSAGE value="threads-sample" />
     <MESSAGE value="Ora thread e relativi commenti (anche in risposta ad altri commenti) funzionano e sono visualizzati in modo interattivo." />
     <MESSAGE value="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="Potenziato tasto per espandere i commenti, ora visualizza il numero di commenti presenti sotto il thread" />
+    <MESSAGE value="commenti su livelli diversi vengono spostati verso dx" />
+    <option name="LAST_COMMIT_MESSAGE" value="commenti su livelli diversi vengono spostati verso dx" />
   </component>
 </project>

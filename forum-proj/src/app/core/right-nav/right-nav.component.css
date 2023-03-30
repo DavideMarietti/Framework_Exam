@@ -26,3 +26,12 @@ button {
   border-radius: 5px;
   padding: 5px;
 }
+
+.pd {
+  width: 100%;
+}
+
+.new-thread {
+  padding: 10px;
+  text-align: center;
+}
