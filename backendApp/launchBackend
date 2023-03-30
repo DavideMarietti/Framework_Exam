@@ -4,6 +4,10 @@ cd ./service-registry
 ./mvnw -DskipTests=true clean package
 docker build -t service-registry .
 
+cd ../api-gateway
+./mvnw -DskipTests=true clean package
+docker build -t api-gateway .
+
 cd ../user-service
 ./mvnw -DskipTests=true clean package
 docker build -t user-service .
