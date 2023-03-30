@@ -61,7 +61,6 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
           element.view = false;
           element.answer = false;
         });
-        //console.log("numero thread caricati : ", this.threads.length);
       },
       error => {
         this.isFetching = false;
@@ -107,7 +106,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   expand_comments(i, threadcheck: boolean) {
     if (threadcheck) {
       this.comments.forEach((element, index) => {
-        if (element.parentid === this.threads[i].id) {
+        if (element.parentid === this.threads[i].id  && element.level === 0) {
           element.view = !element.view;
         } else {
           element.view = false;
@@ -115,7 +114,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
       });
     } else {
       this.comments.forEach((element, index) => {
-        if (element.parentid === this.comments[i].id) {
+        if (element.parentid === this.comments[i].id && element.level > 0) {
           element.view = !element.view;
           this.comments.forEach((elem, ind) => {
             if (elem.level === element.level - 1 && elem.parentid === this.comments[i].parentid && elem.id !== this.comments[i].id) {
