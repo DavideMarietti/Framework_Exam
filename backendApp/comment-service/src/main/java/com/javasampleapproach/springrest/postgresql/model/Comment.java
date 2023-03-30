@@ -12,7 +12,6 @@ import java.util.List;
     "id": 4,
     "like": [1,2,3],
     "dislike": [4],
-    "postid": 0,
     "parentid": 3,
     "level": 0,
     "creato": "2021-03-25T00:00:00.000+00:00"
