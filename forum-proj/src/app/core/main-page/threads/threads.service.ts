@@ -26,6 +26,10 @@ export class ThreadsService {
     return this.http
       .get<Comment[]>('http://localhost:8082/api/v1/comments')
       .pipe(
+        map(responseData => {
+          responseData.forEach((element) => {element.view = true;});
+          return responseData;
+        }),
         catchError(errorRes => {
           // Send to analytics server
           return throwError(errorRes);

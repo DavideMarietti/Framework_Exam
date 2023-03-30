@@ -51,8 +51,8 @@ public class PostService {
       return new ResponseEntity<>("All posts have been deleted!", HttpStatus.OK);
    }
 
-   public List<Post> findPostByTitolo(String titolo) {
-      List<Post> posts = postRepository.findByTitolo(titolo);
+   public List<Post> findPostByAutore(String autore) {
+      List<Post> posts = postRepository.findByAutore(autore);
 
       return posts;
    }

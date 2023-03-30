@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="post-service" />
-        <module name="service-registry" />
+        <module name="comment-service" />
         <module name="user-service" />
+        <module name="service-registry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="comment-service" target="11" />
       <module name="post-service" target="11" />
       <module name="service-registry" target="11" />
       <module name="untitled" target="17" />
@@ -20,6 +22,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="comment-service" options="-parameters" />
       <module name="post-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
       <module name="user-service" options="-parameters" />

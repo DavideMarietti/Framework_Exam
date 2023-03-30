@@ -49,9 +49,9 @@ public class PostController {
       return postService.deleteAllPosts();
    }
 
-   @GetMapping(value = "posts/titolo/{titolo}")
-   public List<Post> findByTitolo(@PathVariable String titolo) {
-      return postService.findPostByTitolo(titolo);
+   @GetMapping(value = "posts/autore/{autore}")
+   public List<Post> findByAutore(@PathVariable String autore) {
+      return postService.findPostByAutore(autore);
    }
 
    @PutMapping("/posts/{id}")
