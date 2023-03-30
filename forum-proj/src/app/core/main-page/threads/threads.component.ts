@@ -1,32 +1,73 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Comment, Controller, Thread, Utente} from "../../../variable-type";
 import threads_sample from "../../../threads_sample.json";
 import comments_sample from "../../../comments_sample.json";
+import {ThreadsService} from "./threads.service";
+import {HttpClient} from "@angular/common/http";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-threads',
   templateUrl: './threads.component.html',
   styleUrls: ['./threads.component.css']
 })
-export class ThreadsComponent {
+export class ThreadsComponent implements OnInit {
   @Input() user: Utente;
   @Input() control: Controller;
 
   threads: Thread[] = [];
   comments: Comment[] = [];
 
+  isFetching = false;
+  errorFetching = null;
+
+  private errorSub: Subscription;
   titolo: string;
   testo: string;
   testo_: string;
   testo__: string;
 
+  constructor(private http: HttpClient, private threadService: ThreadsService) {}
+
   ngOnInit(): void{
-    this.load_data();
-    this.comment_counter();
-    this.hierarchy_analyzer();
+    //this.load_data();
+    //this.comment_counter();
+    //this.hierarchy_analyzer();
+
+    this.errorSub = this.threadService.error.subscribe(errorMessage => {
+      // @ts-ignore
+      this.errorFetching = errorMessage;
+    });
+
+    this.isFetching = true;
+    this.threadService.fetchThreads().subscribe(
+      threads => {
+        this.isFetching = false;
+        this.threads = threads;
+        console.log("threads: ", threads);
+      },
+      error => {
+        this.isFetching = false;
+        this.errorFetching = error.message;
+      }
+    );
+
+    this.isFetching = true;
+    this.threadService.fetchComments().subscribe(
+      comments => {
+        this.isFetching = false;
+        this.comments = comments;
+        console.log("comments: ", comments);
+      },
+      error => {
+        this.isFetching = false;
+        this.errorFetching = error.message;
+      }
+    );
   }
 
   load_data(){
+    /*
     for(let aa of threads_sample){
       this.threads.push(aa);
     }
@@ -34,9 +75,14 @@ export class ThreadsComponent {
     for(let aa of comments_sample){
       this.comments.push(aa);
     }
+
+     */
   }
 
+
+
   expand_thread(i) {
+    /*
     this.threads[i].expand = !this.threads[i].expand;
     this.threads.forEach((element, index) => {
       if(i !== index){
@@ -47,18 +93,23 @@ export class ThreadsComponent {
     if(!this.threads[i].expand){
       this.comments.forEach((element, index) => {element.view = false;});
     }
+
+     */
   }
 
   reactionControl(i: any, threadcheck: boolean, reactiontype: boolean) {
+    /*
     if(this.control.autenticato){
       if(threadcheck && reactiontype){ this.threads[i].like++; }
       if(threadcheck && !reactiontype){ this.threads[i].dislike++; }
       if(!threadcheck && reactiontype){ this.comments[i].like++; }
       if(!threadcheck && !reactiontype){ this.comments[i].dislike++; }
     }
+     */
   }
 
   expand_comments(i, threadcheck: boolean) {
+    /*
     if(threadcheck){
       this.comments.forEach((element, index) => {
         if(element.parentID === this.threads[i].id){
@@ -82,17 +133,22 @@ export class ThreadsComponent {
         }
       });
     }
+
+     */
   }
 
   answer_form(i, threadcheck: boolean){
+    /*
     if(threadcheck){
       this.threads[i].answer = !this.threads[i].answer;
     }else{
       this.comments[i].answer = !this.comments[i].answer;
     }
+     */
   }
 
   hierarchy_analyzer() {
+    /*
     this.comments.forEach((element, index) => {
       this.threads.forEach((elem, ind) => {
         if(element.parentID === elem.id){
@@ -105,9 +161,12 @@ export class ThreadsComponent {
         }
       });
     });
+
+     */
   }
 
   comment_counter(){
+    /*
     this.threads.forEach((elem, ind) => {elem.commcounter = 0;});
     this.comments.forEach((elem, ind) => {elem.commcounter = 0;});
     this.comments.reverse().forEach((element, index) => {
@@ -123,15 +182,20 @@ export class ThreadsComponent {
       });
     });
     this.comments.reverse();
+
+     */
   }
 
   addThread(){
+    /*
     let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, 0, 0, 0);
     this.threads.push(newTD);
     this.control.newthread = false;
+     */
   }
 
   addComment(i, threadcheck: boolean){
+    /*
     let txt: string = "";
     let parentIDvalue: number = 0;
     let Levelvalue: number = 0;
@@ -167,10 +231,13 @@ export class ThreadsComponent {
     this.expand_comments(i, threadcheck);
     this.comment_counter();
 
+
+     */
   }
 
 
   genID() {
+    /*
     let count: number = 0;
     this.threads.forEach((element, index) => {
       if(element.id >= count) {
@@ -183,5 +250,7 @@ export class ThreadsComponent {
       }
     });
     return count;
+
+     */
   }
 }

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="Added config to user service.">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum-proj/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../forum-proj/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum-proj/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../forum-proj/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum-proj/src/app/sign-in/sign-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../forum-proj/src/app/sign-in/sign-in.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -24,23 +24,23 @@ export class Comment{
   testo: string;
   autore: string;
   id: number;
-  like: number;
-  dislike: number;
+  like: number[];
+  dislike: number[];
   view?: boolean;
-  parentID: number;
+  parentid: number;
   answer?: boolean;
   commcounter?: number;
   level: number;
   creato: string;
 
-  constructor(id: number,testo: string, autore: string, parentID: number, like: number, dislike: number, level: number, creato: string) {
+  constructor(id: number,testo: string, autore: string, parentid: number, like: number[], dislike: number[], level: number, creato: string) {
     this.testo = testo;
     this.autore = autore;
     this.id = id;
     this.like = like;
     this.dislike = dislike;
     this.view = false;
-    this.parentID = parentID;
+    this.parentid = parentid;
     this.answer = false;
     this.commcounter = 0;
     this.level = level;
@@ -52,8 +52,8 @@ export class Thread{
   testo: string;
   autore: string;
   id: number;
-  like: number;
-  dislike: number;
+  like: number[];
+  dislike: number[];
   view?: boolean;
   titolo: string;
   expand?: boolean;
@@ -61,7 +61,7 @@ export class Thread{
   commcounter?: number;
   creato: string;
 
-  constructor(id: number,title: string,testo: string, autore: string, like: number, dislike: number, creato: string) {
+  constructor(id: number,title: string,testo: string, autore: string, like: number[], dislike: number[], creato: string) {
     this.testo = testo;
     this.autore = autore;
     this.id = id;

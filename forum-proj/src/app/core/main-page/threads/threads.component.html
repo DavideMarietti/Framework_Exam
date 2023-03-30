@@ -26,7 +26,7 @@
           <img src="./assets/images/arrow-up.png"
                class="icon"
                (click)=reactionControl(i,true,true)>
-          <p class="reaction-p">{{thread.like-thread.dislike}}</p>
+          <p class="reaction-p">{{thread.like.length-thread.dislike.length}}</p>
           <img src="./assets/images/arrow-down.png"
                class="icon"
                (click)=reactionControl(i,true,false)>
@@ -79,7 +79,7 @@
         <img src="./assets/images/arrow-up.png"
              class="icon"
              (click)=reactionControl(i,false,true)>
-        <p class="reaction-p">{{comment.like-comment.dislike}}</p>
+        <p class="reaction-p">{{comment.like.length-comment.dislike.length}}</p>
         <img src="./assets/images/arrow-down.png"
              class="icon"
              (click)=reactionControl(i,false,false)>
