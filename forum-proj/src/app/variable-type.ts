@@ -75,11 +75,13 @@ export class Controller {
   loginform: boolean;
   registform: boolean;
   pagectrl: number;
+  newthread: boolean;
 
-  constructor(autenticato: boolean, loginform: boolean, registform: boolean, pagectrl: number) {
+  constructor(autenticato: boolean, loginform: boolean, registform: boolean, pagectrl: number, newthread: boolean) {
     this.autenticato = autenticato;
     this.loginform = loginform;
     this.registform = registform;
     this.pagectrl = pagectrl;
+    this.newthread = newthread;
   }
 }

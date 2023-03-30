@@ -22,4 +22,6 @@
                [user]="user"
                (user_)='UserController($event)'
 ></app-main-page>
-<app-right-nav></app-right-nav>
+<app-right-nav [control]="control"
+               (control_)='ControllerIN($event)'
+></app-right-nav>

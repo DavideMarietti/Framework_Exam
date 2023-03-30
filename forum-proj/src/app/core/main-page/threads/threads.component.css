@@ -4,32 +4,20 @@
   border: 1px solid darkslategray;
   border-radius: 5px;
   margin: 5px;
-  display: grid;
-  grid-template-columns: 40px 8fr;
   color: darkslategray;
-
 }
 
-.thread-sub1 {
-  align-content: center;
-  grid-column-start: 1;
-  grid-column-end: 2;
+.thread-bar {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  vertical-align: baseline;
 }
 
-.reaction-icon {
-  height: 20px;
-  width: 30px;
+.icon {
+  height: 40px;
+  width: 40px;
   cursor: pointer;
-}
-
-.reaction p {
-
-}
-
-.thread-sub2 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  display: grid;
 }
 
 .thread-author {
@@ -44,16 +32,6 @@
 
 .thread-sub2 p {
   text-align: left;
-}
-
-.thread-sub3 {
-  display: block;
-}
-
-.comment-icon {
-  height: 35px;
-  width: 35px;
-  cursor: pointer;
 }
 
 .comment {
@@ -82,7 +60,37 @@
   margin-top: 5px;
   margin-bottom: 5px;
   margin-right: 5px;
-  display: grid;
-  grid-template-columns: 40px 8fr 1fr;
   color: darkslategray;
+}
+
+.newTD {
+  background-color: darkolivegreen;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+  grid-template-rows: 1fr 8fr;
+  padding: 5px;
+  margin: 5px;
+}
+
+.part1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.part2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 100%;
+  text-align: center;
+}
+.part3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }

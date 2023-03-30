@@ -11,7 +11,7 @@ export class AppComponent {
   titolo: string = "Welcome user!";
   sottotitolo: string = "--Log in for full access--";
   user = new Utente("","","","","",1,"/assets/images/default-user-icon.png");
-  control = new Controller(false, false, false, 1);
+  control = new Controller(false, false, false, 1, false);
 
   ControllerIN(value: Controller){
     this.control = value;
