@@ -41,18 +41,19 @@ export class ThreadsService {
 
   createThread(titolo: string, testo: string, autore: string) {
     const postData = { titolo: titolo, testo: testo, autore: autore };
-    this.http
+    return this.http
       .post<Thread>(
         'http://localhost:8081/api/v1/posts/create',
         postData
       )
-      .subscribe(
-        responseData => {
-          console.log(responseData);
-        },
-        error => {
-          this.error.next(error.message);
-        }
+      .pipe(
+        map(responseData => {
+          return responseData;
+        }),
+        catchError(errorRes => {
+          // Send to analytics server
+          return throwError(errorRes);
+        })
       );
   }
 }

@@ -164,14 +164,18 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   }
 
   addThread() {
-    let postBody = {
-      titolo: this.titolo,
-      testo: this.testo,
-      autore: this.user.username
-    };
-
-    /*let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, [], [], "");
-    this.threads.push(newTD);*/
+    lastValueFrom(this.threadService.createThread(this.titolo, this.testo, this.user.username)).then(
+      thread => {
+        console.log("thread:", thread)
+        this.isFetching = false;
+        this.threads.push(new Thread(thread.id, thread.titolo, thread.testo, thread.autore, thread.like, thread.dislike, thread.creato));
+      })
+      .catch(
+        error => {
+          this.isFetching = false;
+          this.errorFetching = error.message;
+        }
+      );
     this.control.newthread = false;
   }
 
