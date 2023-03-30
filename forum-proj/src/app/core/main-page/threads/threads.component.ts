@@ -2,7 +2,7 @@ import {Component, Input, OnInit, AfterContentInit} from '@angular/core';
 import {Comment, Controller, Thread, Utente} from "../../../variable-type";
 import {ThreadsService} from "./threads.service";
 import {HttpClient} from "@angular/common/http";
-import {Subscription} from "rxjs";
+import {lastValueFrom, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-threads',
@@ -37,7 +37,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     this.isFetching = true;
 
 
-    this.threadService.fetchThreads().subscribe(
+    const promiseThreads = lastValueFrom(this.threadService.fetchThreads()).then(
       threads => {
         this.isFetching = false;
         this.threads = threads;
@@ -45,17 +45,17 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
           element.view = true;
           element.expand = false;
           element.answer = false;
-          console.log("thread : ", element);
         });
-      },
-      error => {
-        this.isFetching = false;
-        this.errorFetching = error.message;
-      }
-    );
+      })
+      .catch(
+        error => {
+          this.isFetching = false;
+          this.errorFetching = error.message;
+        }
+      );
 
     this.isFetching = true;
-    this.threadService.fetchComments().subscribe(
+    const promiseComments = lastValueFrom(this.threadService.fetchComments()).then(
       comments => {
         this.isFetching = false;
         this.comments = comments;
@@ -63,20 +63,22 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
           element.view = false;
           element.answer = false;
         });
-      },
+      }).catch(
       error => {
         this.isFetching = false;
         this.errorFetching = error.message;
       }
     );
-  }
 
+    Promise.all([promiseThreads, promiseComments]).then(() => {
+      this.comment_counter();
+    });
+  }
 
 
   ngAfterContentInit(): void {
     this.comment_counter();
   }
-
 
 
   expand_thread(i) {
@@ -108,7 +110,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   expand_comments(i, threadcheck: boolean) {
     if (threadcheck) {
       this.comments.forEach((element, index) => {
-        if (element.parentid === this.threads[i].id  && element.level === 0) {
+        if (element.parentid === this.threads[i].id && element.level === 0) {
           element.view = !element.view;
         } else {
           element.view = false;
@@ -155,8 +157,12 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   }*/
 
   comment_counter() {
-    this.threads.forEach((element, index) => {element.commcounter = 0;});
-    this.comments.forEach((element, index) => {element.commcounter = 0;});
+    this.threads.forEach((element, index) => {
+      element.commcounter = 0;
+    });
+    this.comments.forEach((element, index) => {
+      element.commcounter = 0;
+    });
     this.comments.reverse().forEach((element, index) => {
       this.threads.forEach((elem, ind) => {
         if (elem.id === element.parentid && element.level === 0) {
