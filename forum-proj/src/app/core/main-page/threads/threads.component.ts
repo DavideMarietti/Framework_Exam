@@ -141,21 +141,6 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     }
   }
 
-  /*hierarchy_analyzer() {
-    this.comments.forEach((element, index) => {
-      this.threads.forEach((elem, ind) => {
-        if(element.parentid === elem.id){
-          element.level = 1;
-        }
-      });
-      this.comments.forEach((elem, ind) => {
-        if(element.parentid === elem.id){
-          element.level = elem.level + 1;
-        }
-      });
-    });
-  }*/
-
   comment_counter() {
     this.threads.forEach((element, index) => {
       element.commcounter = 0;
@@ -179,8 +164,14 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   }
 
   addThread() {
-    let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, [], [], "");
-    this.threads.push(newTD);
+    let postBody = {
+      titolo: this.titolo,
+      testo: this.testo,
+      autore: this.user.username
+    };
+
+    /*let newTD = new Thread(this.genID(), this.titolo, this.testo, this.user.username, [], [], "");
+    this.threads.push(newTD);*/
     this.control.newthread = false;
   }
 
