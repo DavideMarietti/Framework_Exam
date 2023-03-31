@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd ./backendApp
+
 cd ./service-registry
 ./mvnw -DskipTests=true clean package
 docker build -t service-registry .
@@ -19,6 +21,13 @@ docker build -t post-service .
 cd ../comment-service
 ./mvnw -DskipTests=true clean package
 docker build -t comment-service .
+
+
+cd ..
+
+
+cd ../forum-proj
+docker build -t forum-proj .
 
 
 cd ..
