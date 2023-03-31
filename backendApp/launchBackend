@@ -20,5 +20,8 @@ cd ../comment-service
 ./mvnw -DskipTests=true clean package
 docker build -t comment-service .
 
+
 cd ..
+
+
 docker-compose up
