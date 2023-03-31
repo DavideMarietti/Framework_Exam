@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="piedini azzurrini">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="gattini incazzati">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/login/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/right-nav/right-nav.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +113,9 @@
       <workItem from="1680170707674" duration="3571000" />
       <workItem from="1680179119191" duration="13000" />
       <workItem from="1680179316354" duration="2224000" />
-      <workItem from="1680182099976" duration="6523000" />
+      <workItem from="1680182099976" duration="6857000" />
+      <workItem from="1680291366021" duration="524000" />
+      <workItem from="1680292000651" duration="4493000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -341,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680188516561</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="gattini incazzati">
+      <created>1680189746140</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1680189746140</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,6 +397,7 @@
     <MESSAGE value="caricamento thread da sistemare" />
     <MESSAGE value="giraffe arancioni" />
     <MESSAGE value="piedini azzurrini" />
-    <option name="LAST_COMMIT_MESSAGE" value="piedini azzurrini" />
+    <MESSAGE value="gattini incazzati" />
+    <option name="LAST_COMMIT_MESSAGE" value="gattini incazzati" />
   </component>
 </project>

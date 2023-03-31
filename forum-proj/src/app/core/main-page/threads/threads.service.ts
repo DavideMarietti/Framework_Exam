@@ -74,4 +74,22 @@ export class ThreadsService {
         })
       );
   }
+
+  /*deleteThread(id: number) {
+    const delID = {id: id};
+    return this.http
+      .delete<String>(
+        'http://localhost:9191/api/v1/posts/{id}',
+        delID
+      )
+      .pipe(
+        map(responseData => {
+          return responseData;
+        }),
+        catchError(errorRes => {
+          // Send to analytics server
+          return throwError(errorRes);
+        })
+      );
+  }*/
 }

@@ -15,8 +15,14 @@
 <div *ngFor="let thread of threads; let i = index" [attr.data-index]="i">
   <div class="thread-box" *ngIf="thread.view">
 
+    <button class="btn-close"
+            *ngIf="control.autenticato && thread.autore === user.username"
+            (click)=delete(i,true);
+    ></button>
+
     <div class="thread-sub2">
       <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
+      <p class="creato">{{thread.creato}}</p>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
@@ -70,6 +76,11 @@
   <div class="comment-box"
        [ngStyle]="{'margin-left': (comment.level+1)*10+'px'}"
        *ngIf="comment.view">
+
+    <button class="btn-close"
+            *ngIf="control.autenticato && comment.autore === user.username"
+            (click)=delete(i,false);
+    ></button>
 
     <div class="thread-sub2">
       <p class="author"><i>Author <b>{{comment.autore}} level {{comment.level}}</b></i></p>

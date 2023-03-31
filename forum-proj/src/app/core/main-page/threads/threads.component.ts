@@ -196,7 +196,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
       this.testo__ = "";
       this.comments[i].answer = false;
     }
-    lastValueFrom(this.threadService.createComment(txt, this.user.username, parentidvalue, levelValue)).then(
+    const promiseAddComment = lastValueFrom(this.threadService.createComment(txt, this.user.username, parentidvalue, levelValue)).then(
       comment => {
         console.log("comment:", comment)
         this.isFetching = false;
@@ -208,20 +208,31 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
           this.errorFetching = error.message;
         }
       );
-    if (threadcheck) {
-      this.comments.forEach((element, index) => {
-        if (element.level >= 0) {
-          element.view = false;
-        }
-      });
-    } else {
-      this.comments.forEach((element, index) => {
-        if (element.level > this.comments[i].level) {
-          element.view = false;
-        }
-      });
+
+    Promise.all([promiseAddComment]).then(() => {
+      if (threadcheck) {
+        this.comments.forEach((element, index) => {
+          if (element.level >= 0) {
+            element.view = false;
+          }
+        });
+      } else {
+        this.comments.forEach((element, index) => {
+          if (element.level > this.comments[i].level) {
+            element.view = false;
+          }
+        });
+      }
+      this.expand_comments(i, threadcheck);
+      this.comment_counter();
+    });
+  }
+
+  delete(i, threadcheck: boolean){
+    if(threadcheck){
+
+    }else{
+
     }
-    this.expand_comments(i, threadcheck);
-    this.comment_counter();
   }
 }

@@ -7,6 +7,10 @@
   color: darkslategray;
 }
 
+.creato {
+  font-size: 6px;
+}
+
 .thread-bar {
   display: flex;
   border: 1px solid black;
