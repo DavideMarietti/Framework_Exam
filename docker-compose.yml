@@ -1,0 +1,161 @@
+version: '3'
+
+services:
+
+  service-registry:
+    #build: user-service
+    image: service-registry:latest
+    container_name: service-registry
+    ports:
+      - "8761:8761"
+    networks:
+      - backendnet
+
+  api-gateway:
+    image: api-gateway:latest
+    container_name: api-gateway
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
+    ports:
+      - "9191:9191"
+    depends_on:
+      - service-registry
+    networks:
+      - backendnet
+
+  dbpostgresql_user:
+    image: "postgres"
+    container_name: postgres-user
+    ports:
+      - "5445:5432"
+    depends_on:
+      - service-registry
+    volumes:
+      - db-data_user:/var/lib/postgresql_user/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: userdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
+
+  app-user:
+    #build: user-service
+    image: user-service:latest
+    container_name: user-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - service-registry
+      - dbpostgresql_user
+    networks:
+      - backendnet
+    environment:
+     - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_user:5432/userdb
+     - SPRING_DATASOURCE_USERNAME=admin
+     - SPRING_DATASOURCE_PASSWORD=admin
+     - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+     - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
+     - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
+     - SPRING_PROFILES_ACTIVE=docker
+     - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
+
+  dbpostgresql_post:
+    image: "postgres"
+    container_name: postgres-post
+    ports:
+      - "5446:5432"
+    depends_on:
+      - service-registry
+    volumes:
+      - db-data_post:/var/lib/postgresql_post/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: postdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
+
+  app-post:
+    #build: post-service
+    image: post-service:latest
+    container_name: post-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - service-registry
+      - dbpostgresql_post
+    networks:
+      - backendnet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_post:5432/postdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
+      - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
+      - SPRING_PROFILES_ACTIVE=docker
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
+
+  dbpostgresql_comment:
+    image: "postgres"
+    container_name: postgres-comment
+    ports:
+      - "5447:5432"
+    depends_on:
+      - service-registry
+    volumes:
+      - db-data_comment:/var/lib/postgresql_comment/data
+    networks:
+      - backendnet
+    environment:
+      POSTGRES_DB: commentdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      restart: unless-stopped
+
+  app-comment:
+    #build: comment-service
+    image: comment-service:latest
+    container_name: comment-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - service-registry
+      - dbpostgresql_comment
+    networks:
+      - backendnet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgresql_comment:5432/commentdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - LOG4J.LOGGER.ORG.HIBERNATE=DEBUG
+      - LOG4J.LOGGER.ORG.HIBERNATE.SQL=DEBUG
+      - SPRING_PROFILES_ACTIVE=docker
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka/
+
+  forum-proj:
+    image: forum-proj:latest
+    container_name: forum-proj
+    ports:
+      - "4200:80"
+    networks:
+      - backendnet
+    depends_on:
+      - app-comment
+      - app-post
+      - app-user
+
+volumes:
+  db-data_user:
+  db-data_post:
+  db-data_comment:
+
+networks:
+  backendnet:
+    driver: bridge
+
+# (docker-compose) build && docker-compose up

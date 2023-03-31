@@ -1,0 +1,36 @@
+#!/bin/sh
+
+cd ./backendApp
+
+cd ./service-registry
+./mvnw -DskipTests=true clean package
+docker build -t service-registry .
+
+cd ../api-gateway
+./mvnw -DskipTests=true clean package
+docker build -t api-gateway .
+
+cd ../user-service
+./mvnw -DskipTests=true clean package
+docker build -t user-service .
+
+cd ../post-service
+./mvnw -DskipTests=true clean package
+docker build -t post-service .
+
+cd ../comment-service
+./mvnw -DskipTests=true clean package
+docker build -t comment-service .
+
+
+cd ..
+
+
+cd ../forum-proj
+docker build -t forum-proj .
+
+
+cd ..
+
+
+docker-compose up
