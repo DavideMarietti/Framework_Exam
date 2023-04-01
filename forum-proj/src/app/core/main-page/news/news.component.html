@@ -1,12 +1,17 @@
-<p class="selectable-index"
-   *ngFor="let sym of symbol; let i = index"
-   [attr.data-index]="i" (click)="searchNews(i)">
-  {{sym}}
-</p>
-<div class="news-box"
-     *ngFor="let news of stockNews">
-  <h1>{{news.title}}</h1>
-  <p>Author {{news.authors}}</p>
-  <p>Open original: {{news.url}}</p>
-  <p>{{news.summary}}</p>
+<div class="selectors">
+  <p>Select index: </p>
+  <p class="selectable-index"
+     *ngFor="let sym of symbol; let i = index"
+     [attr.data-index]="i" (click)="searchNews(i)">
+    {{sym}}
+  </p>
+</div>
+<div class="news-section">
+  <div class="news-box"
+       *ngFor="let news of stockNews">
+    <h1>{{news.title}}</h1>
+    <p>Author {{news.authors}}</p>
+    <a href="{{news.url}}">Open original article</a>
+    <p>{{news.summary}}</p>
+  </div>
 </div>

@@ -2,11 +2,18 @@
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+}
+
+.selectors {
+  display: flex;
 }
 
 .news-box {
   border: 1px solid black;
   border-radius: 5px;
+  padding: 5px;
 }
 
 h1 {

@@ -8,7 +8,7 @@ import {lastValueFrom} from "rxjs";
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent {
-  symbol: string[] = ['IBM', 'TSCO'];
+  symbol: string[] = ['IBM', 'TSCO', 'MSFT', 'NFLX', 'GM', 'V'];
   stockNews: any[] = [];
 
   constructor(private newsService: NewsService) { }
