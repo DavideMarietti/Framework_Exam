@@ -25,12 +25,73 @@
   opacity: 0.5;
 }
 
-.icon-selected {
+.arrow-up {
   height: 40px;
   width: 40px;
   cursor: pointer;
+  background-color: black;
+  opacity: 0.5;
+  -webkit-mask: url(../../../../assets/images/arrow_up_icon.svg) no-repeat center;
+  mask: url(../../../../assets/images/arrow_up_icon.svg) no-repeat center;
 }
 
+.arrow-up-selected {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: rgba(50, 81, 194, 0.76);
+  -webkit-mask: url(../../../../assets/images/arrow_up_icon.svg) no-repeat center;
+  mask: url(../../../../assets/images/arrow_up_icon.svg) no-repeat center;
+}
+
+.arrow-down {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.5;
+  -webkit-mask: url(../../../../assets/images/arrow_down_icon.svg) no-repeat center;
+  mask: url(../../../../assets/images/arrow_down_icon.svg) no-repeat center;
+}
+
+.arrow-down-selected {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: rgba(50, 81, 194, 0.76);
+  -webkit-mask: url(../../../../assets/images/arrow_down_icon.svg) no-repeat center;
+  mask: url(../../../../assets/images/arrow_down_icon.svg) no-repeat center;
+}
+
+.icon-message {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.5;
+  -webkit-mask: url(../../../../assets/images/message.svg) no-repeat center;
+  mask: url(../../../../assets/images/message.svg) no-repeat center;
+}
+
+.icon-replay {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.5;
+  -webkit-mask: url(../../../../assets/images/replay.svg) no-repeat center;
+  mask: url(../../../../assets/images/replay.svg) no-repeat center;
+}
+
+.icon-send {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.5;
+  -webkit-mask: url(../../../../assets/images/send.svg) no-repeat center;
+  mask: url(../../../../assets/images/send.svg) no-repeat center;
+}
 
 .thread-author {
   font-size: 12px;
@@ -92,6 +153,7 @@
   grid-row-start: 1;
   grid-row-end: 2;
 }
+
 .part2 {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -100,6 +162,7 @@
   height: 100%;
   text-align: center;
 }
+
 .part3 {
   grid-column-start: 1;
   grid-column-end: 3;

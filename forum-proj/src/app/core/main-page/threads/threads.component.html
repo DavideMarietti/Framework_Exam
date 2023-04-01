@@ -32,8 +32,10 @@
 
     <div class="thread-sub2">
 
-      <p class="author"><i>Author <b (mouseover)="setPopupUser(thread.autore)" (mouseleave)="setPopupUser(thread.autore)" [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i></p>
-      <p class="creato" >{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(thread.autore)"
+                                     (mouseleave)="setPopupUser(thread.autore)"
+                                     [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i></p>
+      <p class="creato">{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
@@ -42,13 +44,14 @@
 
       <div class="thread-bar">
 
-        <img [ngClass]=" thread.like.includes(user.id) ? 'icon-selected' : 'icon'"
+        <div [ngClass]=" thread.like.includes(user.id) && control.autenticato ? 'arrow-up-selected' : 'arrow-up'"
              (click)=reactionControl(i,true,true)
-              src="assets/images/arrow-up.svg">
+        ></div>
         <p class="reaction-p">{{thread.like.length - thread.dislike.length}}</p>
-        <img [ngClass]=" thread.dislike.includes(user.id) ? 'icon-selected' : 'icon'"
-             (click)=reactionControl(i,true,false)
-             src="assets/images/arrow-down.svg">
+        <div
+          [ngClass]=" thread.dislike.includes(user.id)  && control.autenticato ? 'arrow-down-selected' : 'arrow-down'"
+          (click)=reactionControl(i,true,false)
+        ></div>
 
         <div class="comment"
              (click)=expand_comments(i,true)
@@ -95,20 +98,24 @@
     ></button>
 
     <div class="thread-sub2">
-      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore)" (mouseleave)="setPopupUser(comment.autore)" [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> level <b>{{comment.level}}</b></i></p>
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore)"
+                                     (mouseleave)="setPopupUser(comment.autore)"
+                                     [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> level
+        <b>{{comment.level}}</b></i></p>
       <p class="thread-text"
       >{{comment.testo}}</p>
     </div>
 
     <div class="thread-bar">
-      <img [ngClass]=" comment.like.includes(user.id) ? 'icon-selected' : 'icon'"
-           (click)=reactionControl(i,false,true)
-           src="assets/images/arrow-up.svg">
+      <div
+        [ngClass]=" comment.like.includes(user.id) && control.autenticato ? 'arrow-up-selected' : 'arrow-up'"
+        (click)=reactionControl(i,false,true)>
+      </div>
       <p class="reaction-p">{{comment.like.length - comment.dislike.length}}</p>
-      <img [ngClass]=" comment.like.includes(user.id) ? 'icon-selected' : 'icon'"
-           (click)=reactionControl(i,false,false)
-           src="assets/images/arrow-down.svg">
-      <img class="down-arrow">
+      <div [ngClass]=" comment.dislike.includes(user.id) && control.autenticato ? 'arrow-down-selected' : 'arrow-down'"
+           (click)=reactionControl(i,false,false)>
+
+      </div>
 
       <div class="comment"
            (click)=expand_comments(i,false)
