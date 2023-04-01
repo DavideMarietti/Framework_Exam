@@ -26,7 +26,7 @@ export class StockChartService {
           const stockData: any[] = [];
           for (const key in responseData_) {
             if (responseData_.hasOwnProperty(key)) {
-              stockData.push({ ...responseData_[key], data: new Date(key).getTime() });
+              stockData.push(convertIntObj({ ...responseData_[key], data: new Date(key).getTime() }));
             }
           }
           console.log("stockData: ", stockData)
@@ -38,4 +38,14 @@ export class StockChartService {
         })
       );
   }
+}
+
+
+function convertIntObj(obj) {
+  for (const key in obj) {
+    for (const prop in obj[key]) {
+      obj[key] = Number(obj[key]);
+    }
+  }
+  return obj;
 }
