@@ -106,7 +106,11 @@ public class Comment {
       if (this.dislike.contains(userid)) {
          this.dislike.remove(userid);
       }
-      this.like.add(userid);
+      if (this.like.contains(userid)) {
+         this.like.remove(userid);
+      } else {
+         this.like.add(userid);
+      }
    }
 
    public List<Integer> getDislike() {
@@ -121,7 +125,11 @@ public class Comment {
       if (this.like.contains(userid)) {
          this.like.remove(userid);
       }
-      this.dislike.add(userid);
+      if (this.dislike.contains(userid)) {
+         this.dislike.remove(userid);
+      } else {
+         this.dislike.add(userid);
+      }
    }
 
    public int getParentid() {
