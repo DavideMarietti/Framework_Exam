@@ -16,20 +16,19 @@ import {StockChartService} from "./stock-chart.service";
 })
 
 
-export class StockChartComponent{
+export class StockChartComponent implements OnInit{
 
   private symbol: string[] = ['IBM', 'TSCO'];
   private  stockData: any[] = [];
   /*chartId = 'stock-chart';*/
 
-  constructor(private stockchartService: StockChartService) { }
+  constructor(private http: HttpClient, private stockchartService: StockChartService) { }
 
   ngOnInit(): void {
     for(let sym of this.symbol){
       lastValueFrom(this.stockchartService.getStockData(sym)).then(
         stockdata => {
           this.stockData.push(stockdata);
-          console.log(this.stockData);
         });
     }
 
