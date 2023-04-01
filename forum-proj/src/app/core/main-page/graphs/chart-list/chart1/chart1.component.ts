@@ -1,5 +1,11 @@
-import {AfterViewInit, Component, Inject, NgZone, OnDestroy, PLATFORM_ID} from '@angular/core';
+import {AfterViewInit, Component, Inject, NgZone, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
+
+import {HttpClient} from '@angular/common/http';
+import {lastValueFrom, Observable} from 'rxjs';
+import {Injectable} from '@angular/core';
+
+import {StockChartService} from "../../../../../stock-chart/stock-chart.service";
 
 // amCharts imports
 import * as am5 from '@amcharts/amcharts5';
@@ -12,10 +18,21 @@ import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
   templateUrl: './chart1.component.html',
   styleUrls: ['./chart1.component.css']
 })
-export class Chart1Component implements AfterViewInit, OnDestroy{
+export class Chart1Component implements OnDestroy, OnInit {
   private root!: am5.Root;
+  private stockData: any[] = [];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone, private http: HttpClient, private stockchartService: StockChartService) {
+  }
+
+  ngOnInit(): void {
+    lastValueFrom(this.stockchartService.getStockData('IBM')).then(
+      stockdata => {
+        this.stockData = stockdata;
+        console.log("stockdata chart1: ", this.stockData)
+      }).then(() =>{
+        this.pio();
+    });
   }
 
   // Run the function only in the browser
@@ -27,7 +44,7 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
     }
   }
 
-  ngAfterViewInit() {
+   pio() {
     // Chart code goes in here
     this.browserOnly(() => {
 
@@ -35,7 +52,7 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
 // Create root element
 // -------------------------------------------------------------------------------
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-      let root = am5.Root.new("chartdiv");
+      let root = am5.Root.new("chartdiv1");
 
 
 // Set themes
@@ -75,7 +92,7 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
         renderer: am5xy.AxisRendererY.new(root, {
           pan: "zoom"
         }),
-        extraMin: 0.1, // adds some space for for main series
+        extraMin: 0.1, // adds some space for main series
         tooltip: am5.Tooltip.new(root, {}),
         numberFormat: "#,###.00",
         extraTooltipPrecision: 2
@@ -95,20 +112,19 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
 // -------------------------------------------------------------------------------
 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
       let valueSeries = mainPanel.series.push(am5xy.CandlestickSeries.new(root, {
-        name: "MSFT",
+        name: "IBM",
         clustered: false,
-        valueXField: "Date",
-        valueYField: "Close",
-        highValueYField: "High",
-        lowValueYField: "Low",
-        openValueYField: "Open",
+        valueXField: "data",
+        valueYField: "4. close",
+        highValueYField: "2. high",
+        lowValueYField: "3. low",
+        openValueYField: "1. open",
         calculateAggregates: true,
         xAxis: dateAxis,
         yAxis: valueAxis,
         legendValueText: "open: [bold]{openValueY}[/] high: [bold]{highValueY}[/] low: [bold]{lowValueY}[/] close: [bold]{valueY}[/]",
         legendRangeValueText: ""
       }));
-
 
 // Set main value series
 // -------------------------------------------------------------------------------
@@ -142,13 +158,14 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
         renderer: volumeAxisRenderer
       }));
 
+
 // Add series
 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
       let volumeSeries = mainPanel.series.push(am5xy.ColumnSeries.new(root, {
         name: "Volume",
         clustered: false,
-        valueXField: "Date",
-        valueYField: "Volume",
+        valueXField: "data",
+        valueYField: "6. volume",
         xAxis: dateAxis,
         yAxis: volumeValueAxis,
         legendValueText: "[bold]{valueY.formatNumber('#,###.0a')}[/]"
@@ -209,8 +226,8 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
       }));
 
       let sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
-        valueYField: "Close",
-        valueXField: "Date",
+        valueYField: "4. close",
+        valueXField: "data",
         xAxis: sbDateAxis,
         yAxis: sbValueAxis
       }));
@@ -236,7 +253,7 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
       })
 
 // data
-      let data = [
+      let data_ = [
         {Date: 1617192000000, Open: 515.67, High: 528.13, Low: 515.44, Close: 521.66, Volume: 3503100},
         {Date: 1617278400000, Open: 529.93, High: 540.5, Low: 527.03, Close: 539.42, Volume: 3938600},
         {Date: 1617624000000, Open: 540.01, High: 542.85, Low: 529.23, Close: 540.67, Volume: 3355900},
@@ -491,6 +508,9 @@ export class Chart1Component implements AfterViewInit, OnDestroy{
         {Date: 1648555200000, Open: 384.39, High: 396.5, Low: 380.33, Close: 391.82, Volume: 5880700},
         {Date: 1648641600000, Open: 389.55, High: 392.7, Low: 378.63, Close: 381.47, Volume: 4023300}
       ];
+      let data = this.stockData;
+
+      console.log(data)
 
       // set data to all series
       valueSeries.data.setAll(data);

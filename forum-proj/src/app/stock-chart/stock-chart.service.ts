@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {ThreadsService} from "../core/main-page/threads/threads.service";
 import {catchError, map} from "rxjs/operators";
 
 @Injectable({
@@ -27,7 +26,7 @@ export class StockChartService {
           const stockData: any[] = [];
           for (const key in responseData_) {
             if (responseData_.hasOwnProperty(key)) {
-              stockData.push({ ...responseData_[key], data: key });
+              stockData.push({ ...responseData_[key], data: new Date(key).getTime() });
             }
           }
           console.log("stockData: ", stockData)

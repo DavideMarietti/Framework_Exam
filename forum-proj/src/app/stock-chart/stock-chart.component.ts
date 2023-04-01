@@ -10,7 +10,6 @@ import {StockChartService} from "./stock-chart.service";
 
 @Component({
   selector: 'app-stock-chart',
-  /*template: '<div class="chart-container" [id]="chartId"></div>',*/
   templateUrl: './stock-chart.component.html',
   styleUrls: ['./stock-chart.component.css']
 })
@@ -25,13 +24,14 @@ export class StockChartComponent implements OnInit{
   constructor(private http: HttpClient, private stockchartService: StockChartService) { }
 
   ngOnInit(): void {
+    /*
     for(let sym of this.symbol){
       lastValueFrom(this.stockchartService.getStockData(sym)).then(
         stockdata => {
           this.stockData.push(stockdata);
         });
     }
-
+*/
     /*Object.keys(this.stockData).forEach(date => {
       const dataPoint = {
         x: new Date(date).getTime(),
