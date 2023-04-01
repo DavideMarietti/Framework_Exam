@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="corretto bug se eliminazione thread che non riapriva gli altri threads">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="sistemato load data da finance API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/stock-chart/stock-chart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/stock-chart/stock-chart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/core.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/jumbotron/jumbotron.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/jumbotron/jumbotron.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/main-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,7 @@
       <workItem from="1680182099976" duration="6857000" />
       <workItem from="1680291366021" duration="524000" />
       <workItem from="1680292000651" duration="5083000" />
-      <workItem from="1680339000446" duration="12878000" />
+      <workItem from="1680339000446" duration="15233000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -364,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680350831782</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="sistemato load data da finance API">
+      <created>1680353909273</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1680353909273</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Moved tha nav bar and added brand logo" />
     <MESSAGE value="Reduced Bootstrap usage" />
     <MESSAGE value="Added global controller" />
     <MESSAGE value="Added threads" />
@@ -407,6 +415,7 @@
     <MESSAGE value="- sistemato problema nella creazione commenti&#10;- aggiunto tasto eliminazione post/commento personali se loggato&#10;&#10;- manca ancora il servizio" />
     <MESSAGE value="sistemata eliminazione commenti" />
     <MESSAGE value="corretto bug se eliminazione thread che non riapriva gli altri threads" />
-    <option name="LAST_COMMIT_MESSAGE" value="corretto bug se eliminazione thread che non riapriva gli altri threads" />
+    <MESSAGE value="sistemato load data da finance API" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemato load data da finance API" />
   </component>
 </project>

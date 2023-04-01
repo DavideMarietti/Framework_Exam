@@ -1,0 +1,8 @@
+<p class="selectable-index"
+   *ngFor="let sym of symbol; let i = index"
+   [attr.data-index]="i" (click)="searchNews(i)">
+  {{sym}}
+</p>
+<div class="news-box"
+     *ngFor="let news of stockNews">
+</div>
