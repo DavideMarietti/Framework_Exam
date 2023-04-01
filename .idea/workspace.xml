@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="aggiunto popup con info utente se il passaggio del mouse">
+    <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="**">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/forum-proj/src/app/core/main-page/threads/threads.service.ts" afterDir="false" />
@@ -106,7 +106,7 @@
       <workItem from="1680292000651" duration="5083000" />
       <workItem from="1680339000446" duration="25185000" />
       <workItem from="1680367441862" duration="4058000" />
-      <workItem from="1680375791349" duration="1289000" />
+      <workItem from="1680375791349" duration="2990000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>
@@ -409,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680371520081</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="**">
+      <created>1680378468824</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1680378468824</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +434,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added graphs" />
     <MESSAGE value="added users json" />
     <MESSAGE value="profile --" />
     <MESSAGE value="threads-sample" />
@@ -452,6 +458,7 @@
     <MESSAGE value="ora funzionano le news" />
     <MESSAGE value="aggiunto apertura fonte articolo" />
     <MESSAGE value="aggiunto popup con info utente se il passaggio del mouse" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto popup con info utente se il passaggio del mouse" />
+    <MESSAGE value="**" />
+    <option name="LAST_COMMIT_MESSAGE" value="**" />
   </component>
 </project>

@@ -129,12 +129,23 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     if(this.control.autenticato){
       //control like of threads
       if(threadcheck && reactiontype){
-        this.threads[i].like++;
+        lastValueFrom(this.threadService.threadLike(this.threads[i].id, this.user.id)).then(
+          thread => {
+            this.threads[i].like = thread.like;
+            this.threads[i].dislike = thread.dislike;
+          }
+        );
       }
-      /*
       //control dislike of threads
-      if(threadcheck && !reactiontype){ this.threads[i].dislike++; }
-      //control like of comment
+      if(threadcheck && !reactiontype){
+        lastValueFrom(this.threadService.threadDislike(this.threads[i].id, this.user.id)).then(
+          thread => {
+            this.threads[i].like = thread.like;
+            this.threads[i].dislike = thread.dislike;
+          }
+        );
+      }
+      /*//control like of comment
       if(!threadcheck && reactiontype){ this.comments[i].like++; }
       //control dislike of threads
       if(!threadcheck && !reactiontype){ this.comments[i].dislike++; }*/

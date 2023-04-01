@@ -106,7 +106,39 @@ export class ThreadsService {
       );
   }
 
-  controlLike(){
+  commentLike(id_com: number, id_user: number){
+    const url: string = `http://localhost:9191/api/v1/comments/like/${id_com}`;
+    return this.http
+      .put<Comment>(
+        url,
+        id_user
+      );
+  }
 
+  commentDislike(id_com: number, id_user: number){
+    const url: string = `http://localhost:9191/api/v1/comments/dislike/${id_com}`;
+    return this.http
+      .put<Comment>(
+        url,
+        id_user
+      );
+  }
+
+  threadLike(id_thr: number, id_user: number){
+    const url: string = `http://localhost:9191/api/v1/posts/like/${id_thr}`;
+    return this.http
+      .put<Thread>(
+        url,
+        id_user
+      );
+  }
+
+  threadDislike(id_thr: number, id_user: number){
+    const url: string = `http://localhost:9191/api/v1/posts/dislike/${id_thr}`;
+    return this.http
+      .put<Thread>(
+        url,
+        id_user
+      );
   }
 }
