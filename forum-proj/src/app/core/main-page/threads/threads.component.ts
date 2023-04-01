@@ -256,6 +256,8 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
           });
         }).then(() => {
         this.comment_counter();
+      }).then(() => {
+        this.reset();
       });
     } else {
       lastValueFrom(this.threadService.deleteComment(this.comments[i].id)).then(
