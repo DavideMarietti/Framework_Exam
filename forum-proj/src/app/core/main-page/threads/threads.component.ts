@@ -126,14 +126,19 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   }
 
   reactionControl(i: any, threadcheck: boolean, reactiontype: boolean) {
-    /*
     if(this.control.autenticato){
-      if(threadcheck && reactiontype){ this.threads[i].like++; }
+      //control like of threads
+      if(threadcheck && reactiontype){
+        this.threads[i].like++;
+      }
+      /*
+      //control dislike of threads
       if(threadcheck && !reactiontype){ this.threads[i].dislike++; }
+      //control like of comment
       if(!threadcheck && reactiontype){ this.comments[i].like++; }
-      if(!threadcheck && !reactiontype){ this.comments[i].dislike++; }
+      //control dislike of threads
+      if(!threadcheck && !reactiontype){ this.comments[i].dislike++; }*/
     }
-     */
   }
 
   expand_comments(i, threadcheck: boolean) {
