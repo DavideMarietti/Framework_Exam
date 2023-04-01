@@ -24,6 +24,14 @@
   cursor: pointer;
 }
 
+.icon .like .selected {
+  fill: #A1FFA1;
+}
+
+.icon .reaction .notsele {
+  fill: #A1FFA1;
+}
+
 .thread-author {
   font-size: 12px;
 }
