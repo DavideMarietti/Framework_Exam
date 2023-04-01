@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, throwError} from "rxjs";
+import {catchError, map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,20 @@ export class NewsService {
       .get(
         url,
         {responseType: "json"}
-      )
+      ).pipe(
+        map(responseData => {
+          console.log("prova ", responseData["feed"]);
+          const stockNews: any[] = [];
+          for(let key in responseData["feed"]){
+            stockNews.push(responseData["feed"][key]);
+          }
+          console.log("number: ", stockNews.length);
+          console.log("stockNews :", stockNews);
+          return stockNews;
+        }),
+        catchError(errorRes => {
+          return throwError(errorRes);
+        })
+      );
   }
 }
