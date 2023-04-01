@@ -22,13 +22,13 @@
   height: 40px;
   width: 40px;
   cursor: pointer;
+  opacity: 0.5;
 }
 
 .icon-selected {
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
-  fill: #A1FFA1;
 }
 
 
