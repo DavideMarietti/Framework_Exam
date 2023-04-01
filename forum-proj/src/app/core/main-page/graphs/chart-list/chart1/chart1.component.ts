@@ -115,10 +115,10 @@ export class Chart1Component implements OnDestroy, OnInit {
         name: "IBM",
         clustered: false,
         valueXField: "data",
-        valueYField: "4. close",
-        highValueYField: "2. high",
-        lowValueYField: "3. low",
-        openValueYField: "1. open",
+        valueYField: "close",
+        highValueYField: "high",
+        lowValueYField: "low",
+        openValueYField: "open",
         calculateAggregates: true,
         xAxis: dateAxis,
         yAxis: valueAxis,
@@ -165,7 +165,7 @@ export class Chart1Component implements OnDestroy, OnInit {
         name: "Volume",
         clustered: false,
         valueXField: "data",
-        valueYField: "6. volume",
+        valueYField: "volume",
         xAxis: dateAxis,
         yAxis: volumeValueAxis,
         legendValueText: "[bold]{valueY.formatNumber('#,###.0a')}[/]"
@@ -226,7 +226,7 @@ export class Chart1Component implements OnDestroy, OnInit {
       }));
 
       let sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
-        valueYField: "4. close",
+        valueYField: "close",
         valueXField: "data",
         xAxis: sbDateAxis,
         yAxis: sbValueAxis

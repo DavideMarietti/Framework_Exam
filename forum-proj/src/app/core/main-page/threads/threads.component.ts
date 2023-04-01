@@ -13,6 +13,10 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   @Input() user: Utente;
   @Input() control: Controller;
 
+  popuser: Utente;
+  popbox: boolean = false;
+
+  users: Utente[] = [];
   threads: Thread[] = [];
   comments: Comment[] = [];
 
@@ -70,7 +74,17 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
       }
     );
 
-    Promise.all([promiseThreads, promiseComments]).then(() => {
+    const promiseUsers = this.isFetching = true;
+    lastValueFrom(this.threadService.fetchUsers()).then(
+      users => {
+        this.isFetching = false;
+        this.users = users;
+      }).catch(error => {
+      this.isFetching = false;
+      this.errorFetching = error.message;
+    });
+
+    Promise.all([promiseThreads, promiseComments, promiseUsers]).then(() => {
       this.comment_counter();
     });
   }
@@ -78,6 +92,21 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.comment_counter();
+  }
+
+  searchUser(username: string){
+    let indexUser: any;
+    this.users.forEach((element, index) => {
+      if(element.username === username){
+        indexUser = index;
+      }
+    });
+    return indexUser;
+  }
+
+  setPopupUser(popUser: string){
+    this.popbox = !this.popbox;
+    this.popuser = this.users[this.searchUser(popUser)];
   }
 
 

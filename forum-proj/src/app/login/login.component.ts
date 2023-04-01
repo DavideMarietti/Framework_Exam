@@ -1,9 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Subscription, timeout} from "rxjs";
+import {lastValueFrom, Subscription, timeout} from "rxjs";
 import {Controller, Utente} from "../variable-type";
 import users_sample from "../users_sample.json"
 import {HttpClient} from "@angular/common/http";
 import {LoginService} from "./login.service";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-login',
@@ -39,16 +40,14 @@ export class LoginComponent implements OnInit{
     });
 
     this.isFetching = true;
-    this.loginService.fetchUsers().subscribe(
+    lastValueFrom(this.loginService.fetchUsers()).then(
       users => {
         this.isFetching = false;
         this.users = users;
-      },
-      error => {
-        this.isFetching = false;
-        this.errorFetching = error.message;
-      }
-    );
+      }).catch(error => {
+      this.isFetching = false;
+      this.errorFetching = error.message;
+    });
   }
 
   login = () : void => {

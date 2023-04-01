@@ -12,6 +12,16 @@
   </div>
 </div>
 
+<div class="author-popup" *ngIf="popbox">
+  <div>
+    <img src="{{popuser.image}}" width="38" height="38">
+  </div>
+  <div class="author-info">
+    <p>{{popuser.nome}} {{popuser.cognome}}</p>
+    <p>Età {{popuser.eta}} anni</p>
+  </div>
+</div>
+
 <div *ngFor="let thread of threads; let i = index" [attr.data-index]="i">
   <div class="thread-box" *ngIf="thread.view">
 
@@ -21,8 +31,9 @@
     ></button>
 
     <div class="thread-sub2">
-      <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
-      <p class="creato">{{thread.creato}}</p>
+
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(thread.autore)" (mouseleave)="setPopupUser(thread.autore)" [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i></p>
+      <p class="creato" >{{thread.creato}}</p>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
@@ -83,7 +94,7 @@
     ></button>
 
     <div class="thread-sub2">
-      <p class="author"><i>Author <b>{{comment.autore}} level {{comment.level}}</b></i></p>
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore)" (mouseleave)="setPopupUser(comment.autore)" [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> level <b>{{comment.level}}</b></i></p>
       <p class="thread-text"
       >{{comment.testo}}</p>
     </div>

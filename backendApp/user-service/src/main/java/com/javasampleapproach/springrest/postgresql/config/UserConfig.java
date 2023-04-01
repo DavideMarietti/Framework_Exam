@@ -44,7 +44,7 @@ public class UserConfig {
                  "Balbo Mossetto",
                  "him/him",
                  45,
-                 "/assets/images/user.png",
+                 "/assets/images/user2.png",
                  new Timestamp(time1)
          );
          User lorenzo = new User(
@@ -54,7 +54,7 @@ public class UserConfig {
                  "Gianotti",
                  "him/him",
                  26,
-                 "/assets/images/user.png",
+                 "/assets/images/user3.png",
                  new Timestamp(time2)
          );
          User alice = new User(
@@ -64,7 +64,7 @@ public class UserConfig {
                  "Pregnolato",
                  "him/him",
                  97,
-                 "/assets/images/user.png",
+                 "/assets/images/user1.png",
                  new Timestamp(time3)
          );
          User davide = new User(
