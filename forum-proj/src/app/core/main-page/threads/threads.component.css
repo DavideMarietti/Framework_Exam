@@ -24,13 +24,13 @@
   cursor: pointer;
 }
 
-.icon .like .selected {
+.icon-selected {
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
   fill: #A1FFA1;
 }
 
-.icon .reaction .notsele {
-  fill: #A1FFA1;
-}
 
 .thread-author {
   font-size: 12px;

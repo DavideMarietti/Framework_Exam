@@ -42,11 +42,11 @@
 
       <div class="thread-bar">
         <img src="./assets/images/arrow-up.png"
-             class="icon"
+             [ngClass]=" thread.like.includes(user.id) ? 'icon-selected' : 'icon'"
              (click)=reactionControl(i,true,true)>
         <p class="reaction-p">{{thread.like.length - thread.dislike.length}}</p>
         <img src="./assets/images/arrow-down.png"
-             class="icon"
+              [ngClass]=" thread.dislike.includes(user.id) ? 'icon-selected' : 'icon'"
              (click)=reactionControl(i,true,false)>
 
         <div class="comment"
