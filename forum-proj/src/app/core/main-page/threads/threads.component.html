@@ -41,13 +41,14 @@
       >{{thread.testo}}</p>
 
       <div class="thread-bar">
-        <img src="./assets/images/arrow-up.png"
-             [ngClass]=" thread.like.includes(user.id) ? 'icon-selected' : 'icon'"
-             (click)=reactionControl(i,true,true)>
+
+        <img [ngClass]=" thread.like.includes(user.id) ? 'icon-selected' : 'icon'"
+             (click)=reactionControl(i,true,true)
+              src="assets/images/arrow-up.svg">
         <p class="reaction-p">{{thread.like.length - thread.dislike.length}}</p>
-        <img src="./assets/images/arrow-down.png"
-              [ngClass]=" thread.dislike.includes(user.id) ? 'icon-selected' : 'icon'"
-             (click)=reactionControl(i,true,false)>
+        <img [ngClass]=" thread.dislike.includes(user.id) ? 'icon-selected' : 'icon'"
+             (click)=reactionControl(i,true,false)
+             src="assets/images/arrow-down.svg">
 
         <div class="comment"
              (click)=expand_comments(i,true)
@@ -100,13 +101,13 @@
     </div>
 
     <div class="thread-bar">
-      <img src="./assets/images/arrow-up.png"
-           class="icon"
-           (click)=reactionControl(i,false,true)>
+      <img [ngClass]=" comment.like.includes(user.id) ? 'icon-selected' : 'icon'"
+           (click)=reactionControl(i,false,true)
+           src="assets/images/arrow-up.svg">
       <p class="reaction-p">{{comment.like.length - comment.dislike.length}}</p>
-      <img src="./assets/images/arrow-down.png"
-           class="icon"
-           (click)=reactionControl(i,false,false)>
+      <img [ngClass]=" comment.like.includes(user.id) ? 'icon-selected' : 'icon'"
+           (click)=reactionControl(i,false,false)
+           src="assets/images/arrow-down.svg">
       <img class="down-arrow">
 
       <div class="comment"
