@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Inject, NgZone, OnDestroy, OnInit, PLATFORM_ID
 import {isPlatformBrowser} from '@angular/common';
 
 import {HttpClient} from '@angular/common/http';
-import {lastValueFrom, Observable} from 'rxjs';
+import {lastValueFrom} from 'rxjs';
 import {Injectable} from '@angular/core';
 
 import {StockChartService} from "../../../../../stock-chart/stock-chart.service";
@@ -277,6 +277,7 @@ export class Chart1Component implements OnDestroy, OnInit {
 
 // data
       let data = this.stockData;
+      console.log("data: ", data)
 
 // set data to all series
       valueSeries.data.setAll(data);
