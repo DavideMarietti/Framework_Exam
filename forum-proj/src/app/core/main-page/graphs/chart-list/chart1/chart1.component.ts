@@ -47,10 +47,6 @@ export class Chart1Component implements OnDestroy, OnInit {
     // Chart code goes in here
     this.browserOnly(() => {
 
-      /* Chart code */
-// Create root element
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/getting-started/#Root_element
       let root = am5.Root.new("chartdiv1");
 
 
@@ -91,7 +87,7 @@ export class Chart1Component implements OnDestroy, OnInit {
         renderer: am5xy.AxisRendererY.new(root, {
           pan: "zoom"
         }),
-        extraMin: 0.1, // adds some space for main series
+        extraMin: 0.1, // adds some space for for main series
         tooltip: am5.Tooltip.new(root, {}),
         numberFormat: "#,###.00",
         extraTooltipPrecision: 2
@@ -125,6 +121,7 @@ export class Chart1Component implements OnDestroy, OnInit {
         legendRangeValueText: ""
       }));
 
+
 // Set main value series
 // -------------------------------------------------------------------------------
 // https://www.amcharts.com/docs/v5/charts/stock-chart/#Setting_main_series
@@ -156,7 +153,6 @@ export class Chart1Component implements OnDestroy, OnInit {
         centerY: am5.percent(100),
         renderer: volumeAxisRenderer
       }));
-
 
 // Add series
 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
@@ -251,10 +247,38 @@ export class Chart1Component implements OnDestroy, OnInit {
         periodSelector.selectPeriod({timeUnit: "month", count: 3})
       })
 
+// Stock toolbar
+// -------------------------------------------------------------------------------
+// https://www.amcharts.com/docs/v5/charts/stock/toolbar/
+      let toolbar = am5stock.StockToolbar.new(root, {
+        // @ts-ignore
+        container: document.getElementById("chartcontrols"),
+        stockChart: stockChart,
+        controls: [
+          am5stock.IndicatorControl.new(root, {
+            stockChart: stockChart,
+            legend: valueLegend
+          }),
+          am5stock.DateRangeSelector.new(root, {
+            stockChart: stockChart
+          }),
+          periodSelector,
+          am5stock.DrawingControl.new(root, {
+            stockChart: stockChart
+          }),
+          am5stock.ResetControl.new(root, {
+            stockChart: stockChart
+          }),
+          am5stock.SettingsControl.new(root, {
+            stockChart: stockChart
+          })
+        ]
+      })
+
 // data
       let data = this.stockData;
 
-      // set data to all series
+// set data to all series
       valueSeries.data.setAll(data);
       volumeSeries.data.setAll(data);
       sbSeries.data.setAll(data);

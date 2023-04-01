@@ -22,7 +22,7 @@
 
     <div class="thread-sub2">
       <p class="author"><i>Author <b>{{thread.autore}}</b></i></p>
-      <p class="creato">{{thread.creato}}</p>
+      <p class="creato">{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
