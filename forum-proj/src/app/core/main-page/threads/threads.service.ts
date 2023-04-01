@@ -75,21 +75,23 @@ export class ThreadsService {
       );
   }
 
-  /*deleteThread(id: number) {
-    const delID = {id: id};
+  deleteThread(id: number) {
+    const url: string = `http://localhost:9191/api/v1/posts/${id}`;
+    console.log(url);
     return this.http
-      .delete<String>(
-        'http://localhost:9191/api/v1/posts/{id}',
-        delID
-      )
-      .pipe(
-        map(responseData => {
-          return responseData;
-        }),
-        catchError(errorRes => {
-          // Send to analytics server
-          return throwError(errorRes);
-        })
+      .delete(
+        url,
+        {responseType: 'text'}
       );
-  }*/
+  }
+
+  deleteComment(id: number) {
+    const url: string = `http://localhost:9191/api/v1/comments/${id}`;
+    console.log(url);
+    return this.http
+      .delete(
+        url,
+        {responseType: 'text'}
+      );
+  }
 }

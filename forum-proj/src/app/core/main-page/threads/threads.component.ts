@@ -164,7 +164,7 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   }
 
   addThread() {
-    lastValueFrom(this.threadService.createThread(this.titolo, this.testo, this.user.username)).then(
+    const added = lastValueFrom(this.threadService.createThread(this.titolo, this.testo, this.user.username)).then(
       thread => {
         console.log("thread:", thread)
         this.isFetching = false;
@@ -177,6 +177,21 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
         }
       );
     this.control.newthread = false;
+    Promise.all([added]).then(() => {
+      this.reset();
+    });
+  }
+
+  reset() {
+    this.threads.forEach((element, index) => {
+      element.view = true;
+      element.expand = false;
+      element.answer = false;
+    });
+    this.comments.forEach((element, index) => {
+      element.view = false;
+      element.answer = false;
+    });
   }
 
   addComment(i, threadcheck: boolean) {
@@ -228,11 +243,34 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     });
   }
 
-  delete(i, threadcheck: boolean){
-    if(threadcheck){
-
-    }else{
-
+  delete(i, threadcheck: boolean) {
+    if (threadcheck) {
+      lastValueFrom(this.threadService.deleteThread(this.threads[i].id)).then(
+        () => {
+          let delID = this.threads[i].id;
+          this.threads.splice(i, 1);
+          this.comments.forEach((element, index) => {
+            if (element.parentid === delID && element.level === 0) {
+              this.delete(index, false);
+            }
+          });
+        }).then(() => {
+        this.comment_counter();
+      });
+    } else {
+      lastValueFrom(this.threadService.deleteComment(this.comments[i].id)).then(
+        () => {
+          let delID_ = this.comments[i].id;
+          this.comments.splice(i, 1);
+          this.comments.forEach((element, index) => {
+            if (element.parentid === delID_) {
+              this.delete(index, false);
+            }
+          });
+        }
+      ).then(() => {
+        this.comment_counter();
+      });
     }
   }
 }
