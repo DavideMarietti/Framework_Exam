@@ -11,6 +11,7 @@ import { ProfileComponent } from './main-page/profile/profile.component';
 import { StockChartComponent } from '../stock-chart/stock-chart.component';
 import {FormsModule} from "@angular/forms";
 import { NewsComponent } from './main-page/news/news.component';
+import { Chart1Component } from './main-page/graphs/chart-list/chart1/chart1.component';
 
 
 
@@ -25,7 +26,8 @@ import { NewsComponent } from './main-page/news/news.component';
     GraphsComponent,
     ProfileComponent,
     StockChartComponent,
-    NewsComponent
+    NewsComponent,
+    Chart1Component
   ],
   imports: [
     CommonModule,
