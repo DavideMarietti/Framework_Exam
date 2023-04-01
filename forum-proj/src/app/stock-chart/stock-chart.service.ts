@@ -26,15 +26,7 @@ export class StockChartService {
           const stockData: any[] = [];
           for (const key in responseData_) {
             if (responseData_.hasOwnProperty(key)) {
-              let open:  number = +responseData[key]["1. open"];
-              let high:  number = +responseData[key]["2. high"];
-              let low:  number = +responseData[key]["3. low"];
-              let close:  number = +responseData[key]["4. close"];
-              let close_ad:  number = +responseData[key]["5. adjusted close"];
-              let volume:  number = +responseData[key]["6. volume"];
-              let dividend_am:  number = +responseData[key]["7. dividend amount"];
-              let split_coef:  number = +responseData[key]["8. split coefficient"];
-              stockData.push({open: open, high: high, low: low, close: close, close_ad: close_ad, volume: volume, dividend_am: dividend_am, split_coef: split_coef, data: new Date(key).getTime() });
+              stockData.push(convertIntObj({ ...responseData_[key], data: new Date(key).getTime() }));
             }
           }
           console.log("stockData: ", stockData)
@@ -46,4 +38,14 @@ export class StockChartService {
         })
       );
   }
+}
+
+
+function convertIntObj(obj) {
+  for (const key in obj) {
+    for (const prop in obj[key]) {
+      obj[key] = Number(obj[key]);
+    }
+  }
+  return obj;
 }
