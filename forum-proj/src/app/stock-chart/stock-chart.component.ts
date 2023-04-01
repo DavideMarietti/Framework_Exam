@@ -29,7 +29,6 @@ export class StockChartComponent implements OnInit{
       lastValueFrom(this.stockchartService.getStockData(sym)).then(
         stockdata => {
           this.stockData.push(stockdata);
-          console.log(this.stockData);
         });
     }
 

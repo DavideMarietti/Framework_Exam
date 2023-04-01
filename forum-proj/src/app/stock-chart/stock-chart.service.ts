@@ -23,10 +23,11 @@ export class StockChartService {
       ).pipe(
         map(responseData => {
           console.log("responseData: ", responseData)
+          let responseData_ = responseData["Time Series (Daily)"]
           const stockData: any[] = [];
-          for (const key in responseData["Time Series (Daily)"]) {
-            if (responseData.hasOwnProperty(key)) {
-              stockData.push({ ...responseData[key], data: key });
+          for (const key in responseData_) {
+            if (responseData_.hasOwnProperty(key)) {
+              stockData.push({ ...responseData_[key], data: key });
             }
           }
           console.log("stockData: ", stockData)
