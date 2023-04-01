@@ -10,6 +10,7 @@ import { GraphsComponent } from './main-page/graphs/graphs.component';
 import { ProfileComponent } from './main-page/profile/profile.component';
 import { StockChartComponent } from '../stock-chart/stock-chart.component';
 import {FormsModule} from "@angular/forms";
+import { NewsComponent } from './main-page/news/news.component';
 
 
 
@@ -23,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     ThreadsComponent,
     GraphsComponent,
     ProfileComponent,
-    StockChartComponent
+    StockChartComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,
