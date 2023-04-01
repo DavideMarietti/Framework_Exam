@@ -23,8 +23,9 @@ export class NewsComponent {
     });
     lastValueFrom(this.newsService.getNews(this.symbol[i])).then(
       stocknews => {
-        this.stockNews.push(stocknews);
-        console.log(this.stockNews);
+        this.stockNews = stocknews;
+        console.log("component file: ", this.stockNews);
+        console.log("numero news: ", this.stockNews.length);
       });
   }
 }

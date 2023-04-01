@@ -5,4 +5,8 @@
 </p>
 <div class="news-box"
      *ngFor="let news of stockNews">
+  <h1>{{news.title}}</h1>
+  <p>Author {{news.authors}}</p>
+  <p>Open original: {{news.url}}</p>
+  <p>{{news.summary}}</p>
 </div>
