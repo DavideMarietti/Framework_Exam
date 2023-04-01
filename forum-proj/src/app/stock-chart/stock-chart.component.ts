@@ -2,44 +2,38 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {lastValueFrom, Observable} from 'rxjs';
 import { Injectable } from '@angular/core';
+
+import {StockChartService} from "./stock-chart.service";
 
 
 @Component({
   selector: 'app-stock-chart',
-  template: '<div class="chart-container" [id]="chartId"></div>',
+  /*template: '<div class="chart-container" [id]="chartId"></div>',*/
+  templateUrl: './stock-chart.component.html',
   styleUrls: ['./stock-chart.component.css']
 })
 
 
-export class StockChartComponent implements OnInit {
+export class StockChartComponent{
 
-  private  stockData: any; 
-  /*@Input() stockData: any;*/
+  private symbol: string[] = ['IBM', 'TSCO'];
+  private  stockData: any[] = [];
+  /*chartId = 'stock-chart';*/
 
-  private apiKey = 'GI9ZJ7T8NBICANYP';
-  private apiUrl = 'https://www.alphavantage.co/query';
-  private http: HttpClient
-  chartId = 'stock-chart';
-
-  getStockData(symbol: string): Observable<any> {
-    const url = `${this.apiUrl}?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${this.apiKey}`;
-    console.log(this.http.get(url)); 
-    return this.http.get(url);
-  }
-
-  constructor() { }
+  constructor(private stockchartService: StockChartService) { }
 
   ngOnInit(): void {
-    const seriesData: { x: number, y: number }[] = [];
+    for(let sym of this.symbol){
+      lastValueFrom(this.stockchartService.getStockData(sym)).then(
+        stockdata => {
+          this.stockData.push(stockdata);
+          console.log(this.stockData);
+        });
+    }
 
-    
-    this.stockData = this.getStockData('SPY')
-    console.log(this.stockData); 
-    console.log("ciao");
-
-    Object.keys(this.stockData).forEach(date => {
+    /*Object.keys(this.stockData).forEach(date => {
       const dataPoint = {
         x: new Date(date).getTime(),
         y: parseFloat(this.stockData[date]['4. close'])
@@ -64,6 +58,6 @@ export class StockChartComponent implements OnInit {
       }]
     };
 
-    Highcharts.chart(this.chartId, chartOptions);
+    Highcharts.chart(this.chartId, chartOptions);*/
   }
 }
