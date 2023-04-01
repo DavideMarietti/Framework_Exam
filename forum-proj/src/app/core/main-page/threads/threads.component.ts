@@ -145,10 +145,24 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
           }
         );
       }
-      /*//control like of comment
-      if(!threadcheck && reactiontype){ this.comments[i].like++; }
-      //control dislike of threads
-      if(!threadcheck && !reactiontype){ this.comments[i].dislike++; }*/
+      //control like of comments
+      if(!threadcheck && reactiontype){
+        lastValueFrom(this.threadService.commentLike(this.comments[i].id, this.user.id)).then(
+          comment => {
+            this.comments[i].like = comment.like;
+            this.comments[i].dislike = comment.dislike;
+          }
+        );
+      }
+      //control dislike of comments
+      if(!threadcheck && !reactiontype){
+        lastValueFrom(this.threadService.commentDislike(this.comments[i].id, this.user.id)).then(
+          comment => {
+            this.comments[i].like = comment.like;
+            this.comments[i].dislike = comment.dislike;
+          }
+        );
+      }
     }
   }
 
