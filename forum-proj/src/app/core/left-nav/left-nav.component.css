@@ -3,10 +3,10 @@
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 5;
-  background: wheat;
+  background: #001233;
   text-align: center;
   border: 1px solid black;
-  color: black;
+  color: #023E7D;
   font-size: 15px;
   padding: 5px;
 }
