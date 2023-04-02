@@ -14,7 +14,10 @@
            (user_)='UserController($event)'
            *ngIf="control.loginform"
 ></app-login>
-<!--<app-sign-in></app-sign-in>-->
+<app-sign-in [control]="control"
+             (control_)='ControllerIN($event)'
+             *ngIf="control.registform"
+></app-sign-in>
 <!--router-outlet></--router-outlet-->
 <app-left-nav></app-left-nav>
 <app-main-page [control]="control"

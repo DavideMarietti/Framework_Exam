@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Controller} from "../variable-type";
+import {HttpClient} from "@angular/common/http";
+import {SignInService} from "./sign-in.service";
 
 
 @Component({
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.css']
 })
 
-export class SignInComponent {
+export class SignInComponent implements OnInit{
+  @Input() control: Controller;
+
   nome: string = '';
   cognome: string = '';
   username: string = '';
@@ -15,14 +20,18 @@ export class SignInComponent {
   password: string = '';
   confirmPassword: string = '';
 
+  @Output() control_ = new EventEmitter<Controller>();
 
-  constructor () {}
+
+  constructor (private http: HttpClient, private signInService: SignInService) {}
 
   onSubmit() {
     if (this.password !== this.confirmPassword) {
       alert('Passwords do not match');
       return;
     }
+
+
 
     const data = {
       nome: this.nome,
@@ -32,6 +41,9 @@ export class SignInComponent {
       password: this.password
     };
     console.log(data);
+  }
+
+  ngOnInit(): void {
   }
 
 }
