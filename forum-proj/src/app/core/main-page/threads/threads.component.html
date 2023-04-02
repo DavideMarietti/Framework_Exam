@@ -12,7 +12,8 @@
   </div>
 </div>
 
-<div class="author-popup" *ngIf="popbox">
+<div class="author-popup"
+     *ngIf="popbox">
   <div>
     <img src="{{popuser.image}}" width="38" height="38">
   </div>
@@ -27,16 +28,15 @@
 
     <button class="btn-close"
             *ngIf="control.autenticato && thread.autore === user.username"
-            (click)=delete(i,true);>
-    </button>
+            (click)=delete(i,true);
+    ></button>
 
     <div class="thread-sub2">
-      <div style="display: inline-block; width: 100%;">
-      <p class="author" style="float: left"><i>Author <b (mouseover)="setPopupUser(thread.autore)"
-                                     (mouseleave)="setPopupUser(thread.autore)"
+
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(thread.autore,$event)"
+                                     (mouseleave)="setPopupUser(thread.autore,$event)"
                                      [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i></p>
-      <p class="creato" style="float: right">{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
-      </div>
+      <p class="creato">{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
@@ -101,11 +101,12 @@
     <p class="creato">{{comment.creato.split('T')[0]}} - {{comment.creato.split('T')[1].split('.')[0]}}</p>
 
     <div class="thread-sub2">
-      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore)"
-                                     (mouseleave)="setPopupUser(comment.autore)"
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore,$event)"
+                                     (mouseleave)="setPopupUser(comment.autore,$event)"
                                      [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> level
         <b>{{comment.level}}</b></i></p>
-      <p class="thread-text">{{comment.testo}}</p>
+      <p class="thread-text"
+      >{{comment.testo}}</p>
     </div>
 
     <div class="thread-bar">

@@ -3,6 +3,7 @@ import {Comment, Controller, Thread, Utente} from "../../../variable-type";
 import {ThreadsService} from "./threads.service";
 import {HttpClient} from "@angular/common/http";
 import {lastValueFrom, Subscription} from "rxjs";
+import * as events from "events";
 
 @Component({
   selector: 'app-threads',
@@ -130,7 +131,8 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     return indexUser;
   }
 
-  setPopupUser(popUser: string){
+  setPopupUser(popUser: string, e){
+    console.log("position x=",e.pageX," y=",e.pageY);
     this.popbox = !this.popbox;
     this.popuser = this.users[this.searchUser(popUser)];
   }
