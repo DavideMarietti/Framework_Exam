@@ -9,8 +9,11 @@ import {Controller, Utente} from "../../variable-type";
 export class RightNavComponent {
   @Input() control: Controller;
   @Output() control_ = new EventEmitter<Controller>();
+  @Output() searchword_ = new EventEmitter<string>();
 
-  insertnewTD() {
+  search: string = "";
+
+  insertnewTD(){
     this.control.newthread = !this.control.newthread;
   }
 
@@ -44,4 +47,8 @@ export class RightNavComponent {
       summary: 'These stocks offer nice blends of income and value.'
     }
   ]
+  sendword(){
+    this.searchword_.emit(this.search);
+  }
+
 }

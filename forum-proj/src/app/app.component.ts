@@ -12,6 +12,11 @@ export class AppComponent {
   sottotitolo: string = "--Log in for full access--";
   user = new Utente(0,"","","","","",1,"/assets/images/default-user-icon.png");
   control = new Controller(false, false, false, 1, false);
+  searchword: string = "";
+
+  searchFunction(value: string){
+    this.searchword = value;
+  }
 
   ControllerIN(value: Controller){
     this.control = value;

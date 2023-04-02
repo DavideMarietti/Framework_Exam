@@ -1,6 +1,5 @@
 <form class="search-form">
-  <input class="search-label" type="search" placeholder="Search" aria-label="Search">
-  <button class="" type="submit">Cerca</button>
+  <input type="text" class="form-control"  id="search" placeholder="Search" [(ngModel)] = "search" [ngModelOptions]="{standalone: true}" (input)="sendword()">
 </form>
 
 <div class="new-thread">

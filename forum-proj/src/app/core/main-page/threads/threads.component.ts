@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, AfterContentInit} from '@angular/core';
+import {Component, Input, OnInit, AfterContentInit, SimpleChanges} from '@angular/core';
 import {Comment, Controller, Thread, Utente} from "../../../variable-type";
 import {ThreadsService} from "./threads.service";
 import {HttpClient} from "@angular/common/http";
@@ -12,7 +12,7 @@ import {lastValueFrom, Subscription} from "rxjs";
 export class ThreadsComponent implements OnInit, AfterContentInit {
   @Input() user: Utente;
   @Input() control: Controller;
-
+  @Input() searchword: string;
   popuser: Utente;
   popbox: boolean = false;
 
@@ -92,6 +92,32 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.comment_counter();
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log("parola ricevuta: ", this.searchword);
+    this.searchThread(this.searchword);
+  }
+
+  searchThread(test: string){
+    let check: boolean = false;
+    this.reset();
+    this.threads.forEach((element, index) =>{
+      element.view = false;
+      if(element.titolo.toLowerCase().split(" ").includes(this.searchword.toLowerCase()) && this.searchword !== ""){
+        element.view = true;
+        element.expand = false;
+        check = true;
+      }
+      if(element.testo.toLowerCase().split(" ").includes(this.searchword.toLowerCase()) && this.searchword !== ""){
+        element.view = true;
+        element.expand = true;
+        check = true;
+      }
+    })
+    if(!check){
+      this.reset();
+    }
   }
 
   searchUser(username: string){

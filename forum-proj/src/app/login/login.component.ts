@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {lastValueFrom, Subscription, timeout} from "rxjs";
 import {Controller, Utente} from "../variable-type";
-import users_sample from "../users_sample.json"
 import {HttpClient} from "@angular/common/http";
 import {LoginService} from "./login.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";

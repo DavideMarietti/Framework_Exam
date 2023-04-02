@@ -9,6 +9,7 @@ import {Controller, Utente} from "../../variable-type";
 export class MainPageComponent {
   @Input() control: Controller;
   @Input() user: Utente;
+  @Input() searchword: string;
   @Output() control_ = new EventEmitter<Controller>();
   @Output() user_ = new EventEmitter<Utente>();
 }
