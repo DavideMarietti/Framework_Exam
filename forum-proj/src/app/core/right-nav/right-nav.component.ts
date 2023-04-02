@@ -17,7 +17,6 @@ export class RightNavComponent {
     this.control.newthread = !this.control.newthread;
   }
 
-  let
   pippo = [{
     title: 'Global OpenStack Cloud Management Market Report 20…o Reach $10.3 Billion by 2028 at a CAGR of 23.52%',
     url: 'https://www.prnewswire.com/news-releases/global-op…billion-by-2028-at-a-cagr-of-23-52-301787216.html',
