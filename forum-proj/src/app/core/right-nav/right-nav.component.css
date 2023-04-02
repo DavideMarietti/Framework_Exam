@@ -3,18 +3,25 @@
   grid-column-end: 5;
   grid-row-start: 4;
   grid-row-end: 5;
-  background-color: lightpink;
+  background-color: #001233;
+  border-color: black;
+  border-width: 1px;
+  color: #023E7D;
 }
 
 .search-form {
   display: flex;
   padding: 5px;
   gap: 5px;
+  color: #0466C8;
+  font-weight: bold;
 }
 
 .search-label {
   padding: 0px;
   border-radius: 5px;
+  color: #0466C8;
+  font-weight: bold;
 }
 
 button {
@@ -41,6 +48,7 @@ button {
   border-radius: 5px;
   padding: 10px;
   margin: 20px 10px;
+  background-color: #5C677D;
 }
 
 h1 {

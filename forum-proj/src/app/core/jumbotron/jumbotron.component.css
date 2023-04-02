@@ -32,3 +32,8 @@
   --bs-navbar-color:  chartreuse;
   --bs-navbar-hover-color: aqua;
 }
+
+.nav-link {
+  color: #0353A4;
+  font-weight: bold;
+}
