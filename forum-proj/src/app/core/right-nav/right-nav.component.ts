@@ -20,14 +20,14 @@ export class RightNavComponent {
       url: 'https://www.prnewswire.com/news-releases/global-op…billion-by-2028-at-a-cagr-of-23-52-301787216.html',
       time_published: '04/04/2023',
       authors: "James Rogers",
-      summary: 'Global OpenStack Cloud Management Market Report 2023: Sector ... PR ...'
+      summary: 'Global OpenStack Cloud Management Market Report 2023: Sector...'
     },
       {
         title: 'Higher Education Market to grow at a CAGR of 14.49… educational content delivery methods - Technavio',
         url: "https://www.prnewswire.com/news-releases/higher-ed…ntent-delivery-methods---technavio-301784592.html",
         time_published: '04/04/2023',
         authors: "Justin Pope",
-        summary: "Higher Education Market to grow at a CAGR of 14.49% from 2022 to ... PR ..."
+        summary: "Higher Education Market to grow at a CAGR of 14.49% from 2022 to..."
       },
       {
         title: '9 Best Index Funds for Long-Term Investors',
