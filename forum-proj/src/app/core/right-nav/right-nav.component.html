@@ -1,16 +1,17 @@
+<div class="new-thread">
+  <button class="pd"
+          type="submit"
+          style="margin: 20px 0;"
+          (click)="insertnewTD()"
+          *ngIf="control.autenticato"> Create new post</button>
+</div>
+
 <h2>Search Threads</h2>
 <form class="search-form">
   <input type="text" class="form-control"  id="search" placeholder="Search title" [(ngModel)] = "search" [ngModelOptions]="{standalone: true}" (input)="sendword()">
 </form>
 
-<div class="new-thread">
-  <button class="pd"
-          type="submit"
-          (click)="insertnewTD()"
-          *ngIf="control.autenticato"> + New thread</button>
-</div>
-
-<h2>Latest News</h2>
+<h2 style="margin-top: 20px;">Latest News</h2>
 <div class="news-section">
   <div class="news-box" *ngFor="let news of newsArray">
     <div style="display: inline-block; width: 100%;">
