@@ -1,8 +1,8 @@
 <div class="selectors">
   <p>Select index: </p>
-  <p class="selectable-index"
-     *ngFor="let sym of symbol; let i = index"
-     [attr.data-index]="i" (click)="searchNews(i)">
+  <p *ngFor="let sym of symbol; let i = index"
+     [attr.data-index]="i" (click)="searchNews(i)"
+     [ngClass]=" selected === sym ? 'index-selected' : 'index-selectable'">
     {{sym}}
   </p>
 </div>
