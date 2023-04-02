@@ -11,21 +11,25 @@
                     style="width: 200px; border-radius: 10px;">
                 </div>
                 <div class="flex-grow-1 ms-3">
-                  <h5 class="mb-1">{{user.username}}</h5>
-                  <p class="mb-2 pb-1" style="color: #2b2a2a;">{{user.nome}} {{user.cognome}}</p>
-                  <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                  <h5 class="mb-1" style="color: #ffffff">{{user.username}}</h5>
+                  <p class="mb-2 pb-1" style="color: #ffffff;">{{user.nome}} {{user.cognome}}</p>
+                  <div class="d-flex justify-content-start rounded-3 p-2 mb-2 statiche"
                     style="background-color: #efefef;">
-                    <div>
-                      <p class="small text-muted mb-1">Threads</p>
+                    <div class="px-4">
+                      <strong class="small text-muted mb-1">Threads</strong>
                       <p class="mb-0">{{ntrh}}</p>
                     </div>
                     <div class="px-4">
-                      <p class="small text-muted mb-1">Comments</p>
+                      <strong class="small text-muted mb-1">Comments</strong>
                       <p class="mb-0">{{ncomm}}</p>
                     </div>
                     <div class="px-4">
-                      <p class="small text-muted mb-1">Member from</p>
-                      <p class="mb-0">23/03/2023</p>
+                      <strong class="small text-muted mb-1">Member from</strong>
+                      <p class="mb-0">{{user.iscrizione.split('T')[0]}}</p>
+                    </div>
+                    <div class="px-4">
+                      <strong class="small text-muted mb-1">Age</strong>
+                      <p class="mb-0">{{user.eta}}</p>
                     </div>
                   </div>
                 </div>

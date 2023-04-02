@@ -8,7 +8,8 @@ export class Utente {
   eta : number;
   image: string;
 
-  constructor(id: number, username: string, password: string, nome: string, cognome: string, sesso: string, eta: number, image: string) {
+  iscrizione: string;
+  constructor(id: number, username: string, password: string, nome: string, cognome: string, sesso: string, eta: number, image: string, iscrizione: string) {
     this.id = id;
     this.username = username;
     this.password = password;
@@ -17,6 +18,7 @@ export class Utente {
     this.sesso = sesso;
     this.eta = eta;
     this.image = image;
+    this.iscrizione = iscrizione;
   }
 }
 

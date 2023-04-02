@@ -62,9 +62,10 @@ export class StockChartComponent implements OnDestroy, AfterViewInit {
         let col1 = document.createElement("div");
         col1.innerHTML = ticker;
         col1.style.fontSize = "1em";
+        col1.style.margin = "2px 0 2px 0";
         col1.style.width = "20%";
-        col1.style.height = "40px";
-        col1.style.lineHeight = "40px";
+        col1.style.height = "36px";
+        col1.style.lineHeight = "36px";
         col1.style.float = "left";
         row.appendChild(col1);
 
@@ -72,8 +73,9 @@ export class StockChartComponent implements OnDestroy, AfterViewInit {
         col2.innerHTML = change + "%";
         col2.style.fontSize = "1em";
         col2.style.width = "20%";
-        col2.style.height = "40px";
-        col2.style.lineHeight = "40px";
+        col2.style.margin = "2px 0 2px 0";
+        col2.style.height = "36px";
+        col2.style.lineHeight = "36px";
         col2.style.float = "left";
         col2.style.color = color.toCSSHex();
         col2.style.textAlign = "center";
@@ -82,8 +84,9 @@ export class StockChartComponent implements OnDestroy, AfterViewInit {
         let col3 = document.createElement("div");
         col3.style.fontSize = "2em";
         col3.style.width = "60%";
-        col3.style.height = "40px";
-        col3.style.lineHeight = "40px";
+        col3.style.margin = "2px 0 2px 0";
+        col3.style.height = "36px";
+        col3.style.lineHeight = "36px";
         col3.style.float = "left";
         row.appendChild(col3);
         createValueChart(col3, data, color);

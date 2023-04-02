@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'forum-proj';
   titolo: string = "Welcome user!";
   sottotitolo: string = "--Log in for full access--";
-  user = new Utente(0,"","","","","",1,"/assets/images/default-user-icon.png");
+  user = new Utente(0,"","","","","",1,"/assets/images/default-user-icon.png", "");
   control = new Controller(false, false, false, 1, false);
   searchword: string = "";
 
