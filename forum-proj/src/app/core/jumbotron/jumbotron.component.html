@@ -1,7 +1,7 @@
 <div class="board">
-  <div class="board-welcome">
-    <h2>{{titolo}}</h2>
-    <!--p>{{sottotitolo}}</p-->
+  <div class="board-welcome" style="z-index: 10000">
+    <h2 style="color: #0466C8">{{titolo}}</h2>
+    <p style="color: #0466C8">{{sottotitolo}}</p>
   </div>
   <div class="board-welcome">
     <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
@@ -14,7 +14,7 @@
             <a class="nav-link"
                href="#"
                (click)=setPage(1)
-            >Threads</a>
+            >Posts</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"

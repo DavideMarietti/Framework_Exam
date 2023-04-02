@@ -8,7 +8,7 @@ import {Controller, Utente} from "./variable-type";
 })
 export class AppComponent {
   title = 'forum-proj';
-  titolo: string = "Welcome user!";
+  titolo: string = "Welcome user not logged!";
   sottotitolo: string = "--Log in for full access--";
   user = new Utente(0,"","","","","",1,"/assets/images/default-user-icon.png", "");
   control = new Controller(false, false, false, 1, false);
@@ -39,9 +39,9 @@ export class AppComponent {
   setTitles(){
     if(!this.control.autenticato){
       this.sottotitolo = "--Log in for full access--";
-      this.titolo = "Welcome user!";
+      this.titolo = "Welcome user not logged!";
     }else{
-      this.sottotitolo = "";
+      this.sottotitolo = "--You have full access--";
       this.titolo = "Welcome " + this.user.nome + "!";
     }
   }
