@@ -54,7 +54,7 @@ export class StockChartComponent implements OnDestroy, AfterViewInit {
         div.style.overflow = "auto";
 
         let row = document.createElement("div");
-        row.style.borderBottom = "1px solid #eee";
+        row.style.borderBottom = "1px solid #7D8597";
         row.style.clear = "left";
         // @ts-ignore
         div.appendChild(row);

@@ -4,4 +4,5 @@
   grid-template-rows: 10px 92px 133px 9fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  background-color: rgba(39, 40, 51, 0.965);
 }

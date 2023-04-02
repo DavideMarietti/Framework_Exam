@@ -11,6 +11,7 @@ import * as am5 from '@amcharts/amcharts5';
 import * as am5xy from '@amcharts/amcharts5/xy';
 import * as am5stock from '@amcharts/amcharts5/stock';
 import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
+import am5themes_Dark from '@amcharts/amcharts5/themes/Dark';
 
 @Component({
   selector: 'app-chart1',
@@ -55,7 +56,8 @@ export class Chart1Component implements OnDestroy, OnInit {
       // -------------------------------------------------------------------------------
       // https://www.amcharts.com/docs/v5/concepts/themes/
       root.setThemes([
-        am5themes_Animated.new(root)
+        am5themes_Animated.new(root),
+        am5themes_Dark.new(root)
       ]);
 
 
