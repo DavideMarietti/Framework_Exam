@@ -170,6 +170,15 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
     if (threadcheck) {
       this.comments.forEach((element, index) => {
         if (element.parentid === this.threads[i].id && element.level === 0) {
+          if(element.view){
+            this.comments.forEach((elem, ind) => {
+              elem.view = true;
+            });
+          }
+        }
+      });
+      this.comments.forEach((element, index) => {
+        if (element.parentid === this.threads[i].id && element.level === 0) {
           element.view = !element.view;
         } else {
           element.view = false;
