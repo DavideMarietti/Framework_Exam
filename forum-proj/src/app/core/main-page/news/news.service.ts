@@ -7,7 +7,7 @@ import {catchError, map} from "rxjs/operators";
   providedIn: 'root'
 })
 export class NewsService {
-  private apiKey = 'GI9ZJ7T8NBICANYP';
+  private apiKey = 'F4ZHDQUB3CU90YKL';
   private apiUrl = 'https://www.alphavantage.co/query';
 
   constructor(private http: HttpClient) {}
