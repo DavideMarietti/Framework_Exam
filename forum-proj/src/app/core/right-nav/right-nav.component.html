@@ -10,3 +10,13 @@
 </div>
 
 <h2>Latest News</h2>
+<div class="news-section">
+  <div class="news-box"
+       *ngFor="let news of newsArray">
+    <h1>{{news.title}}</h1>
+    <p>Author: {{news.authors}}</p>
+    <p>Date: {{news.time_published}}</p>
+    <a href="{{news.url}}" target="_blank">Open original article</a>
+    <p>{{news.summary}}</p>
+  </div>
+</div>
