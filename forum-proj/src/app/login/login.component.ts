@@ -51,7 +51,8 @@ export class LoginComponent implements OnInit{
   }
 
   login = () : void => {
-    console.log("users: ", this.users)
+    this.errore = false;
+    console.log("users: ", this.users);
     let test: boolean = false;
     for (let user in this.users){
       if (this.username === this.users[user].username && this.password === this.users[user].password) {
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit{
           this.control.autenticato = true;
           this.control.loginform = false;
           this.control_.emit(this.control)
-          this.errore = false;
+          //this.errore = false;
           this.user_.emit(this.users[user]);
         },2000)
       }
@@ -75,19 +76,6 @@ export class LoginComponent implements OnInit{
     this.control.loginform = false;
     this.control_.emit(this.control);
   }
-
-  /*initPlants() {
-
-    const res = await fetch("../data/plants.json");
-    const users = await res.json();
-
-    try {
-      for (let user of users) {
-        user
-      }
-    } catch (err) {
-    }
-  }*/
 
   onHandleError() {
     this.errorFetching = null;

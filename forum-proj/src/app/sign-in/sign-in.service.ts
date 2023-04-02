@@ -9,6 +9,7 @@ import {Subject, throwError} from "rxjs";
 })
 export class SignInService {
   error = new Subject<string>();
+
   constructor(private http: HttpClient) {
   }
 
@@ -23,4 +24,17 @@ export class SignInService {
       );
   }
 
+  newUser(user: any){
+    console.log("service body", user);
+    return this.http
+      .post<Utente>(
+        'http://localhost:9191/api/v1/users/create',
+        user
+      ).pipe(
+        catchError(errorRes => {
+          // Send to analytics server
+          return throwError(errorRes);
+        })
+      );
+  }
 }

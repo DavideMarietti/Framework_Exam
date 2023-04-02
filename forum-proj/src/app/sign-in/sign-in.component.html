@@ -1,33 +1,47 @@
 <div class="signin-form">
   <div class="signin-form-1">
-    <!--
     <button class="btn-close"
-            (click)=close_login_form()
+            (click)=close_regis_form()
     ></button>
-    -->
   </div>
   <div class="signin-form-2">
     <h3>Registrati</h3>
     <div class="form-group">
-      <input type="text" class="form-control"  id="userId" placeholder="Nome" [(ngModel)]="nome">
+      <input type="text" class="form-control"  id="nome" placeholder="Nome" [(ngModel)]="nome">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control"  id="userId" placeholder="Cognome" [(ngModel)]="cognome">
+      <input type="text" class="form-control"  id="cognome" placeholder="Cognome" [(ngModel)]="cognome">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control"  id="userId" placeholder="Username" [(ngModel)]="username">
+      <input type="text" class="form-control"  id="username" placeholder="Username" [(ngModel)]="username">
     </div>
     <div class="form-group">
-      <input type="email" class="form-control"  id="userId" placeholder="Email" [(ngModel)]="email">
+      <input type="email" class="form-control"  id="email" placeholder="Email" [(ngModel)]="email">
     </div>
     <div class="form-group">
       <input type="password" class="form-control"  id="password" placeholder="Password" [(ngModel)]="password">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control"  id="password" placeholder="Ripetere Password"
-      [(ngModel)]="confirmPassword" required pattern="{{ password }}">
+      <input type="password" class="form-control"  id="confirmpassword" placeholder="Ripetere Password"
+      [(ngModel)]="confirmPassword">
     </div>
-    <button class="button" type="submit">Invia i dati</button>
+    <button class="button" type="submit" (click)="userRegistration()">Invia i dati</button>
+    <div class="alert"
+         *ngIf='password_errore'
+    ><strong>Attenzione!</strong> Password non corrisponde!
+    </div>
+    <div class="alert"
+         *ngIf='username_errore'
+    ><strong>Attenzione!</strong> Nome utente già esistente!
+    </div>
+    <!--div class="alert"
+         *ngIf='email_errore'
+    ><strong>Attenzione!</strong> Indirizzo email già esistente!
+    </div-->
+    <div class="ok"
+         *ngIf='valido'
+    >Accesso effettuato con successo!!
+    </div>
   </div>
 </div>
 
