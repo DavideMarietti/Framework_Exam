@@ -10,12 +10,17 @@ import {lastValueFrom} from "rxjs";
 export class NewsComponent {
   symbol: string[] = ['IBM', 'TSCO', 'MSFT', 'NFLX', 'GM', 'V'];
   stockNews: any[] = [];
-  selected: string = "";
+  selected: string = "IBM";
 
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-
+    console.log("ngOnInit chiamato")
+    lastValueFrom(this.newsService.getNews("IBM")).then(
+      stocknews => {
+        this.stockNews = stocknews;
+        console.log("get News lanciato");
+      });
   }
 
   searchNews(i){
