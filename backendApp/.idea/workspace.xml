@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="Aggiornata api like/dislike">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/comment-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/comment-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/classes/com/javasampleapproach/springrest/postgresql/model/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/post-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/target/post-service.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/user-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/target/user-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/user-service.jar.original" afterDir="false" />
-    </list>
+    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="Aggiornata api like/dislike" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
