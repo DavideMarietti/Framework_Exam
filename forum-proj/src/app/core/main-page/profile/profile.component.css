@@ -1,9 +1,9 @@
 .container {
-    background-color: blueviolet;
+    background-color: #0466C8;
 }
 
 .card {
-    background-color: plum;
+    background-color: rgba(39, 40, 51, 0.965);;
     width: 100%;
 }
 
