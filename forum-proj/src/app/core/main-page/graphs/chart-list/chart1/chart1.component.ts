@@ -1,9 +1,8 @@
-import {AfterViewInit, Component, Inject, NgZone, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, NgZone, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 
 import {HttpClient} from '@angular/common/http';
 import {lastValueFrom} from 'rxjs';
-import {Injectable} from '@angular/core';
 
 import {StockChartService} from "../../../../../stock-chart/stock-chart.service";
 
@@ -46,33 +45,35 @@ export class Chart1Component implements OnDestroy, OnInit {
   renderChart() {
     // Chart code goes in here
     this.browserOnly(() => {
-
+      // Create root element
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
       let root = am5.Root.new("chartdiv1");
 
 
-// Set themes
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/concepts/themes/
+      // Set themes
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/concepts/themes/
       root.setThemes([
         am5themes_Animated.new(root)
       ]);
 
 
-// Create a stock chart
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/stock-chart/#Instantiating_the_chart
+      // Create a stock chart
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/stock-chart/#Instantiating_the_chart
       let stockChart = root.container.children.push(am5stock.StockChart.new(root, {}));
 
 
-// Set global number format
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/concepts/formatters/formatting-numbers/
+      // Set global number format
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/concepts/formatters/formatting-numbers/
       root.numberFormatter.set("numberFormat", "#,###.00");
 
 
-// Create a main stock panel (chart)
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/stock-chart/#Adding_panels
+      // Create a main stock panel (chart)
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/stock-chart/#Adding_panels
       let mainPanel = stockChart.panels.push(am5stock.StockPanel.new(root, {
         wheelY: "zoomX",
         panX: true,
@@ -80,14 +81,25 @@ export class Chart1Component implements OnDestroy, OnInit {
       }));
 
 
-// Create value axis
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+      // title
+      var title = mainPanel.plotContainer.children.push(am5.Label.new(root, {
+        text: "Stock Charts with Relative Indexes",
+        fontSize: 20,
+        fontWeight: "400",
+        x: am5.percent(50),
+        centerX: am5.percent(50),
+        paddingTop: 0,
+        paddingBottom: 0
+      }))
+
+      // Create value axis
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
       let valueAxis = mainPanel.yAxes.push(am5xy.ValueAxis.new(root, {
         renderer: am5xy.AxisRendererY.new(root, {
           pan: "zoom"
         }),
-        extraMin: 0.1, // adds some space for for main series
+        extraMin: 0.1, // adds some space for main series
         tooltip: am5.Tooltip.new(root, {}),
         numberFormat: "#,###.00",
         extraTooltipPrecision: 2
@@ -103,17 +115,17 @@ export class Chart1Component implements OnDestroy, OnInit {
       }));
 
 
-// Add series
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+      // Add series
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
       let valueSeries = mainPanel.series.push(am5xy.CandlestickSeries.new(root, {
-        name: "IBM",
+        name: "MSFT",
         clustered: false,
         valueXField: "data",
-        valueYField: "close",
-        highValueYField: "high",
-        lowValueYField: "low",
-        openValueYField: "open",
+        valueYField: "4. close",
+        highValueYField: "2. high",
+        lowValueYField: "3. low",
+        openValueYField: "1. open",
         calculateAggregates: true,
         xAxis: dateAxis,
         yAxis: valueAxis,
@@ -122,23 +134,23 @@ export class Chart1Component implements OnDestroy, OnInit {
       }));
 
 
-// Set main value series
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/stock-chart/#Setting_main_series
+      // Set main value series
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/stock-chart/#Setting_main_series
       stockChart.set("stockSeries", valueSeries);
 
 
-// Add a stock legend
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/stock-chart/stock-legend/
+      // Add a stock legend
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/stock-chart/stock-legend/
       let valueLegend = mainPanel.plotContainer.children.push(am5stock.StockLegend.new(root, {
         stockChart: stockChart
       }));
 
 
-// Create volume axis
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+      // Create volume axis
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
       let volumeAxisRenderer = am5xy.AxisRendererY.new(root, {
         inside: true
       });
@@ -154,13 +166,13 @@ export class Chart1Component implements OnDestroy, OnInit {
         renderer: volumeAxisRenderer
       }));
 
-// Add series
-// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+      // Add series
+      // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
       let volumeSeries = mainPanel.series.push(am5xy.ColumnSeries.new(root, {
-        name: "Volume",
+        name: "6. volume",
         clustered: false,
         valueXField: "data",
-        valueYField: "volume",
+        valueYField: "6. volume",
         xAxis: dateAxis,
         yAxis: volumeValueAxis,
         legendValueText: "[bold]{valueY.formatNumber('#,###.0a')}[/]"
@@ -171,7 +183,7 @@ export class Chart1Component implements OnDestroy, OnInit {
         fillOpacity: 0.5
       });
 
-// color columns by stock rules
+      // color columns by stock rules
       volumeSeries.columns.template.adapters.add("fill", function (fill, target) {
         let dataItem = target.dataItem;
         if (dataItem) {
@@ -181,16 +193,16 @@ export class Chart1Component implements OnDestroy, OnInit {
       })
 
 
-// Set main series
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/stock-chart/#Setting_main_series
+      // Set main series
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/stock-chart/#Setting_main_series
       stockChart.set("volumeSeries", volumeSeries);
       valueLegend.data.setAll([valueSeries, volumeSeries]);
 
 
-// Add cursor(s)
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+      // Add cursor(s)
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
       mainPanel.set("cursor", am5xy.XYCursor.new(root, {
         yAxis: valueAxis,
         xAxis: dateAxis,
@@ -199,9 +211,9 @@ export class Chart1Component implements OnDestroy, OnInit {
       }));
 
 
-// Add scrollbar
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+      // Add scrollbar
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
       let scrollbar = mainPanel.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
         orientation: "horizontal",
         height: 50
@@ -220,8 +232,35 @@ export class Chart1Component implements OnDestroy, OnInit {
         renderer: am5xy.AxisRendererY.new(root, {})
       }));
 
+      // add Bollinger Bands indicator
+      var bollingerBands = stockChart.indicators.push(am5stock.BollingerBands.new(root, {
+        stockChart: stockChart,
+        stockSeries: valueSeries,
+      }));
+
+      stockChart.indicators.push(am5stock.DisparityIndex.new(root, {
+        stockChart: stockChart,
+        stockSeries: valueSeries,
+      }));
+
+      stockChart.indicators.push(am5stock.MACD.new(root, {
+        stockChart: stockChart,
+        stockSeries: valueSeries,
+      }));
+
+      stockChart.indicators.push(am5stock.StandardDeviation.new(root, {
+        stockChart: stockChart,
+        stockSeries: valueSeries,
+      }));
+
+      stockChart.indicators.push(am5stock.WilliamsR.new(root, {
+        stockChart: stockChart,
+        stockSeries: valueSeries,
+      }));
+
+
       let sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
-        valueYField: "close",
+        valueYField: "4. close",
         valueXField: "data",
         xAxis: sbDateAxis,
         yAxis: sbValueAxis
@@ -232,13 +271,13 @@ export class Chart1Component implements OnDestroy, OnInit {
         fillOpacity: 0.3
       });
 
-// add indicator
+      // add indicator
       stockChart.indicators.push(am5stock.RelativeStrengthIndex.new(root, {
         stockChart: stockChart,
         stockSeries: valueSeries
       }));
 
-// zoom to some period
+      // zoom to some period
       let periodSelector = am5stock.PeriodSelector.new(root, {
         stockChart: stockChart
       })
@@ -247,9 +286,11 @@ export class Chart1Component implements OnDestroy, OnInit {
         periodSelector.selectPeriod({timeUnit: "month", count: 3})
       })
 
-// Stock toolbar
-// -------------------------------------------------------------------------------
-// https://www.amcharts.com/docs/v5/charts/stock/toolbar/
+
+      // Stock toolbar
+      // -------------------------------------------------------------------------------
+      // https://www.amcharts.com/docs/v5/charts/stock/toolbar/
+
       let toolbar = am5stock.StockToolbar.new(root, {
         // @ts-ignore
         container: document.getElementById("chartcontrols"),
@@ -263,9 +304,6 @@ export class Chart1Component implements OnDestroy, OnInit {
             stockChart: stockChart
           }),
           periodSelector,
-          am5stock.DrawingControl.new(root, {
-            stockChart: stockChart
-          }),
           am5stock.ResetControl.new(root, {
             stockChart: stockChart
           }),
@@ -276,10 +314,21 @@ export class Chart1Component implements OnDestroy, OnInit {
       })
 
 // data
+      //let data = [ {Date: 1617192000000, Open: 515.67, High: 528.13, Low: 515.44, Close: 521.66, Volume: 3503100} ];
+      let pippo = {
+        "1. open": 129.47,
+        "2. high": 131.23,
+        "3. low": 129.42,
+        "4. close": 131.09,
+        "5. adjusted close": 131.09,
+        "6. volume": 4524686,
+        "7. dividend amount": 0,
+        "8. split coefficient": 1,
+        "data": 1680220800000
+      }
       let data = this.stockData;
-      console.log("data: ", data)
 
-// set data to all series
+      // set data to all series
       valueSeries.data.setAll(data);
       volumeSeries.data.setAll(data);
       sbSeries.data.setAll(data);
