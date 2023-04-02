@@ -97,6 +97,8 @@
             (click)=delete(i,false);
     ></button>
 
+    <p class="creato">{{comment.creato.split('T')[0]}} - {{comment.creato.split('T')[1].split('.')[0]}}</p>
+
     <div class="thread-sub2">
       <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore)"
                                      (mouseleave)="setPopupUser(comment.autore)"
@@ -116,7 +118,6 @@
            (click)=reactionControl(i,false,false)>
 
       </div>
-
       <div class="comment"
            (click)=expand_comments(i,false)
       ><img src="./assets/images/chat.png"

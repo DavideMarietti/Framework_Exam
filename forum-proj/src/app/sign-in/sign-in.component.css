@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.7);
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
-  grid-template-rows: 1.5fr 3fr 2.5fr;
+  grid-template-rows: 250px 600px auto;
 }
 
 .signin-form{
