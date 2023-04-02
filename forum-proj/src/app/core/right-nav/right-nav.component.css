@@ -3,10 +3,11 @@
   grid-column-end: 5;
   grid-row-start: 4;
   grid-row-end: 5;
-  background-color: #001233;
-  border-color: black;
-  border-width: 1px;
-  color: #5C677D;
+  background: #001233;
+  color: #7D8597;
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid #30363d !important;
 }
 
 .search-form {
