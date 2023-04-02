@@ -1,5 +1,6 @@
 <form class="search-form">
-  <input type="text" class="form-control"  id="search" placeholder="Search" [(ngModel)] = "search" [ngModelOptions]="{standalone: true}" (input)="sendword()">
+  <label>Search Threads</label>
+  <input type="text" class="form-control"  id="search" placeholder="Search title" [(ngModel)] = "search" [ngModelOptions]="{standalone: true}" (input)="sendword()">
 </form>
 
 <div class="new-thread">
