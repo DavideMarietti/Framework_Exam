@@ -10,6 +10,7 @@ import {lastValueFrom} from "rxjs";
 export class NewsComponent {
   symbol: string[] = ['IBM', 'TSCO', 'MSFT', 'NFLX', 'GM', 'V'];
   stockNews: any[] = [];
+  selected: string = "";
 
   constructor(private newsService: NewsService) { }
 
@@ -18,10 +19,11 @@ export class NewsComponent {
   }
 
   searchNews(i){
+    this.selected = this.symbol[i];
     this.stockNews.forEach((element, index) => {
       this.stockNews.splice(index, 1);
     });
-    lastValueFrom(this.newsService.getNews(this.symbol[i])).then(
+    lastValueFrom(this.newsService.getNews(this.selected)).then(
       stocknews => {
         this.stockNews = stocknews;
         console.log("component file: ", this.stockNews);
