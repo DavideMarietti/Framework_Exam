@@ -19,12 +19,14 @@
              *ngIf="control.registform"
 ></app-sign-in>
 <!--router-outlet></--router-outlet-->
-<app-left-nav></app-left-nav>
+<app-left-nav ></app-left-nav>
 <app-main-page [control]="control"
                (control_)='ControllerIN($event)'
                [user]="user"
                (user_)='UserController($event)'
+               [searchword]="searchword"
 ></app-main-page>
 <app-right-nav [control]="control"
                (control_)='ControllerIN($event)'
+               (searchword_)="searchFunction($event)"
 ></app-right-nav>

@@ -9,9 +9,16 @@ import {Controller, Utente} from "../../variable-type";
 export class RightNavComponent {
   @Input() control: Controller;
   @Output() control_ = new EventEmitter<Controller>();
+  @Output() searchword_ = new EventEmitter<string>();
+
+  search: string = "";
 
   insertnewTD(){
     this.control.newthread = !this.control.newthread;
+  }
+
+  sendword(){
+    this.searchword_.emit(this.search);
   }
 
 }
