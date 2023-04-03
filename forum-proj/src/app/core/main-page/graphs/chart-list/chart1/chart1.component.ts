@@ -77,7 +77,6 @@ export class Chart1Component implements OnDestroy, OnInit {
       // -------------------------------------------------------------------------------
       // https://www.amcharts.com/docs/v5/charts/stock-chart/#Adding_panels
       let mainPanel = stockChart.panels.push(am5stock.StockPanel.new(root, {
-        wheelY: "zoomX",
         panX: true,
         panY: true
       }));
@@ -304,6 +303,8 @@ export class Chart1Component implements OnDestroy, OnInit {
           }),
           am5stock.DateRangeSelector.new(root, {
             stockChart: stockChart
+            //color: #FFFFFF;
+            //     text-decoration: none;
           }),
           periodSelector,
           am5stock.ResetControl.new(root, {
