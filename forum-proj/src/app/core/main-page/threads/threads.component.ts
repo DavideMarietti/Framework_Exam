@@ -24,6 +24,9 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
   isFetching = false;
   errorFetching = null;
 
+  x: number;
+  y: number;
+
   private errorSub: Subscription;
   titolo: string;
   testo: string;
@@ -133,6 +136,8 @@ export class ThreadsComponent implements OnInit, AfterContentInit {
 
   setPopupUser(popUser: string, e){
     console.log("position x=",e.pageX," y=",e.pageY);
+    this.x = e.pageX;
+    this.y = e.pageY;
     this.popbox = !this.popbox;
     this.popuser = this.users[this.searchUser(popUser)];
   }
