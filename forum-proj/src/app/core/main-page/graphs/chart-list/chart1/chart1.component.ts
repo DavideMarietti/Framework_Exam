@@ -303,10 +303,8 @@ export class Chart1Component implements OnDestroy, OnInit {
           }),
           am5stock.DateRangeSelector.new(root, {
             stockChart: stockChart
-            //color: #FFFFFF;
-            //     text-decoration: none;
           }),
-          periodSelector,
+          //periodSelector,
           am5stock.ResetControl.new(root, {
             stockChart: stockChart
           }),
