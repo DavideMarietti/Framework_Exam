@@ -1,5 +1,5 @@
 <div class="selectors" style="padding: 10px 0; font-size: 20px;">
-  <p style="color: #979DAC; font-weight: 900; padding: 10px;">Latests News about: </p>
+  <p style="color: #979DAC; font-weight: 900; padding: 10px;">Latest papers: </p>
   <p *ngFor="let sym of symbol; let i = index"
      [attr.data-index]="i" (click)="searchNews(i)"
      [ngClass]=" selected === sym ? 'index-selected' : 'index-selectable'">
