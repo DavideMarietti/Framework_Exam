@@ -1,20 +1,20 @@
 <div *ngIf="control.autenticato && control.newthread"
      class="newTD">
-  <div class="form-group part1" style="margin-top: 15px">
+  <div class="form-group part1">
     <input type="text" class="form-control" id="titolo" placeholder="Inserisci titolo..." [(ngModel)]="titolo">
   </div>
-  <div class="form-group part3" style="margin-top: 15px">
-    <textarea type="text" class="form-control" id="testo" placeholder="Inserisci testo..." style="    height: 140px;"
+  <div class="form-group part3">
+    <textarea type="text" class="form-control" id="testo" placeholder="Inserisci testo..."
               [(ngModel)]="testo"></textarea>
   </div>
-  <div class="form-group part2" style="margin-top: 15px">
+  <div class="form-group part2">
     <button (click)=addThread() class="btnSubmit">Pubblica</button>
   </div>
 </div>
 
+
 <div class="author-popup"
-     *ngIf="popbox"
-     [ngStyle]="{'position': 'absolute', 'left': (x+20) +'px', 'top': (y-90) + 'px'}">
+     *ngIf="popbox">
   <div>
     <img src="{{popuser.image}}" width="38" height="38">
   </div>
@@ -27,20 +27,17 @@
 <div *ngFor="let thread of threads; let i = index" [attr.data-index]="i">
   <div class="thread-box" *ngIf="thread.view">
 
-    <button class="btn-close" style="float: right;"
+    <button class="btn-close"
             *ngIf="control.autenticato && thread.autore === user.username"
             (click)=delete(i,true);
     ></button>
 
     <div class="thread-sub2">
-      <div style="display: inline-block; width: 100%;">
-        <p class="author" style="float:left"><i>Author <b (mouseover)="setPopupUser(thread.autore,$event)"
-                                                          (mouseleave)="setPopupUser(thread.autore,$event)"
-                                                          [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i>
-        </p>
-        <p class="creato" style="float:right">{{thread.creato.split('T')[0]}}
-          - {{thread.creato.split('T')[1].split('.')[0]}}</p>
-      </div>
+
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(thread.autore,$event)"
+                                     (mouseleave)="setPopupUser(thread.autore,$event)"
+                                     [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i></p>
+      <p class="creato">{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
@@ -86,7 +83,6 @@
                 placeholder="Inserisci testo..."
                 *ngIf="thread.answer"
                 [(ngModel)]="testo_"
-                style="width: calc(100% - 30px); margin: 15px"
       ></textarea>
 
     </div>
@@ -95,24 +91,23 @@
 
 <div *ngFor="let comment of comments; let i = index" [attr.data-index]="i">
   <div class="comment-box"
-       [ngStyle]="{'margin-left': (comment.level+1)*25+'px'}"
+       [ngStyle]="{'margin-left': (comment.level+1)*10+'px'}"
        *ngIf="comment.view">
 
-    <button class="btn-close" style="float: right;"
+    <button class="btn-close"
             *ngIf="control.autenticato && comment.autore === user.username"
             (click)=delete(i,false);
     ></button>
 
+    <p class="creato">{{comment.creato.split('T')[0]}} - {{comment.creato.split('T')[1].split('.')[0]}}</p>
+
     <div class="thread-sub2">
-      <div style="display: inline-block; width: 100%;">
-        <p class="author" style="float:left"><i>Author <b (mouseover)="setPopupUser(comment.autore,$event)"
-                                       (mouseleave)="setPopupUser(comment.autore,$event)"
-                                       [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}
-        </b> <!--level <b>{{comment.level}}</b--></i>
-        </p>
-        <p class="creato" style="float: right">{{comment.creato.split('T')[0]}} - {{comment.creato.split('T')[1].split('.')[0]}}</p>
-      </div>
-      <p class="thread-text">{{comment.testo}}</p>
+      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore,$event)"
+                                     (mouseleave)="setPopupUser(comment.autore,$event)"
+                                     [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> level
+        <b>{{comment.level}}</b></i></p>
+      <p class="thread-text"
+      >{{comment.testo}}</p>
     </div>
 
     <div class="thread-bar">
@@ -153,7 +148,6 @@
               placeholder="Inserisci testo..."
               *ngIf="comment.answer"
               [(ngModel)]="testo__"
-              style="width: calc(100% - 30px); margin: 15px"
     ></textarea>
 
   </div>
