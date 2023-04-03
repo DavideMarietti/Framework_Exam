@@ -28,16 +28,21 @@
   <div class="thread-box" *ngIf="thread.view">
 
     <button class="btn-close"
+            style="float: right"
             *ngIf="control.autenticato && thread.autore === user.username"
             (click)=delete(i,true);
     ></button>
 
     <div class="thread-sub2">
 
-      <p class="author"><i>Author <b (mouseover)="setPopupUser(thread.autore,$event)"
-                                     (mouseleave)="setPopupUser(thread.autore,$event)"
-                                     [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i></p>
-      <p class="creato">{{thread.creato.split('T')[0]}} - {{thread.creato.split('T')[1].split('.')[0]}}</p>
+      <div style="display: inline-block; width: 100%;">
+        <p class="author" style="float: left"><i>Author <b (mouseover)="setPopupUser(thread.autore,$event)"
+                                                           (mouseleave)="setPopupUser(thread.autore,$event)"
+                                                           [ngStyle]="{'cursor': 'pointer'}">{{thread.autore}} </b></i>
+        </p>
+        <p class="creato" style="float: right">{{thread.creato.split('T')[0]}}
+          - {{thread.creato.split('T')[1].split('.')[0]}}</p>
+      </div>
       <h1 (click)=expand_thread(i)
       >{{thread.titolo}}</h1>
       <p class="thread-text"
@@ -91,23 +96,24 @@
 
 <div *ngFor="let comment of comments; let i = index" [attr.data-index]="i">
   <div class="comment-box"
-       [ngStyle]="{'margin-left': (comment.level+1)*10+'px'}"
+       [ngStyle]="{'margin-left': (comment.level+1)*30+'px'}"
        *ngIf="comment.view">
 
     <button class="btn-close"
+            style="float: right"
             *ngIf="control.autenticato && comment.autore === user.username"
             (click)=delete(i,false);
     ></button>
 
-    <p class="creato">{{comment.creato.split('T')[0]}} - {{comment.creato.split('T')[1].split('.')[0]}}</p>
-
     <div class="thread-sub2">
-      <p class="author"><i>Author <b (mouseover)="setPopupUser(comment.autore,$event)"
-                                     (mouseleave)="setPopupUser(comment.autore,$event)"
-                                     [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> level
-        <b>{{comment.level}}</b></i></p>
-      <p class="thread-text"
-      >{{comment.testo}}</p>
+      <div style="display: inline-block; width: 100%;">
+        <p class="author" style="float: left"><i>Author <b (mouseover)="setPopupUser(comment.autore,$event)"
+                                       (mouseleave)="setPopupUser(comment.autore,$event)"
+                                       [ngStyle]="{'cursor': 'pointer'}">{{comment.autore}}</b> <!--level
+          <b>{{comment.level}}</b--></i></p>
+        <p class="creato" style="float: right">{{comment.creato.split('T')[0]}} - {{comment.creato.split('T')[1].split('.')[0]}}</p>
+      </div>
+      <p class="thread-text">{{comment.testo}}</p>
     </div>
 
     <div class="thread-bar">
@@ -122,9 +128,7 @@
       </div>
       <div class="comment"
            (click)=expand_comments(i,false)
-      ><img src="./assets/images/chat.png"
-            class="icon"
-      >
+      ><img src="./assets/images/chat.png" class="icon">
         <p>{{comment.commcounter}}</p>
       </div>
 

@@ -33,7 +33,7 @@ export class RightNavComponent {
         title: '9 Best Index Funds for Long-Term Investors',
         url: "https://www.fool.com/investing/how-to-invest/index-funds/best-index-funds/",
         time_published: "04/04/2023",
-        authors: "Zacks Investment Research",
+        authors: "Zack Investments",
         summary: "Here are the nine best index funds to add to your portfolio for steady, low-cost growth."
       },
       {
