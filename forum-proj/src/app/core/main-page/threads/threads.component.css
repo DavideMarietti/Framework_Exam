@@ -1,9 +1,9 @@
 .thread-box {
   background: lightsteelblue;
-  padding: 5px;
+  padding: 15px;
   border: 1px solid darkslategray;
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px 15px;
   color: darkslategray;
 }
 
@@ -16,19 +16,22 @@
   border: 1px solid black;
   border-radius: 5px;
   vertical-align: baseline;
+  align-items: center;
+  background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
 }
 
 .icon {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   opacity: 0.5;
-  padding: 5px;
+  padding: 6px;
+  margin-left: 15px;
 }
 
 .arrow-up {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: black;
   opacity: 0.5;
@@ -37,8 +40,8 @@
 }
 
 .arrow-up-selected {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: rgba(50, 81, 194, 0.76);
   -webkit-mask: url(../../../../assets/images/arrow_up_icon.svg) no-repeat center;
@@ -46,8 +49,8 @@
 }
 
 .arrow-down {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: black;
   opacity: 0.5;
@@ -56,8 +59,8 @@
 }
 
 .arrow-down-selected {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: rgba(50, 81, 194, 0.76);
   -webkit-mask: url(../../../../assets/images/arrow_down_icon.svg) no-repeat center;
@@ -65,8 +68,8 @@
 }
 
 .icon-message {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: black;
   opacity: 0.5;
@@ -75,8 +78,8 @@
 }
 
 .icon-replay {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: black;
   opacity: 0.5;
@@ -85,8 +88,8 @@
 }
 
 .icon-send {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   cursor: pointer;
   background-color: black;
   opacity: 0.5;
@@ -116,6 +119,16 @@
   margin-left: 3px;
 }
 
+.reaction-p {
+  margin: 0 !important;
+}
+
+.message-p {
+  line-height: 42px;
+  text-align: center;
+  margin: 0 !important;
+}
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -128,24 +141,24 @@
 
 .comment-box {
   background: lightgrey;
-  padding: 5px;
+  padding: 15px;
   border: 1px solid darkslategray;
   border-radius: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-right: 5px;
+  margin-right: 15px;
   color: darkslategray;
 }
 
 .newTD {
-  background-color: darkolivegreen;
+  background: lightsteelblue;;
   border: 1px solid darkslategray;
   border-radius: 5px;
   display: grid;
   grid-template-columns: 8fr 1fr;
-  grid-template-rows: 1fr 8fr;
-  padding: 5px;
-  margin: 5px;
+  align-items: center;
+  padding: 15px;
+  margin: 15px;
 }
 
 .part1 {
@@ -176,10 +189,23 @@
   border: 1px solid black;
   border-radius: 5px;
   position: absolute;
-  background-color: indianred;
+  background-color: #0466C8;
   display: flex;
 }
 
 .author-info {
   display: grid;
+}
+
+.btnSubmit
+{
+  width: 70%;
+  height: 70%;
+  border-radius: 0.5rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
 }

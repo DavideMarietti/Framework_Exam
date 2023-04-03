@@ -7,24 +7,24 @@
   <div class="log-form-2">
     <h3>Login</h3>
     <div class="form-group">
-      <input type="text" class="form-control"  id="userId" placeholder="Nome Utente" [(ngModel)] = "username" >
+      <input type="text" class="form-control"  id="userId" placeholder="Username" [(ngModel)] = "username" >
     </div>
     <div class="form-group">
       <input type="password" class="form-control"  id="password" placeholder="Password" [(ngModel)] = "password">
     </div>
     <div class="form-group">
-      <button (click) = login() class="btnSubmit">Connetti</button>
+      <button (click) = login() class="btnSubmit">Login</button>
     </div>
     <div class="form-group">
-      <a href="#" class="ForgetPwd">Password Dimenticata?</a>
+      <a href="#" class="ForgetPwd">Did you forget the password?</a>
     </div>
     <div class="alert"
          *ngIf='errore'
-    ><strong>Attenzione!</strong> Username o password errati.
+    ><strong>Attention!</strong> Username or password are wrong.
     </div>
     <div class="ok"
          *ngIf='valido'
-    >Accesso effettuato con successo!!
+    >Login successful!
     </div>
   </div>
 </div>

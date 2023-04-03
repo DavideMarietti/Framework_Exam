@@ -6,8 +6,9 @@
   background: #001233;
   color: #7D8597;
   font-size: 15px;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #30363d !important;
+
 }
 
 .search-form {
@@ -40,7 +41,7 @@ button {
 }
 
 .new-thread {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -48,10 +49,17 @@ button {
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
-  margin: 20px 10px;
+  margin: 15px 5px;
   background-color: #023E7D;
+
 }
 
 h1 {
+  font-weight: bold;
   font-size: 14px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
 }

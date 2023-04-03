@@ -3,6 +3,7 @@ import {Comment, Controller, Thread, Utente} from "../../../variable-type";
 import {ThreadsService} from "./threads.service";
 import {HttpClient} from "@angular/common/http";
 import {lastValueFrom, Subscription} from "rxjs";
+import * as events from "events";
 
 @Component({
   selector: 'app-threads',

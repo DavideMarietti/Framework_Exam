@@ -5,12 +5,12 @@
     ></button>
   </div>
   <div class="signin-form-2">
-    <h3>Registrati</h3>
+    <h3>Sign up</h3>
     <div class="form-group">
-      <input type="text" class="form-control"  id="nome" placeholder="Nome" [(ngModel)]="nome">
+      <input type="text" class="form-control"  id="nome" placeholder="Name" [(ngModel)]="nome">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control"  id="cognome" placeholder="Cognome" [(ngModel)]="cognome">
+      <input type="text" class="form-control"  id="cognome" placeholder="Surname" [(ngModel)]="cognome">
     </div>
     <div class="form-group">
       <input type="text" class="form-control"  id="username" placeholder="Username" [(ngModel)]="username">
@@ -22,17 +22,19 @@
       <input type="password" class="form-control"  id="password" placeholder="Password" [(ngModel)]="password">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control"  id="confirmpassword" placeholder="Ripetere Password"
+      <input type="password" class="form-control"  id="confirmpassword" placeholder="Type the password again"
       [(ngModel)]="confirmPassword">
     </div>
-    <button class="button" type="submit" (click)="userRegistration()">Invia i dati</button>
+    <div class="form-group">
+    <button class="btnSubmit" type="submit" (click)="userRegistration()">Sign up</button>
+    </div>
     <div class="alert"
          *ngIf='password_errore'
-    ><strong>Attenzione!</strong> Password non corrisponde!
+    ><strong>Attention!</strong> Passwords do not match!
     </div>
     <div class="alert"
          *ngIf='username_errore'
-    ><strong>Attenzione!</strong> Nome utente già esistente!
+    ><strong>Attention!</strong> This username already exists!
     </div>
     <!--div class="alert"
          *ngIf='email_errore'
@@ -40,7 +42,7 @@
     </div-->
     <div class="ok"
          *ngIf='valido'
-    >Accesso effettuato con successo!!
+    >Successful sign up!
     </div>
   </div>
 </div>

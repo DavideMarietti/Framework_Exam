@@ -5,6 +5,10 @@
   cursor: pointer;
   padding: 5px;
   margin: 5px;
+  width: 100px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 .index-selected {
@@ -14,6 +18,10 @@
   cursor: pointer;
   padding: 5px;
   margin: 5px;
+  width: 100px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 .selectors {

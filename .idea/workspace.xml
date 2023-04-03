@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29e89d66-9422-49e4-8cd4-0b6ce8ebdb7c" name="Changes" comment="**">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/comment-service/target/comment-service.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/post-service/target/post-service.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backendApp/user-service/target/user-service.jar" afterDir="false" />
@@ -47,27 +44,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/forum-proj",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.typescriptcompiler",
-    "ts.external.directory.path": "C:\\Users\\david\\Desktop\\Master_Full_Stack\\Development Stack\\progetto_dev_stack\\Framework_Exam\\forum-proj\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/Desktop/Master_Full_Stack/Development Stack/progetto_dev_stack/Framework_Exam/forum-proj&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\david\\Desktop\\Master_Full_Stack\\Development Stack\\progetto_dev_stack\\Framework_Exam\\forum-proj\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\david\Desktop\Master_Full_Stack\Development Stack\progetto_dev_stack\Framework_Exam\backendApp" />
@@ -116,6 +113,7 @@
       <workItem from="1680367441862" duration="4058000" />
       <workItem from="1680375791349" duration="3531000" />
       <workItem from="1680383907560" duration="490000" />
+      <workItem from="1680511214554" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="pupopeligroso">
       <created>1678984343530</created>

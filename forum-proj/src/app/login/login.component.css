@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.7);
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
-  grid-template-rows: 250px 450px auto;
+  grid-template-rows: 150px 450px auto;
 }
 
 .log-form{
@@ -44,12 +44,17 @@ h3{
   padding: 1.5%;
   border: none;
   cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
 }
+
 .btnSubmit{
   font-weight: 600;
   color: #fff;
   background-color: #0062cc;
 }
+
 .ForgetPwd{
   color: #0062cc;
   font-weight: 600;
