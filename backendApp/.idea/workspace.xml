@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="Aggiornata api like/dislike">
+    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="added comments pt.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" afterDir="false" />
@@ -150,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680378325511</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added comments pt.1">
+      <created>1680593038226</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680593038226</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +179,8 @@
     <MESSAGE value="suca." />
     <MESSAGE value="API-gateway funzionante." />
     <MESSAGE value="Aggiornata api like/dislike" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiornata api like/dislike" />
+    <MESSAGE value="added comments pt.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="added comments pt.1" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

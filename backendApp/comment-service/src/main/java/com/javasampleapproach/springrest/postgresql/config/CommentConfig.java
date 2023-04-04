@@ -59,7 +59,7 @@ public class CommentConfig {
                          "E dovrei anche considerare che in caso di riscatto avrei una tassazione importante lasciandolo in azienda.\n" +
                          "\n" +
                          "Ma data la necessità di avere una certa liquidità aggiuntiva a breve ha senso impegnarsi ora in un fondo?",
-                 "Lollo",
+                 "Ale",
                  List.of(1, 2),
                  List.of(0),
                  1,
@@ -70,7 +70,7 @@ public class CommentConfig {
                  "Puoi cominciare a guardare questa guida, dove spiegano come funzionano entrambi i metodi, e poi valutare:\n" +
                          "\n" +
                          "https://www.covip.it/per-il-cittadino/educazione-previdenziale/guida-introduttiva-alla-previdenza-complementare",
-                 "Alice",
+                 "Ali",
                  List.of(1, 2),
                  List.of(0),
                  1,
@@ -82,7 +82,7 @@ public class CommentConfig {
                  "Puoi cominciare a guardare questa guida, dove spiegano come funzionano entrambi i metodi, e poi valutare:\n" +
                          "\n" +
                          "https://www.covip.it/per-il-cittadino/educazione-previdenziale/guida-introduttiva-alla-previdenza-complementare",
-                 "Alice",
+                 "Lauretta",
                  List.of(1, 2),
                  List.of(3),
                  1,
@@ -96,7 +96,7 @@ public class CommentConfig {
                          "Non ho un Tfr pregresso da versare in quanto liquidato con l'ultimo cambio di lavoro.\n" +
                          "\n" +
                          "Ho un po' di soldi da parte di cui non ho necessità di utilizzo a stretto giro se non eventualmente per la casa. I quali pensavo di inserirli su un conto deposito 12 mesi.",
-                 "Alice",
+                 "Ali",
                  List.of(1, 2, 3, 5),
                  List.of(0),
                  1,
@@ -106,7 +106,7 @@ public class CommentConfig {
 
          Comment comment7 = new Comment(
                  "Grazie, verifo la cosa.",
-                 "Alice",
+                 "Ale",
                  List.of(4, 5),
                  List.of(1),
                  1,
@@ -116,7 +116,7 @@ public class CommentConfig {
 
          Comment comment8 = new Comment(
                  "Siamo nella stessa situazione, con la differenza che non ho cambiato azienda. Per il momento io l’ho lasciato in azienda il tfr, in futuro però penso di trasferirlo su un pac in modo che poi non resta bloccato per 8 anni",
-                 "Alice",
+                 "Lollo",
                  List.of(1, 2, 3, 4, 5),
                  List.of(0),
                  2,
@@ -126,12 +126,92 @@ public class CommentConfig {
 
          Comment comment9 = new Comment(
                  "Siamo nella stessa situazione, con la differenza che non ho cambiato azienda. Per il momento io l’ho lasciato in azienda il tfr, in futuro però penso di trasferirlo su un pac in modo che poi non resta bloccato per 8 anni",
-                 "Alice",
+                 "Andre",
                  List.of(5),
                  List.of(1,2,3,4),
                  2,
                  2,
                  new Timestamp(time3)
+         );
+
+         Comment comment10 = new Comment(
+                 "Esattamente la % per arrivare al massimo deducibile annuale",
+                 "Alice",
+                 List.of(5),
+                 List.of(1,2,3,4),
+                 2,
+                 0,
+                 new Timestamp(time3)
+         );
+
+         Comment comment11 = new Comment(
+                 "Scusa la domanda un pò ignorante.. Conviene il massimo deducibile per ottimizzare la tassazione? Ma sempre? In qualsiasi scaglione?",
+                 "Lollo",
+                 List.of(5,2),
+                 List.of(1,4),
+                 10,
+                 1,
+                 new Timestamp(time1)
+         );
+
+         Comment comment12 = new Comment(
+                 "Curiosità (banale, credo):\n" +
+                         "\n" +
+                         "Ad ogni aumento fai la procedura per rivedere la % di contributo volontario?",
+                 "Alice",
+                 List.of(5),
+                 List.of(1,2,3,4),
+                 10,
+                 1,
+                 new Timestamp(time4)
+         );
+
+         Comment comment13 = new Comment(
+                 "Siamo nella stessa situazione, con la differenza che non ho cambiato azienda. Per il momento io l’ho lasciato in azienda il tfr, in futuro però penso di trasferirlo su un pac in modo che poi non resta bloccato per 8 anni",
+                 "Lauretta",
+                 List.of(1,2,3,4),
+                 List.of(5),
+                 2,
+                 2,
+                 new Timestamp(time3)
+         );
+
+         Comment comment14 = new Comment(
+                 "Io metto il minimo per queste ragioni:\n" +
+                         "\n" +
+                         "    La mia generazione (anni '90), se mai ci arriverà, maturerà il diritto alla pensione in area 74 anni. Pertanto non avrò tutto questo tempo per \"godermi\" il mio fondo pensione.\n" +
+                         "\n" +
+                         "    Vivendo a Milano, per me è quasi impossibile pensare di rinunciare ad una parte dello stipendio, dato che ormai i costi sono arrivati a livelli folli su tutti i fronti (ed in prospettiva la situazione non migliorerà).\n" +
+                         "\n" +
+                         "    Con i livelli di inquinamento dell'aria, unitamente ad un SSN che si approccia al collasso, non mi stupirei se le mie condizioni di salute peggiorassero con il passare degli anni.",
+                 "Lauretta",
+                 List.of(3),
+                 List.of(1,2),
+                 2,
+                 2,
+                 new Timestamp(time3)
+         );
+
+         Comment comment15 = new Comment(
+                 "Per il punto 1 puoi leggere del RITA.",
+                 "Ale",
+                 List.of(5),
+                 List.of(1,2,3,4),
+                 14,
+                 2,
+                 new Timestamp(time4)
+         );
+
+         Comment comment16 = new Comment(
+                 "Io cerco di maxare i 5k annuali di deducibilità, ma conviene solo se hai il giusto mix di scaglione IRPEF alto e allocazione del fondo pensione decentemente rischiosa, altrimenti tra risparmio gestito e mille limiti rischia di essere una trappola.\n" +
+                         "\n" +
+                         "Puoi fare un check veloce se hai già in mente dei numeri sul mio comparatore qua: https://sossoldi.org/pac-o-fondo-pensione.html",
+                 "Lollo",
+                 List.of(5),
+                 List.of(1,2,3,4),
+                 14,
+                 2,
+                 new Timestamp(time1)
          );
 
          repository.saveAll(

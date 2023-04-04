@@ -20,6 +20,8 @@ public class PostConfig {
    Date date1 = dateFormat.parse("23/09/2020");
    Date date2 = dateFormat.parse("25/03/2021");
 
+   Date date3 = dateFormat.parse("23/12/2022");
+
    long time1 = date1.getTime();
    long time2 = date2.getTime();
 
@@ -55,16 +57,16 @@ public class PostConfig {
                          "\n" +
                          "Grazie a tutti quelli che potranno aiutarmi.",
                  "Andre",
-                 List.of(1, 2),
-                 List.of(0),
+                 List.of(1, 2, 3, 5),
+                 List.of(4),
                  new Timestamp(time1)
          );
          Post post2 = new Post(
-                 "Conto deposito - Perchè?",
-                 "I BOT in perdita per carità, ma quale può essere una perdita reale su prodotti a scadenza breve? L’aumento del tasso deciso annualmente. Quindi se tu avevi un BOT che rendeva 2% in 9 mesi e l’aumento dei tassi fa andare a rendere i bot 3% in 9 mesi (aumento folle) puoi o attender quei mesi o vendere in perdita di quella differenza di % di rendimento",
+                 "Quanto versate nel fondo pensione (escluso tfr)",
+                 "Vari articoli che ho letto online consigliavano un 10% ma mi sembra tantino (soprattutto se già si investe per conto proprio) voi quanto versate ?",
                  "Lollo",
-                 List.of(1, 2),
-                 List.of(0),
+                 List.of(4),
+                 List.of(1,2,3),
                  new Timestamp(time2)
          );
 
