@@ -30,8 +30,30 @@ public class PostConfig {
    CommandLineRunner commandLineRunner(PostRepository repository) {
       return args -> {
          Post post1 = new Post(
-                 "Riflessioni sulle banche",
-                 "Aldilà degli investimenti credo sia un sub per appassionati di finanza dove si possa analizzare anche più in generale l'andamento dei mercati.\nVorrei conoscere il vostro parere sulla situazione banche oggi. Per quello che mi riguarda ho diversi dubbi.\nPrimo: essendo aziende private posso chiaramente fallire e lo abbiamo visto negli ultimi giorni, però il fallimento di una banca non è visto come risultato di un mercato efficiente (ovvero chi non è capace per diversi motivi di fare quel tipo di business viene buttato fuori e chiude) ma come problema economico. Perché UBS non è contenta delle disgrazie di CS? Ha praticamente eliminato il suo primo competitor dal mercato. In ogni altro settore si farebbe festa. Qui no, come mai?\nSecondo punto: quando le banche vanno bene i profitti sono dei privati mentre quando falliscono (o vengono comprate) le perdite vengono coperte dalle Banche Centrali / Stati nazionali. A questo punto tanto vale avere una banca unica nazionale/europea visto che ormai è pacifico che il sistema autoproduce delle distorsioni tali che l'intervento esterno è periodicamente necessario e alla fine pagano sempre i contribuenti. Inoltre, a me sembra che questo comportamento favorisca il cosiddetto moral hazard ovvero semplificando facciamo le cose a cazzo tanto i danni li paga sempre qualcun'altro e noi caschiamo in piedi.\nTerzo punto: come fanno le BC a garantire liquidità al sistema e allo stesso tempo fare scendere l'inflazione? Cioè inondare il sistema di liquidità è l'esatto opposto dell'aumento dei tassi. Non mi è chiaro come le due cose possano convivere. Qualcuno me lo può spiegare?",
+                 "Fondo pensione o Tfr in azienda?",
+                 "Buongiorno a tutti.\n" +
+                         "\n" +
+                         "Ho cambiato lavoro a dicembre e devo pensare alla destinazione del Tfr.\n" +
+                         "\n" +
+                         "In azienda si usa Fondapi ma potrei anche optare per Cometa.\n" +
+                         "\n" +
+                         "Mi sorge però il dubbio che almeno quest'anno non convenga lasciare il tutto in azienda visto che in teoria dovrei avere un rendimento del 1,5% + 0,75*(11,6) (tasso inflazione dicembre 2022).\n" +
+                         "\n" +
+                         "Totale 10,2%.\n" +
+                         "\n" +
+                         "Cifra che non raggiungerei sui fondi nemmeno con piani azionari.\n" +
+                         "\n" +
+                         "Mi perderei il contributo aggiuntivo del datore ma rimarrebbe marginale.\n" +
+                         "\n" +
+                         "Inoltre con la prospettiva di comprare casa tra 1-2 anni la somma sarebbe più libera in azienda piuttosto che in un fondo che la terrebbe bloccata per i primi 8 anni.\n" +
+                         "\n" +
+                         "dite che potrebbe essere la scelta migliore?\n" +
+                         "\n" +
+                         "È possibile aprire una posizione su un fondo e versare solo una piccola quota del Tfr + contributo minimo per avere il contributo extra (1-2%)del datore?\n" +
+                         "\n" +
+                         "Per contesto: ho 25 anni, ral 30k, e non mi sento particolarmente affascinato dal posto fisso. Anzi l'idea sarà di cambiare ogni tot anni.\n" +
+                         "\n" +
+                         "Grazie a tutti quelli che potranno aiutarmi.",
                  "Andre",
                  List.of(1, 2),
                  List.of(0),

@@ -34,7 +34,9 @@ public class CommentConfig {
    CommandLineRunner commandLineRunner(CommentRepository repository) {
       return args -> {
          Comment comment1 = new Comment(
-                 "Hey bro! Sei un grande!!",
+                 "Il contributo del datore è tutto fuorchè marginale. Parliamo di una media di 1,5% della retribuzione lorda, ovvero un +20% del tfr maturato annui (che ricordiamo essere il 6.9% della retribuziine lorda).\n" +
+                         "\n" +
+                         "Edit: aggiungo che se vuoi cambiare spesso mettere il tfr bel fondo negoziale del ccnl con contributo datoriale e poi chiederne il riscatto alle dimissioni per perdità requisiti per me è la cosa migliore",
                  "Lollo",
                  List.of(1, 2),
                  List.of(0),
@@ -43,7 +45,7 @@ public class CommentConfig {
                  new Timestamp(time1)
          );
          Comment comment2 = new Comment(
-                 "Per me è cipolla",
+                 "Non sono d’accordo con la postilla finale. potresti facilmente trovarti nella situazione in cui il controvalore è minore della cifra depositata, come sta succedendo a me in questo momento. Se si cambia spesso e si vuole liquidare ogni volta fare il fondo negoziale non ha senso e ti espone ai rischi della volatilità.",
                  "Andre",
                  List.of(1, 2),
                  List.of(0),
@@ -52,16 +54,22 @@ public class CommentConfig {
                  new Timestamp(time2)
          );
          Comment comment3 = new Comment(
-                 "A me piacciono i treni",
+                 "È vero sicuramente ha il suo impatto.\n" +
+                         "\n" +
+                         "E dovrei anche considerare che in caso di riscatto avrei una tassazione importante lasciandolo in azienda.\n" +
+                         "\n" +
+                         "Ma data la necessità di avere una certa liquidità aggiuntiva a breve ha senso impegnarsi ora in un fondo?",
                  "Lollo",
                  List.of(1, 2),
                  List.of(0),
-                 2,
-                 2,
+                 1,
+                 1,
                  new Timestamp(time3)
          );
          Comment comment4 = new Comment(
-                 "terzo commento test",
+                 "Puoi cominciare a guardare questa guida, dove spiegano come funzionano entrambi i metodi, e poi valutare:\n" +
+                         "\n" +
+                         "https://www.covip.it/per-il-cittadino/educazione-previdenziale/guida-introduttiva-alla-previdenza-complementare",
                  "Alice",
                  List.of(1, 2),
                  List.of(0),
@@ -70,9 +78,64 @@ public class CommentConfig {
                  new Timestamp(time4)
          );
 
+         Comment comment5 = new Comment(
+                 "Puoi cominciare a guardare questa guida, dove spiegano come funzionano entrambi i metodi, e poi valutare:\n" +
+                         "\n" +
+                         "https://www.covip.it/per-il-cittadino/educazione-previdenziale/guida-introduttiva-alla-previdenza-complementare",
+                 "Alice",
+                 List.of(1, 2),
+                 List.of(3),
+                 1,
+                 0,
+                 new Timestamp(time1)
+         );
+
+         Comment comment6 = new Comment(
+                 "Grazie mille per la prospettiva.\n" +
+                         "\n" +
+                         "Non ho un Tfr pregresso da versare in quanto liquidato con l'ultimo cambio di lavoro.\n" +
+                         "\n" +
+                         "Ho un po' di soldi da parte di cui non ho necessità di utilizzo a stretto giro se non eventualmente per la casa. I quali pensavo di inserirli su un conto deposito 12 mesi.",
+                 "Alice",
+                 List.of(1, 2, 3, 5),
+                 List.of(0),
+                 1,
+                 0,
+                 new Timestamp(time1)
+         );
+
+         Comment comment7 = new Comment(
+                 "Grazie, verifo la cosa.",
+                 "Alice",
+                 List.of(4, 5),
+                 List.of(1),
+                 1,
+                 1,
+                 new Timestamp(time3)
+         );
+
+         Comment comment8 = new Comment(
+                 "Siamo nella stessa situazione, con la differenza che non ho cambiato azienda. Per il momento io l’ho lasciato in azienda il tfr, in futuro però penso di trasferirlo su un pac in modo che poi non resta bloccato per 8 anni",
+                 "Alice",
+                 List.of(1, 2, 3, 4, 5),
+                 List.of(0),
+                 2,
+                 2,
+                 new Timestamp(time3)
+         );
+
+         Comment comment9 = new Comment(
+                 "Siamo nella stessa situazione, con la differenza che non ho cambiato azienda. Per il momento io l’ho lasciato in azienda il tfr, in futuro però penso di trasferirlo su un pac in modo che poi non resta bloccato per 8 anni",
+                 "Alice",
+                 List.of(5),
+                 List.of(1,2,3,4),
+                 2,
+                 2,
+                 new Timestamp(time3)
+         );
 
          repository.saveAll(
-                 List.of(comment1, comment2, comment3, comment4)
+                 List.of(comment1, comment2, comment3, comment4, comment5, comment6, comment7, comment8, comment9)
          );
       };
    }
