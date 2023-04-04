@@ -39,7 +39,7 @@ public class UserConfig {
       return args -> {
          User andrea = new User(
                  "Andre",
-                 "pupopeligroso95",
+                 "test",
                  "Andrea",
                  "Balbo Mossetto",
                  "him/him",
@@ -62,34 +62,34 @@ public class UserConfig {
                  "test",
                  "Alice",
                  "Pregnolato",
-                 "him/him",
-                 97,
+                 "her/her",
+                 35,
                  "/assets/images/user1.png",
                  new Timestamp(time3)
          );
-         User davide = new User(
-                 "dave",
-                 "pollo1234",
-                 "Davide",
-                 "Marietti",
+         User laura = new User(
+                 "Lauretta",
+                 "test",
+                 "Laura",
+                 "Rossi",
                  "him/him",
                  29,
-                 "/assets/images/user.png",
+                 "/assets/images/user4.png",
                  new Timestamp(time4)
          );
-         User alex = new User(
-                 "alex",
-                 "eccomi231",
-                 "Alex",
-                 "Giovannoni",
+         User alessia = new User(
+                 "Ale",
+                 "test",
+                 "Alessia",
+                 "Brambilla",
                  "him/her",
                  37,
-                 "/assets/images/user.png",
+                 "/assets/images/user5.png",
                  new Timestamp(time5)
          );
 
          repository.saveAll(
-                 List.of(andrea, lorenzo, alice, davide, alex)
+                 List.of(andrea, lorenzo, alice, laura, alessia)
          );
       };
    }
