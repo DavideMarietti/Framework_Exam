@@ -136,7 +136,7 @@ public class CommentConfig {
 
          Comment comment10 = new Comment(
                  "Esattamente la % per arrivare al massimo deducibile annuale",
-                 "Alice",
+                 "Ale",
                  List.of(5),
                  List.of(1,2,3,4),
                  2,
@@ -158,7 +158,7 @@ public class CommentConfig {
                  "Curiosità (banale, credo):\n" +
                          "\n" +
                          "Ad ogni aumento fai la procedura per rivedere la % di contributo volontario?",
-                 "Alice",
+                 "Ale",
                  List.of(5),
                  List.of(1,2,3,4),
                  10,
