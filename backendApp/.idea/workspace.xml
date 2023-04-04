@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="added comments pt.1">
+    <list default="true" id="8b4c0c65-9ace-431e-989d-fcbe40ae2721" name="Changes" comment="Preghiamo Gesooo.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/CommentConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/src/main/java/com/javasampleapproach/springrest/postgresql/model/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/target/comment-service.jar" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/comment-service.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comment-service/target/comment-service.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/comment-service/target/comment-service.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/src/main/java/com/javasampleapproach/springrest/postgresql/config/PostConfig.java" afterDir="false" />
@@ -200,7 +201,8 @@
     <MESSAGE value="API-gateway funzionante." />
     <MESSAGE value="Aggiornata api like/dislike" />
     <MESSAGE value="added comments pt.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comments pt.1" />
+    <MESSAGE value="Preghiamo Gesooo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Preghiamo Gesooo." />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
