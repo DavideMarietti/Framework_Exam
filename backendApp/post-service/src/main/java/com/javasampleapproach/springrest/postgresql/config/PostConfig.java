@@ -24,6 +24,7 @@ public class PostConfig {
 
    long time1 = date1.getTime();
    long time2 = date2.getTime();
+   long time3 = date3.getTime();
 
    public PostConfig() throws ParseException {
    }
@@ -69,9 +70,29 @@ public class PostConfig {
                  List.of(1,2,3),
                  new Timestamp(time2)
          );
+         Post post3 = new Post(
+                 "Offerta di lavoro negli USA a 23 anni",
+                 "Ciao a tutti,\n" +
+                         "\n" +
+                         "Volevo chiedere un vostro parere. Mi è stato proposto di recente di trasferirmi in una delle principali città della NorthCarolina, per circa 3 anni, per conto dell'azienda per la quale attualmente lavoro in Italia.\n" +
+                         "\n" +
+                         "Devo ancora confermare all'azienda il mio interesse a trasferirmi, ma volevo sentire dei pareri dall'internette :) Una volta confermato l'interesse mi farebbero una proposta ufficiale con RAL e tutto il resto.\n" +
+                         "\n" +
+                         "Lavoro nel settore costumer service da quando ho 19 anni e attualmente guadagno 26K lordi. Non sono laureato.\n" +
+                         "\n" +
+                         "Il lavoro proposto è allettante e sicuramente quando tornerei (se torno) avrei un curriculum invidiabile.\n" +
+                         "\n" +
+                         "Quanto sarebbe un RAL accettabile? / Cosa posso aspettarmi? Cosa dovrei chiedere? E' un esperienza che mi consigliate? Qualche pro e contro di pancia??\n" +
+                         "\n" +
+                         "Attendo vostre, se servono altre info fatemi sapere",
+                 "Ali",
+                 List.of(),
+                 List.of(1,2,4),
+                 new Timestamp(time3)
+         );
 
          repository.saveAll(
-                 List.of(post1, post2)
+                 List.of(post1, post2, post3)
          );
       };
    }

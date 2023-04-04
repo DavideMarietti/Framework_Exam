@@ -171,7 +171,7 @@ public class CommentConfig {
                  "Lauretta",
                  List.of(1,2,3,4),
                  List.of(5),
-                 2,
+                 12,
                  2,
                  new Timestamp(time3)
          );
@@ -187,7 +187,7 @@ public class CommentConfig {
                  "Lauretta",
                  List.of(3),
                  List.of(1,2),
-                 2,
+                 12,
                  2,
                  new Timestamp(time3)
          );
@@ -198,7 +198,7 @@ public class CommentConfig {
                  List.of(5),
                  List.of(1,2,3,4),
                  14,
-                 2,
+                 3,
                  new Timestamp(time4)
          );
 
@@ -210,7 +210,7 @@ public class CommentConfig {
                  List.of(5),
                  List.of(1,2,3,4),
                  14,
-                 2,
+                 3,
                  new Timestamp(time1)
          );
 
